@@ -1,25 +1,28 @@
-# Premium lavender passport wedding invite (HTML)
+# Udara & Shainy — Wedding Invitation
 
-## What you get
-1. Full-screen lavender cover + **Press to open**
-2. Passport-style invitation
-3. RSVP form ready to connect to Google Sheets later
+## Personalized guest links
 
-## Add your cover photo
-Put a lavender flower image in this folder named:
+Same site for everyone. Only the guest name in the URL changes:
 
-`cover.jpg`
+```
+https://brainers98.github.io/wedding/?guest=udara-kavinda
+https://brainers98.github.io/wedding/?guest=shainy-tharushika
+```
 
-If missing, a lavender gradient shows instead.
+Add guests in `guests.js`, then send each person their link.
 
-## Preview
-Open `index.html` in a browser.
+Test files:
+- `guests-test.txt` — sample names
+- `invite-links-test.txt` — sample links to send
 
-## Google Sites note
-Google Sites cannot run this full animation as raw HTML alone.  
-Best approach:
-1. Host this folder on **Netlify Drop** (free)
-2. In Google Sites, add an **Embed** → paste your Netlify URL
+## Upload to GitHub Pages
 
-## Next step
-Connect the RSVP form to a Google Sheet (Apps Script). Ask when ready.
+Upload: `index.html`, `styles.css`, `main.js`, `guests.js`, `cover.png`
+
+## GitHub 400 error
+
+If the browser shows “400 Bad Request”:
+1. Open `https://brainers98.github.io/wedding/` (not `github.com/...`)
+2. Check **Settings → Pages** is set to branch `main`
+3. Wait 1–2 minutes after uploading
+4. Try a Private/Incognito tab

@@ -2,6 +2,7 @@ const cover = document.getElementById("cover");
 const invite = document.getElementById("invite");
 const passport = document.getElementById("passport");
 const petalBurst = document.getElementById("petalBurst");
+const guestNameEl = document.getElementById("guestName");
 const rsvpForm = document.getElementById("rsvpForm");
 const rsvpNote = document.getElementById("rsvpNote");
 const rsvpSuccess = document.getElementById("rsvpSuccess");
@@ -10,10 +11,55 @@ const isMobile =
   window.matchMedia("(max-width: 768px)").matches ||
   window.matchMedia("(pointer: coarse)").matches;
 
-// Safe counts for phones (you can raise these later)
 const PETAL_COUNT = isMobile ? 200 : 400;
 
 let opening = false;
+let currentGuest = null;
+
+function normalizeGuestKey(value) {
+  return String(value || "")
+    .trim()
+    .replace(/\s+/g, " ")
+    .toLowerCase();
+}
+
+function guestId(guest) {
+  if (guest.id) return normalizeGuestKey(guest.id);
+  return normalizeGuestKey(guest.name)
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+function getGuestFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  const raw = params.get("guest") || params.get("name") || params.get("to");
+  if (!raw) return null;
+
+  const requested = normalizeGuestKey(raw);
+  const guests = typeof GUESTS !== "undefined" ? GUESTS : [];
+
+  return (
+    guests.find((guest) => guestId(guest) === requested) ||
+    guests.find((guest) => normalizeGuestKey(guest.name) === requested) ||
+    null
+  );
+}
+
+function personalizeInvitation() {
+  currentGuest = getGuestFromUrl();
+  const displayName = currentGuest ? currentGuest.name : "Guest";
+
+  if (guestNameEl) guestNameEl.textContent = displayName;
+
+  if (currentGuest) {
+    document.title = `${currentGuest.name} — Udara & Shainy Wedding`;
+    const nameInput = rsvpForm?.querySelector('input[name="name"]');
+    if (nameInput && !nameInput.value) nameInput.value = currentGuest.name;
+  }
+}
+
+personalizeInvitation();
 
 function wait(ms) {
   return new Promise((resolve) => window.setTimeout(resolve, ms));
@@ -162,6 +208,7 @@ cover.addEventListener("keydown", (event) => {
 rsvpForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const data = Object.fromEntries(new FormData(rsvpForm).entries());
+  if (currentGuest) data.guestFromLink = currentGuest.name;
   console.log("RSVP data:", data);
 
   rsvpForm.querySelectorAll("input, select, textarea, button").forEach((el) => {
