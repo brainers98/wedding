@@ -9,7 +9,7 @@ const rsvpSuccess = document.getElementById("rsvpSuccess");
 
 let opening = false;
 
-function spawnPetals(count = 1000) {
+function spawnPetals(count = 100000) {
   petalBurst.innerHTML = "";
   petalBurst.classList.add("is-active");
 
