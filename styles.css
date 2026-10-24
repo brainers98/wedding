@@ -12,12 +12,19 @@
   --font-script: "Great Vibes", cursive;
   --font-serif: "Cormorant Garamond", Georgia, serif;
   --font-body: "Outfit", system-ui, sans-serif;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-x: max(1rem, env(safe-area-inset-left, 0px), env(safe-area-inset-right, 0px));
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
 }
 
 html,
@@ -30,16 +37,22 @@ body {
   font-family: var(--font-body);
   color: var(--ink);
   background: linear-gradient(165deg, #f4ecf9 0%, #e3d0f0 50%, #d8bfe8 100%);
+  overflow-x: hidden;
 }
 
-/* —— Cover with lavender photo —— */
+/* —— Cover (mobile first) —— */
 .cover {
   position: fixed;
   inset: 0;
   z-index: 20;
-  display: grid;
-  place-items: end center;
-  padding: 0 1.25rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding:
+    calc(1.25rem + var(--safe-top))
+    var(--safe-x)
+    calc(2.25rem + var(--safe-bottom));
   overflow: hidden;
   transition: opacity 0.7s ease, visibility 0.7s ease;
 }
@@ -59,7 +72,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center top;
   display: block;
 }
 
@@ -86,24 +99,25 @@ body {
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(47, 29, 64, 0.15) 0%,
-    rgba(47, 29, 64, 0.25) 40%,
-    rgba(47, 29, 64, 0.72) 100%
+    rgba(47, 29, 64, 0.2) 0%,
+    rgba(47, 29, 64, 0.28) 35%,
+    rgba(47, 29, 64, 0.78) 100%
   );
 }
 
 .cover-content {
   position: relative;
   z-index: 1;
+  width: min(100%, 22rem);
   text-align: center;
   color: #f7f2fb;
   animation: rise 1s ease both;
 }
 
 .cover-eyebrow {
-  margin: 0 0 0.4rem;
-  font-size: 0.72rem;
-  letter-spacing: 0.28em;
+  margin: 0 0 0.35rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   opacity: 0.9;
 }
@@ -112,7 +126,7 @@ body {
   margin: 0;
   font-family: var(--font-serif);
   font-weight: 500;
-  font-size: clamp(2.6rem, 8vw, 4rem);
+  font-size: clamp(2.35rem, 10vw, 3.4rem);
   line-height: 1.05;
 }
 
@@ -121,44 +135,52 @@ body {
   font-family: var(--font-script);
   font-weight: 400;
   color: var(--lav-200);
-  margin: 0 0.15em;
+  margin: 0 0.12em;
 }
 
 .cover-date {
-  margin: 0.55rem 0 1.5rem;
+  margin: 0.5rem 0 1.35rem;
   font-family: var(--font-serif);
-  letter-spacing: 0.08em;
-  opacity: 0.9;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  opacity: 0.92;
 }
 
 .open-btn {
   appearance: none;
+  width: min(100%, 16rem);
+  min-height: 3rem;
   border: 1px solid rgba(255, 255, 255, 0.45);
-  background: rgba(47, 29, 64, 0.35);
+  background: rgba(47, 29, 64, 0.4);
   color: #f7f2fb;
-  padding: 0.95rem 1.6rem;
+  padding: 0.9rem 1.25rem;
   font-family: var(--font-body);
-  font-size: 0.8rem;
-  letter-spacing: 0.2em;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   cursor: pointer;
   backdrop-filter: blur(8px);
+  -webkit-tap-highlight-color: transparent;
   animation: pulse 2.2s ease-in-out infinite;
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
-.open-btn:hover {
-  background: rgba(92, 61, 122, 0.65);
-  transform: translateY(-2px);
+.open-btn:active {
+  transform: scale(0.98);
+  background: rgba(92, 61, 122, 0.75);
 }
 
-/* —— Passport invite —— */
+/* —— Passport invite (mobile: single page) —— */
 .invite {
   min-height: 100dvh;
-  padding: 2.5rem 1.25rem 4rem;
+  padding:
+    calc(1.25rem + var(--safe-top))
+    var(--safe-x)
+    calc(2.5rem + var(--safe-bottom));
   display: grid;
   justify-items: center;
-  gap: 2.5rem;
+  align-content: start;
+  gap: 1.75rem;
   animation: rise 0.9s ease both;
 }
 
@@ -167,103 +189,56 @@ body {
 }
 
 .passport {
-  width: min(92vw, 340px);
-  perspective: 1400px;
+  width: min(100%, 360px);
 }
 
 .passport-book {
   position: relative;
   width: 100%;
-  aspect-ratio: 5 / 7;
-  transform-style: preserve-3d;
 }
 
-.passport-inside-left,
-.passport-page {
-  position: absolute;
-  inset: 0;
-  border-radius: 10px 14px 14px 10px;
-  box-shadow: 0 28px 60px rgba(47, 29, 64, 0.28);
-}
-
+/* Hide decorative left panel on phones — show invitation page only */
 .passport-inside-left {
-  background: linear-gradient(160deg, #6e4a8f, #3d2756);
-  color: #f3e9fb;
-  display: grid;
-  place-content: center;
-  gap: 0.4rem;
-  text-align: center;
-  padding: 1.5rem;
-  opacity: 0;
-  transform: translateX(-8%) scale(0.98);
-  transition: opacity 0.6s ease 0.35s, transform 0.6s ease 0.35s;
-  border: 1px solid rgba(201, 176, 122, 0.3);
-}
-
-.passport.is-open .passport-inside-left {
-  opacity: 1;
-  transform: translateX(0) scale(1);
-}
-
-.stamp-label {
-  margin: 0;
-  font-size: 0.68rem;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--gold);
-}
-
-.mono {
-  margin: 0;
-  letter-spacing: 0.2em;
-  font-size: 0.85rem;
-}
-
-.crest {
-  font-size: 2rem;
-  color: var(--gold);
-  margin: 0.5rem 0;
-}
-
-.left-note {
-  margin: 0;
-  font-family: var(--font-script);
-  font-size: 1.6rem;
+  display: none;
 }
 
 .passport-page {
+  position: relative;
+  width: 100%;
+  min-height: min(72dvh, 560px);
+  border-radius: 14px;
+  box-shadow: 0 18px 40px rgba(47, 29, 64, 0.22);
   background:
-    linear-gradient(180deg, rgba(143, 99, 181, 0.06), transparent 30%),
+    linear-gradient(180deg, rgba(143, 99, 181, 0.06), transparent 28%),
     var(--paper);
   border: 1px solid rgba(168, 127, 202, 0.35);
-  padding: 1.5rem 1.25rem;
+  padding: 1.35rem 1.1rem 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  transform-origin: left center;
-  transform: rotateY(-12deg) scale(0.96);
   opacity: 0;
-  transition: transform 1s cubic-bezier(0.65, 0.05, 0.2, 1), opacity 0.6s ease;
+  transform: translateY(16px) scale(0.98);
+  transition: transform 0.7s cubic-bezier(0.65, 0.05, 0.2, 1), opacity 0.55s ease;
 }
 
 .passport.is-open .passport-page {
-  transform: rotateY(0) scale(1);
   opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 .page-eyebrow {
   margin: 0;
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--lav-500);
 }
 
 .page-names {
-  margin: 0.45rem 0 0.2rem;
+  margin: 0.4rem 0 0.15rem;
   font-family: var(--font-serif);
-  font-size: clamp(1.8rem, 6vw, 2.3rem);
+  font-size: clamp(1.75rem, 7.5vw, 2.2rem);
   font-weight: 600;
   color: var(--lav-900);
   line-height: 1.1;
@@ -276,16 +251,17 @@ body {
 }
 
 .page-line {
-  margin: 0 0 0.85rem;
+  margin: 0 0 0.75rem;
   font-family: var(--font-serif);
   font-style: italic;
+  font-size: 1rem;
   color: var(--lav-700);
 }
 
 .gold-rule {
   width: 42%;
   height: 1px;
-  margin-bottom: 0.9rem;
+  margin-bottom: 0.85rem;
   background: linear-gradient(90deg, transparent, var(--gold), transparent);
 }
 
@@ -293,22 +269,23 @@ body {
   margin: 0;
   width: 100%;
   display: grid;
-  gap: 0.65rem;
+  gap: 0.6rem;
   text-align: left;
 }
 
 .details > div {
   display: grid;
-  grid-template-columns: 4.2rem 1fr;
-  gap: 0.5rem;
+  grid-template-columns: 3.8rem 1fr;
+  gap: 0.55rem;
+  align-items: baseline;
   padding-bottom: 0.55rem;
   border-bottom: 1px solid rgba(168, 127, 202, 0.25);
 }
 
 .details dt {
   margin: 0;
-  font-size: 0.65rem;
-  letter-spacing: 0.14em;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--lav-500);
 }
@@ -316,63 +293,65 @@ body {
 .details dd {
   margin: 0;
   font-family: var(--font-serif);
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   font-weight: 500;
   color: var(--lav-900);
-  line-height: 1.25;
+  line-height: 1.3;
 }
 
 .page-note {
-  margin: auto 0 0.85rem;
-  padding-top: 0.85rem;
+  margin: 1rem 0 0.9rem;
   font-family: var(--font-serif);
   font-style: italic;
+  font-size: 0.98rem;
   color: var(--lav-700);
 }
 
 .rsvp-link {
+  margin-top: auto;
   color: var(--lav-700);
   text-decoration: none;
-  font-size: 0.78rem;
-  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   border-bottom: 1px solid rgba(92, 61, 122, 0.35);
-  padding-bottom: 0.1rem;
+  padding: 0.35rem 0.1rem;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* —— RSVP form —— */
 .rsvp {
   width: min(100%, 380px);
   text-align: center;
-  padding: 0.5rem 0 2rem;
+  padding: 0.25rem 0 1rem;
 }
 
 .rsvp-eyebrow {
   margin: 0;
-  font-size: 0.7rem;
-  letter-spacing: 0.24em;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--lav-500);
 }
 
 .rsvp-title {
-  margin: 0.4rem 0 1.25rem;
+  margin: 0.35rem 0 1.1rem;
   font-family: var(--font-script);
-  font-size: 2.4rem;
+  font-size: clamp(2rem, 8vw, 2.4rem);
   font-weight: 400;
   color: var(--lav-900);
 }
 
 .rsvp-form {
   display: grid;
-  gap: 0.85rem;
+  gap: 0.8rem;
   text-align: left;
 }
 
 .rsvp-form label {
   display: grid;
   gap: 0.35rem;
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--lav-700);
@@ -382,29 +361,35 @@ body {
 .rsvp-form select,
 .rsvp-form textarea {
   width: 100%;
+  max-width: 100%;
   padding: 0.85rem 0.9rem;
   border: 1px solid rgba(168, 127, 202, 0.35);
-  background: rgba(255, 255, 255, 0.75);
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.8);
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 16px; /* prevents iOS zoom on focus */
   color: var(--ink);
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .rsvp-form button {
   appearance: none;
   border: 0;
-  margin-top: 0.35rem;
+  margin-top: 0.25rem;
+  min-height: 3rem;
   padding: 0.95rem 1rem;
   background: var(--lav-700);
   color: #f7f2fb;
   font-family: var(--font-body);
   font-size: 0.78rem;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.rsvp-form button:hover {
+.rsvp-form button:active {
   background: var(--lav-900);
 }
 
@@ -443,31 +428,90 @@ body {
   }
 }
 
+/* Tablet / desktop: open passport spread */
 @media (min-width: 720px) {
+  .cover {
+    padding-bottom: calc(3.5rem + var(--safe-bottom));
+  }
+
+  .open-btn:hover {
+    background: rgba(92, 61, 122, 0.65);
+    transform: translateY(-2px);
+  }
+
+  .invite {
+    padding-top: 2.5rem;
+    gap: 2.5rem;
+  }
+
   .passport {
     width: min(92vw, 720px);
   }
 
   .passport-book {
-    aspect-ratio: 10 / 7;
     display: grid;
     grid-template-columns: 1fr 1fr;
-  }
-
-  .passport-inside-left,
-  .passport-page {
-    position: relative;
-    inset: auto;
-    height: 100%;
+    aspect-ratio: 10 / 7;
+    min-height: 420px;
   }
 
   .passport-inside-left {
+    display: grid;
+    place-content: center;
+    gap: 0.4rem;
+    text-align: center;
+    padding: 1.5rem;
+    color: #f3e9fb;
+    background: linear-gradient(160deg, #6e4a8f, #3d2756);
+    border: 1px solid rgba(201, 176, 122, 0.3);
     border-radius: 14px 0 0 14px;
-    transform: none;
+    box-shadow: 0 28px 60px rgba(47, 29, 64, 0.28);
+    opacity: 0;
+    transform: translateX(-8%);
+    transition: opacity 0.6s ease 0.25s, transform 0.6s ease 0.25s;
+  }
+
+  .passport.is-open .passport-inside-left {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .stamp-label {
+    margin: 0;
+    font-size: 0.68rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .mono {
+    margin: 0;
+    letter-spacing: 0.2em;
+    font-size: 0.85rem;
+  }
+
+  .crest {
+    font-size: 2rem;
+    color: var(--gold);
+    margin: 0.5rem 0;
+  }
+
+  .left-note {
+    margin: 0;
+    font-family: var(--font-script);
+    font-size: 1.6rem;
   }
 
   .passport-page {
+    min-height: 0;
+    height: 100%;
     border-radius: 0 14px 14px 0;
+    padding: 1.5rem 1.25rem;
+    box-shadow: 0 28px 60px rgba(47, 29, 64, 0.28);
+  }
+
+  .rsvp-form button:hover {
+    background: var(--lav-900);
   }
 }
 
