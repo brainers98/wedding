@@ -54,9 +54,6 @@ body {
     var(--safe-x)
     calc(2rem + var(--safe-bottom));
   overflow: hidden;
-  cursor: pointer;
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
   user-select: none;
   transition: opacity 0.75s ease, visibility 0.75s ease;
 }
@@ -114,6 +111,9 @@ body {
 }
 
 .open-btn {
+  appearance: none;
+  border: 0;
+  background: transparent;
   position: relative;
   z-index: 2;
   color: #f7f2fb;
@@ -123,7 +123,9 @@ body {
   justify-items: center;
   align-content: center;
   font-family: var(--font-body);
-  pointer-events: none; /* whole screen handles the tap */
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
   transition: opacity 0.45s ease, transform 0.45s ease;
 }
 

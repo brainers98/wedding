@@ -20,14 +20,8 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Premium cover — tap ANYWHERE to open -->
-    <section
-      class="cover"
-      id="cover"
-      role="button"
-      tabindex="0"
-      aria-label="Press anywhere to open the invitation"
-    >
+    <!-- Premium cover — only the round button / text opens -->
+    <section class="cover" id="cover">
       <div class="cover-media" aria-hidden="true">
         <img
           class="cover-photo"
@@ -41,9 +35,13 @@
         <div class="cover-veil"></div>
       </div>
 
-      <!-- Visual only — whole screen is the tap target -->
-      <div class="open-btn" aria-hidden="true">
-        <span class="open-orb">
+      <button
+        type="button"
+        class="open-btn"
+        id="openBtn"
+        aria-label="Press to open the invitation"
+      >
+        <span class="open-orb" aria-hidden="true">
           <svg class="open-map" viewBox="0 0 120 120" fill="none">
             <circle cx="60" cy="60" r="54" stroke="currentColor" stroke-width="1.5" opacity="0.55" />
             <circle cx="60" cy="60" r="42" stroke="currentColor" stroke-width="0.8" opacity="0.35" />
@@ -63,7 +61,7 @@
           </svg>
         </span>
         <span class="open-main">Press to open</span>
-      </div>
+      </button>
 
       <div class="petal-burst" id="petalBurst" aria-hidden="true"></div>
     </section>

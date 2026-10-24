@@ -1,4 +1,5 @@
 const cover = document.getElementById("cover");
+const openBtn = document.getElementById("openBtn");
 const invite = document.getElementById("invite");
 const passport = document.getElementById("passport");
 const petalBurst = document.getElementById("petalBurst");
@@ -219,21 +220,15 @@ async function openInvitation() {
 
 document.body.style.overflow = "hidden";
 
-function onCoverActivate(event) {
+function onOpenActivate(event) {
   if (opening) return;
   event.preventDefault();
   event.stopPropagation();
   openInvitation();
 }
 
-cover.addEventListener("touchend", onCoverActivate, { passive: false });
-cover.addEventListener("click", onCoverActivate);
-cover.addEventListener("keydown", (event) => {
-  if (event.key === "Enter" || event.key === " ") {
-    event.preventDefault();
-    openInvitation();
-  }
-});
+openBtn.addEventListener("click", onOpenActivate);
+openBtn.addEventListener("touchend", onOpenActivate, { passive: false });
 
 rsvpForm.addEventListener("submit", async (event) => {
   event.preventDefault();
