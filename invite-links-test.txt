@@ -3,17 +3,12 @@ Personalized invitation links (test)
 Base site:
 https://brainers98.github.io/wedding/
 
-1. Udara Kavinda
+1. Mr Udara Kavinda
 https://brainers98.github.io/wedding/?guest=udara-kavinda
 
-2. Shainy Tharushika
+2. Miss Shainy Tharushika
 https://brainers98.github.io/wedding/?guest=shainy-tharushika
 
-How it works:
-- Same website for everyone
-- Only the ?guest= part changes
-- That guest name appears in the invitation text
-
-When you have 150 names:
-1. Add them to guests.js
-2. Send each person their own link with their id
+How replies work:
+- Sheet starts with all invitees (Pending)
+- When they RSVP, that same row becomes Yes or No (overwritten, not a new line)

@@ -239,7 +239,10 @@ rsvpForm.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   const data = Object.fromEntries(new FormData(rsvpForm).entries());
-  if (currentGuest) data.guestFromLink = currentGuest.name;
+  if (currentGuest) {
+    data.guestFromLink = currentGuest.name;
+    data.guestId = currentGuest.id || guestId(currentGuest);
+  }
 
   const scriptUrl =
     typeof RSVP_SCRIPT_URL !== "undefined" ? RSVP_SCRIPT_URL.trim() : "";
