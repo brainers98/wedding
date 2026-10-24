@@ -55,6 +55,9 @@ body {
     calc(2rem + var(--safe-bottom));
   overflow: hidden;
   cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
   transition: opacity 0.75s ease, visibility 0.75s ease;
 }
 
@@ -112,22 +115,15 @@ body {
 
 .open-btn {
   position: relative;
-  z-index: 6;
-  appearance: none;
-  border: 0;
-  background: transparent;
+  z-index: 2;
   color: #f7f2fb;
   padding: 1.25rem 1.5rem;
-  min-width: 8.5rem;
-  min-height: 8.5rem;
   display: grid;
   gap: 0.7rem;
   justify-items: center;
   align-content: center;
   font-family: var(--font-body);
-  cursor: pointer;
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
+  pointer-events: none; /* whole screen handles the tap */
   transition: opacity 0.45s ease, transform 0.45s ease;
 }
 
@@ -135,7 +131,6 @@ body {
   position: relative;
   width: 5.8rem;
   height: 5.8rem;
-  pointer-events: none;
   border-radius: 50%;
   display: grid;
   place-items: center;
@@ -185,8 +180,8 @@ body {
 .petal-burst {
   position: absolute;
   inset: 0;
-  z-index: 5;
-  pointer-events: none;
+  z-index: 3;
+  pointer-events: none !important;
   overflow: hidden;
   opacity: 0;
 }
