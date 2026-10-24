@@ -215,6 +215,7 @@ async function openInvitation() {
 
   window.requestAnimationFrame(() => {
     passport.classList.add("is-open");
+    invite.classList.add("is-revealed");
   });
 }
 

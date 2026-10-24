@@ -269,14 +269,167 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  overflow: hidden;
   opacity: 0;
-  transform: translateY(16px) scale(0.98);
-  transition: transform 0.7s cubic-bezier(0.65, 0.05, 0.2, 1), opacity 0.55s ease;
+  transform: translateY(22px) scale(0.96);
+  transition:
+    transform 0.95s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.7s ease;
 }
 
 .passport.is-open .passport-page {
   opacity: 1;
   transform: translateY(0) scale(1);
+}
+
+/* Soft floating hearts when the page opens */
+.romance-float {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.romance-float span {
+  position: absolute;
+  color: rgba(168, 127, 202, 0.28);
+  font-size: 0.85rem;
+  opacity: 0;
+}
+
+.passport.is-open .romance-float span {
+  animation: heartDrift 5.5s ease-in-out infinite;
+}
+
+.romance-float span:nth-child(1) {
+  left: 12%;
+  bottom: 8%;
+  animation-delay: 0.2s;
+}
+
+.romance-float span:nth-child(2) {
+  left: 78%;
+  bottom: 18%;
+  font-size: 1.1rem;
+  animation-delay: 1.1s;
+}
+
+.romance-float span:nth-child(3) {
+  left: 22%;
+  bottom: 42%;
+  font-size: 0.7rem;
+  animation-delay: 2s;
+}
+
+.romance-float span:nth-child(4) {
+  left: 68%;
+  bottom: 55%;
+  animation-delay: 2.8s;
+}
+
+.passport-page > *:not(.romance-float) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Staggered romantic reveal of invite content */
+.passport-page > .parents-line,
+.passport-page > .parents-join,
+.passport-page > .page-names,
+.passport-page > .invite-copy,
+.passport-page > .guest-name,
+.passport-page > .heart-rule,
+.passport-page > .destinations,
+.passport-page > .rsvp-link {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+.passport.is-open .passport-page > .parents-line,
+.passport.is-open .passport-page > .parents-join,
+.passport.is-open .passport-page > .page-names,
+.passport.is-open .passport-page > .invite-copy,
+.passport.is-open .passport-page > .guest-name,
+.passport.is-open .passport-page > .heart-rule,
+.passport.is-open .passport-page > .destinations,
+.passport.is-open .passport-page > .rsvp-link {
+  animation: softReveal 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.passport.is-open .passport-page > :nth-child(2) {
+  animation-delay: 0.18s;
+}
+
+.passport.is-open .passport-page > :nth-child(3) {
+  animation-delay: 0.28s;
+}
+
+.passport.is-open .passport-page > :nth-child(4) {
+  animation-delay: 0.38s;
+}
+
+.passport.is-open .passport-page > .page-names {
+  animation-name: nameReveal;
+  animation-delay: 0.5s;
+  animation-duration: 1s;
+}
+
+.passport.is-open .passport-page > :nth-child(6) {
+  animation-delay: 0.68s;
+}
+
+.passport.is-open .passport-page > .guest-name {
+  animation-name: guestReveal;
+  animation-delay: 0.82s;
+}
+
+.passport.is-open .passport-page > :nth-child(8) {
+  animation-delay: 0.95s;
+}
+
+.passport.is-open .passport-page > .heart-rule {
+  animation-delay: 1.08s;
+}
+
+.passport.is-open .heart-rule i {
+  display: inline-block;
+  animation: heartBeat 1.2s ease 1.35s both, heartPulse 2.6s ease 2.6s infinite;
+}
+
+.passport.is-open .passport-page > .destinations {
+  animation-delay: 1.22s;
+}
+
+.passport.is-open .destination:first-child {
+  animation: softReveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) 1.28s both;
+}
+
+.passport.is-open .destination:last-child {
+  animation: softReveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) 1.48s both;
+}
+
+.passport.is-open .passport-page > .rsvp-link {
+  animation-delay: 1.65s;
+}
+
+.countdown-section,
+.rsvp-deadline,
+.rsvp {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.invite.is-revealed .countdown-section {
+  animation: softReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1.75s both;
+}
+
+.invite.is-revealed .rsvp-deadline {
+  animation: softReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1.95s both;
+}
+
+.invite.is-revealed .rsvp {
+  animation: softReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) 2.1s both;
 }
 
 .parents-line {
@@ -689,6 +842,85 @@ body {
   }
 }
 
+@keyframes softReveal {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes nameReveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.94);
+    letter-spacing: 0.14em;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    letter-spacing: 0.04em;
+  }
+}
+
+@keyframes guestReveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes heartBeat {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  45% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+  70% {
+    transform: scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes heartPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+@keyframes heartDrift {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0.8);
+  }
+  15% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-120px) scale(1.15);
+  }
+}
+
 @keyframes pulse {
   0%,
   100% {
@@ -838,8 +1070,31 @@ body {
   .open-btn,
   .invite,
   .passport-page,
-  .passport-inside-left {
+  .passport-inside-left,
+  .romance-float span,
+  .passport-page > *,
+  .destination,
+  .countdown-section,
+  .rsvp-deadline,
+  .rsvp,
+  .heart-rule i {
     animation: none !important;
     transition: none !important;
+  }
+
+  .passport-page > .parents-line,
+  .passport-page > .parents-join,
+  .passport-page > .page-names,
+  .passport-page > .invite-copy,
+  .passport-page > .guest-name,
+  .passport-page > .heart-rule,
+  .passport-page > .destinations,
+  .passport-page > .rsvp-link,
+  .countdown-section,
+  .rsvp-deadline,
+  .rsvp {
+    opacity: 1;
+    transform: none;
+    filter: none;
   }
 }
