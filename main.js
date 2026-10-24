@@ -235,15 +235,50 @@ cover.addEventListener("keydown", (event) => {
   }
 });
 
-rsvpForm.addEventListener("submit", (event) => {
+rsvpForm.addEventListener("submit", async (event) => {
   event.preventDefault();
+
   const data = Object.fromEntries(new FormData(rsvpForm).entries());
   if (currentGuest) data.guestFromLink = currentGuest.name;
-  console.log("RSVP data:", data);
 
-  rsvpForm.querySelectorAll("input, select, textarea, button").forEach((el) => {
+  const scriptUrl =
+    typeof RSVP_SCRIPT_URL !== "undefined" ? RSVP_SCRIPT_URL.trim() : "";
+
+  const controls = rsvpForm.querySelectorAll("input, select, textarea, button");
+  controls.forEach((el) => {
     el.disabled = true;
   });
-  rsvpNote.hidden = true;
-  rsvpSuccess.hidden = false;
+
+  if (!scriptUrl) {
+    if (rsvpNote) {
+      rsvpNote.hidden = false;
+      rsvpNote.textContent =
+        "RSVP sheet is not connected yet. Add RSVP_SCRIPT_URL in guests.js.";
+    }
+    controls.forEach((el) => {
+      el.disabled = false;
+    });
+    return;
+  }
+
+  try {
+    await fetch(scriptUrl, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(data),
+    });
+
+    if (rsvpNote) rsvpNote.hidden = true;
+    if (rsvpSuccess) rsvpSuccess.hidden = false;
+  } catch (error) {
+    console.error("RSVP submit failed:", error);
+    controls.forEach((el) => {
+      el.disabled = false;
+    });
+    if (rsvpNote) {
+      rsvpNote.hidden = false;
+      rsvpNote.textContent = "Could not send RSVP. Please try again.";
+    }
+  }
 });
