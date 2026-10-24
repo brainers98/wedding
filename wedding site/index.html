@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Udara & Shainy — Wedding Invitation</title>
+    <meta
+      name="description"
+      content="You're invited to the wedding of Udara & Shainy — December 16, 2026."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Outfit:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- 1) Lavender cover — press to open -->
+    <section class="cover" id="cover" aria-label="Invitation cover">
+      <div class="cover-media">
+        <!-- Replace cover.jpg with your lavender flower photo -->
+        <img
+          class="cover-photo"
+          src="cover.jpg"
+          alt="Lavender flowers"
+          width="1200"
+          height="1800"
+          onerror="this.classList.add('is-missing')"
+        />
+        <div class="cover-fallback" aria-hidden="true"></div>
+        <div class="cover-veil"></div>
+      </div>
+
+      <div class="cover-content">
+        <p class="cover-eyebrow">Wedding Invitation</p>
+        <h1 class="cover-names">Udara <span>&amp;</span> Shainy</h1>
+        <p class="cover-date">December 16, 2026</p>
+        <button class="open-btn" id="openBtn" type="button">
+          Press to open
+        </button>
+      </div>
+    </section>
+
+    <!-- 2) Passport invitation -->
+    <main class="invite" id="invite" hidden>
+      <div class="passport" id="passport">
+        <div class="passport-book">
+          <!-- Left / cover face (back of cover after open) -->
+          <div class="passport-inside-left">
+            <p class="stamp-label">Love Destination</p>
+            <p class="mono">SU · 1612</p>
+            <div class="crest" aria-hidden="true">✈</div>
+            <p class="left-note">Together we fly</p>
+          </div>
+
+          <!-- Right page — invitation details -->
+          <div class="passport-page">
+            <p class="page-eyebrow">You are warmly invited</p>
+            <h2 class="page-names">Udara <span>&amp;</span> Shainy</h2>
+            <p class="page-line">to celebrate their wedding</p>
+
+            <div class="gold-rule" aria-hidden="true"></div>
+
+            <dl class="details">
+              <div>
+                <dt>Date</dt>
+                <dd>December 16, 2026</dd>
+              </div>
+              <div>
+                <dt>Time</dt>
+                <dd>7:00 PM</dd>
+              </div>
+              <div>
+                <dt>Venue</dt>
+                <dd>Grandeeza Hotel<br />Negombo</dd>
+              </div>
+            </dl>
+
+            <p class="page-note">We cannot wait to celebrate with you.</p>
+
+            <a class="rsvp-link" href="#rsvp">RSVP</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RSVP block — connect Google Sheet later -->
+      <section class="rsvp" id="rsvp">
+        <p class="rsvp-eyebrow">Kindly reply</p>
+        <h3 class="rsvp-title">Will you join us?</h3>
+        <form class="rsvp-form" id="rsvpForm">
+          <label>
+            Full name
+            <input type="text" name="name" required placeholder="Your name" />
+          </label>
+          <label>
+            Response
+            <select name="response" required>
+              <option value="" disabled selected>Select</option>
+              <option value="yes">Joyfully accepts</option>
+              <option value="no">Regretfully declines</option>
+            </select>
+          </label>
+          <label>
+            Guests
+            <input type="number" name="guests" min="1" max="10" value="1" />
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="3" placeholder="Optional"></textarea>
+          </label>
+          <button type="submit">Send RSVP</button>
+          <p class="rsvp-note" id="rsvpNote">
+            Google Sheet connection can be added next.
+          </p>
+          <p class="rsvp-success" id="rsvpSuccess" hidden>Thank you — your RSVP was received.</p>
+        </form>
+      </section>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>

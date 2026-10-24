@@ -1,0 +1,484 @@
+:root {
+  --lav-50: #f7f2fb;
+  --lav-100: #ebe0f4;
+  --lav-200: #d7c2e8;
+  --lav-400: #a87fca;
+  --lav-500: #8f63b5;
+  --lav-700: #5c3d7a;
+  --lav-900: #2f1d40;
+  --ink: #2a1f33;
+  --paper: #fbf8fd;
+  --gold: #c9b07a;
+  --font-script: "Great Vibes", cursive;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Outfit", system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: linear-gradient(165deg, #f4ecf9 0%, #e3d0f0 50%, #d8bfe8 100%);
+}
+
+/* —— Cover with lavender photo —— */
+.cover {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: end center;
+  padding: 0 1.25rem 3.5rem;
+  overflow: hidden;
+  transition: opacity 0.7s ease, visibility 0.7s ease;
+}
+
+.cover.is-gone {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.cover-media {
+  position: absolute;
+  inset: 0;
+}
+
+.cover-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.cover-photo.is-missing {
+  display: none;
+}
+
+.cover-fallback {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 30% 20%, #e8d7f4, transparent 45%),
+    radial-gradient(circle at 70% 60%, #c9a8e4, transparent 40%),
+    linear-gradient(160deg, #b88fd4, #6b4a8a 55%, #3f2a55);
+  z-index: -1;
+}
+
+.cover-photo:not(.is-missing) + .cover-fallback {
+  display: none;
+}
+
+.cover-veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(47, 29, 64, 0.15) 0%,
+    rgba(47, 29, 64, 0.25) 40%,
+    rgba(47, 29, 64, 0.72) 100%
+  );
+}
+
+.cover-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #f7f2fb;
+  animation: rise 1s ease both;
+}
+
+.cover-eyebrow {
+  margin: 0 0 0.4rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.cover-names {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(2.6rem, 8vw, 4rem);
+  line-height: 1.05;
+}
+
+.cover-names span {
+  display: inline-block;
+  font-family: var(--font-script);
+  font-weight: 400;
+  color: var(--lav-200);
+  margin: 0 0.15em;
+}
+
+.cover-date {
+  margin: 0.55rem 0 1.5rem;
+  font-family: var(--font-serif);
+  letter-spacing: 0.08em;
+  opacity: 0.9;
+}
+
+.open-btn {
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: rgba(47, 29, 64, 0.35);
+  color: #f7f2fb;
+  padding: 0.95rem 1.6rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  animation: pulse 2.2s ease-in-out infinite;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.open-btn:hover {
+  background: rgba(92, 61, 122, 0.65);
+  transform: translateY(-2px);
+}
+
+/* —— Passport invite —— */
+.invite {
+  min-height: 100dvh;
+  padding: 2.5rem 1.25rem 4rem;
+  display: grid;
+  justify-items: center;
+  gap: 2.5rem;
+  animation: rise 0.9s ease both;
+}
+
+.invite[hidden] {
+  display: none;
+}
+
+.passport {
+  width: min(92vw, 340px);
+  perspective: 1400px;
+}
+
+.passport-book {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 5 / 7;
+  transform-style: preserve-3d;
+}
+
+.passport-inside-left,
+.passport-page {
+  position: absolute;
+  inset: 0;
+  border-radius: 10px 14px 14px 10px;
+  box-shadow: 0 28px 60px rgba(47, 29, 64, 0.28);
+}
+
+.passport-inside-left {
+  background: linear-gradient(160deg, #6e4a8f, #3d2756);
+  color: #f3e9fb;
+  display: grid;
+  place-content: center;
+  gap: 0.4rem;
+  text-align: center;
+  padding: 1.5rem;
+  opacity: 0;
+  transform: translateX(-8%) scale(0.98);
+  transition: opacity 0.6s ease 0.35s, transform 0.6s ease 0.35s;
+  border: 1px solid rgba(201, 176, 122, 0.3);
+}
+
+.passport.is-open .passport-inside-left {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+.stamp-label {
+  margin: 0;
+  font-size: 0.68rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.mono {
+  margin: 0;
+  letter-spacing: 0.2em;
+  font-size: 0.85rem;
+}
+
+.crest {
+  font-size: 2rem;
+  color: var(--gold);
+  margin: 0.5rem 0;
+}
+
+.left-note {
+  margin: 0;
+  font-family: var(--font-script);
+  font-size: 1.6rem;
+}
+
+.passport-page {
+  background:
+    linear-gradient(180deg, rgba(143, 99, 181, 0.06), transparent 30%),
+    var(--paper);
+  border: 1px solid rgba(168, 127, 202, 0.35);
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transform-origin: left center;
+  transform: rotateY(-12deg) scale(0.96);
+  opacity: 0;
+  transition: transform 1s cubic-bezier(0.65, 0.05, 0.2, 1), opacity 0.6s ease;
+}
+
+.passport.is-open .passport-page {
+  transform: rotateY(0) scale(1);
+  opacity: 1;
+}
+
+.page-eyebrow {
+  margin: 0;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--lav-500);
+}
+
+.page-names {
+  margin: 0.45rem 0 0.2rem;
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 6vw, 2.3rem);
+  font-weight: 600;
+  color: var(--lav-900);
+  line-height: 1.1;
+}
+
+.page-names span {
+  font-family: var(--font-script);
+  font-weight: 400;
+  color: var(--lav-400);
+}
+
+.page-line {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--lav-700);
+}
+
+.gold-rule {
+  width: 42%;
+  height: 1px;
+  margin-bottom: 0.9rem;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.details {
+  margin: 0;
+  width: 100%;
+  display: grid;
+  gap: 0.65rem;
+  text-align: left;
+}
+
+.details > div {
+  display: grid;
+  grid-template-columns: 4.2rem 1fr;
+  gap: 0.5rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid rgba(168, 127, 202, 0.25);
+}
+
+.details dt {
+  margin: 0;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--lav-500);
+}
+
+.details dd {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--lav-900);
+  line-height: 1.25;
+}
+
+.page-note {
+  margin: auto 0 0.85rem;
+  padding-top: 0.85rem;
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--lav-700);
+}
+
+.rsvp-link {
+  color: var(--lav-700);
+  text-decoration: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(92, 61, 122, 0.35);
+  padding-bottom: 0.1rem;
+}
+
+/* —— RSVP form —— */
+.rsvp {
+  width: min(100%, 380px);
+  text-align: center;
+  padding: 0.5rem 0 2rem;
+}
+
+.rsvp-eyebrow {
+  margin: 0;
+  font-size: 0.7rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--lav-500);
+}
+
+.rsvp-title {
+  margin: 0.4rem 0 1.25rem;
+  font-family: var(--font-script);
+  font-size: 2.4rem;
+  font-weight: 400;
+  color: var(--lav-900);
+}
+
+.rsvp-form {
+  display: grid;
+  gap: 0.85rem;
+  text-align: left;
+}
+
+.rsvp-form label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--lav-700);
+}
+
+.rsvp-form input,
+.rsvp-form select,
+.rsvp-form textarea {
+  width: 100%;
+  padding: 0.85rem 0.9rem;
+  border: 1px solid rgba(168, 127, 202, 0.35);
+  background: rgba(255, 255, 255, 0.75);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+.rsvp-form button {
+  appearance: none;
+  border: 0;
+  margin-top: 0.35rem;
+  padding: 0.95rem 1rem;
+  background: var(--lav-700);
+  color: #f7f2fb;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.rsvp-form button:hover {
+  background: var(--lav-900);
+}
+
+.rsvp-note,
+.rsvp-success {
+  margin: 0.35rem 0 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--lav-700);
+}
+
+.rsvp-success {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--lav-900);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+}
+
+@media (min-width: 720px) {
+  .passport {
+    width: min(92vw, 720px);
+  }
+
+  .passport-book {
+    aspect-ratio: 10 / 7;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .passport-inside-left,
+  .passport-page {
+    position: relative;
+    inset: auto;
+    height: 100%;
+  }
+
+  .passport-inside-left {
+    border-radius: 14px 0 0 14px;
+    transform: none;
+  }
+
+  .passport-page {
+    border-radius: 0 14px 14px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cover,
+  .cover-content,
+  .open-btn,
+  .invite,
+  .passport-page,
+  .passport-inside-left {
+    animation: none !important;
+    transition: none !important;
+  }
+}
