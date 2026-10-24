@@ -229,6 +229,11 @@ function onOpenActivate(event) {
 
 openBtn.addEventListener("click", onOpenActivate);
 openBtn.addEventListener("touchend", onOpenActivate, { passive: false });
+openBtn.addEventListener("keydown", (event) => {
+  if (event.key === "Enter" || event.key === " ") {
+    onOpenActivate(event);
+  }
+});
 
 rsvpForm.addEventListener("submit", async (event) => {
   event.preventDefault();

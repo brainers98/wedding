@@ -111,9 +111,16 @@ body {
 }
 
 .open-btn {
+  -webkit-appearance: none;
   appearance: none;
+  margin: 0;
   border: 0;
-  background: transparent;
+  border-radius: 0;
+  outline: none;
+  box-shadow: none;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
   position: relative;
   z-index: 2;
   color: #f7f2fb;
@@ -126,7 +133,21 @@ body {
   cursor: pointer;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
   transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.open-btn::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+.open-btn:focus,
+.open-btn:focus-visible,
+.open-btn:active {
+  outline: none;
+  background: transparent !important;
+  box-shadow: none;
 }
 
 .open-orb {
