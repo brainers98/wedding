@@ -61,6 +61,36 @@ function personalizeInvitation() {
 
 personalizeInvitation();
 
+// Ceremony countdown — Dec 16, 2026 · 3:30 PM Sri Lanka time
+const CEREMONY_AT = new Date("2026-12-16T15:30:00+05:30").getTime();
+const cdDays = document.getElementById("cdDays");
+const cdHours = document.getElementById("cdHours");
+const cdMinutes = document.getElementById("cdMinutes");
+const cdSeconds = document.getElementById("cdSeconds");
+
+function padCount(value) {
+  return String(Math.max(0, value)).padStart(2, "0");
+}
+
+function updateCountdown() {
+  if (!cdDays || !cdHours || !cdMinutes || !cdSeconds) return;
+
+  const diff = Math.max(0, CEREMONY_AT - Date.now());
+  const totalSeconds = Math.floor(diff / 1000);
+  const days = Math.floor(totalSeconds / 86400);
+  const hours = Math.floor((totalSeconds % 86400) / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+
+  cdDays.textContent = String(days);
+  cdHours.textContent = padCount(hours);
+  cdMinutes.textContent = padCount(minutes);
+  cdSeconds.textContent = padCount(seconds);
+}
+
+updateCountdown();
+window.setInterval(updateCountdown, 1000);
+
 function wait(ms) {
   return new Promise((resolve) => window.setTimeout(resolve, ms));
 }

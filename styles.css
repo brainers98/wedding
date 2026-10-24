@@ -392,9 +392,9 @@ body {
 }
 
 .destination-icon {
-  width: 2.35rem;
-  height: 2.35rem;
-  color: var(--lav-700);
+  width: 2.85rem;
+  height: 2.85rem;
+  color: var(--lav-800, #5c3d7a);
   flex-shrink: 0;
 }
 
@@ -411,6 +411,7 @@ body {
 }
 
 .destination-place,
+.destination-date,
 .destination-time {
   margin: 0;
   font-family: var(--font-serif);
@@ -423,10 +424,48 @@ body {
   font-weight: 500;
 }
 
+.destination-date {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--lav-800, #5c3d7a);
+}
+
 .destination-time {
   font-size: 0.95rem;
   font-style: italic;
   color: var(--lav-700);
+}
+
+.countdown {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.45rem;
+  margin: 0.85rem 0 0.35rem;
+  padding: 0.75rem 0.35rem 0.55rem;
+  border-top: 1px solid rgba(168, 127, 202, 0.28);
+}
+
+.countdown-unit {
+  display: grid;
+  justify-items: center;
+  gap: 0.2rem;
+}
+
+.countdown-unit span {
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 5.5vw, 1.55rem);
+  font-weight: 600;
+  color: var(--lav-900);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown-unit small {
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--lav-500);
 }
 
 .destination-map {
