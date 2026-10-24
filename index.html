@@ -34,9 +34,27 @@
         <div class="cover-veil"></div>
       </div>
 
-      <button class="open-btn" id="openBtn" type="button">
-        <span class="open-kicker">Your journey begins</span>
-        <span class="open-main">Tap to open</span>
+      <button class="open-btn" id="openBtn" type="button" aria-label="Press to open invitation">
+        <span class="open-orb" aria-hidden="true">
+          <svg class="open-map" viewBox="0 0 120 120" fill="none">
+            <circle cx="60" cy="60" r="54" stroke="currentColor" stroke-width="1.5" opacity="0.55" />
+            <circle cx="60" cy="60" r="42" stroke="currentColor" stroke-width="0.8" opacity="0.35" />
+            <ellipse cx="60" cy="60" rx="20" ry="54" stroke="currentColor" stroke-width="0.8" opacity="0.35" />
+            <path d="M6 60h108M60 6v108" stroke="currentColor" stroke-width="0.8" opacity="0.35" />
+            <path
+              d="M18 38c12 4 28 6 42 2 14-4 28-2 42 4M18 82c14-4 28-2 42 2s28 2 42-4"
+              stroke="currentColor"
+              stroke-width="0.9"
+              opacity="0.4"
+            />
+          </svg>
+          <svg class="open-plane" viewBox="0 0 64 64" fill="currentColor">
+            <path
+              d="M62 32c0 1.1-.7 1.9-2 2.2L38 39.5 30 56h-3.8l3.5-16.2L16 36H5.2C3.4 36 2.4 35 3 33.6c.3-.7 1-1.1 2-1.1H16l13.7-3.3L26.2 13H30l8 16.2 22 5.3c1.3.3 2 1.1 2 2.5z"
+            />
+          </svg>
+        </span>
+        <span class="open-main">Press to open</span>
       </button>
 
       <div class="petal-burst" id="petalBurst" aria-hidden="true"></div>

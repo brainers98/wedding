@@ -9,21 +9,23 @@ const rsvpSuccess = document.getElementById("rsvpSuccess");
 
 let opening = false;
 
-function spawnPetals(count = 56) {
+function spawnPetals(count = 160) {
   petalBurst.innerHTML = "";
   petalBurst.classList.add("is-active");
 
   for (let i = 0; i < count; i += 1) {
     const petal = document.createElement("span");
     petal.className = "petal";
-    const size = 10 + Math.random() * 22;
+    const size = 8 + Math.random() * 26;
+    const startTop = -12 + Math.random() * 35;
     petal.style.width = `${size}px`;
     petal.style.height = `${size * 1.4}px`;
     petal.style.left = `${Math.random() * 100}%`;
-    petal.style.setProperty("--x", `${-40 + Math.random() * 80}px`);
-    petal.style.setProperty("--rot", `${180 + Math.random() * 280}deg`);
-    petal.style.animationDuration = `${1.4 + Math.random() * 1.6}s`;
-    petal.style.animationDelay = `${Math.random() * 0.45}s`;
+    petal.style.top = `${startTop}%`;
+    petal.style.setProperty("--x", `${-60 + Math.random() * 120}px`);
+    petal.style.setProperty("--rot", `${160 + Math.random() * 320}deg`);
+    petal.style.animationDuration = `${1.3 + Math.random() * 2}s`;
+    petal.style.animationDelay = `${Math.random() * 0.7}s`;
     petalBurst.appendChild(petal);
   }
 }
@@ -37,7 +39,7 @@ async function openInvitation() {
   spawnPetals();
 
   // Let petals fill the screen, then reveal invitation
-  await new Promise((resolve) => setTimeout(resolve, 1600));
+  await new Promise((resolve) => setTimeout(resolve, 2000));
 
   cover.classList.add("is-gone");
   invite.hidden = false;
