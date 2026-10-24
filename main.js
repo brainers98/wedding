@@ -10,7 +10,7 @@ const isMobile =
   window.matchMedia("(max-width: 768px)").matches ||
   window.matchMedia("(pointer: coarse)").matches;
 
-const PETAL_COUNT = isMobile ? 800 : 1000;
+const PETAL_COUNT = isMobile ? 200 : 400;
 
 let opening = false;
 
