@@ -10,6 +10,7 @@ const isMobile =
   window.matchMedia("(max-width: 768px)").matches ||
   window.matchMedia("(pointer: coarse)").matches;
 
+// Safe counts for phones (you can raise these later)
 const PETAL_COUNT = isMobile ? 200 : 400;
 
 let opening = false;
@@ -18,7 +19,17 @@ function wait(ms) {
   return new Promise((resolve) => window.setTimeout(resolve, ms));
 }
 
+function drawPetalShape(ctx, w, h) {
+  // Pointed lavender-style petal (works on older mobile browsers too)
+  ctx.moveTo(0, -h);
+  ctx.bezierCurveTo(w * 0.95, -h * 0.55, w * 0.95, h * 0.25, 0, h);
+  ctx.bezierCurveTo(-w * 0.95, h * 0.25, -w * 0.95, -h * 0.55, 0, -h);
+  ctx.closePath();
+}
+
 function spawnPetals(count = PETAL_COUNT) {
+  if (!petalBurst) return;
+
   petalBurst.innerHTML = "";
   petalBurst.classList.add("is-active");
 
@@ -27,12 +38,14 @@ function spawnPetals(count = PETAL_COUNT) {
   petalBurst.appendChild(canvas);
 
   const ctx = canvas.getContext("2d", { alpha: true });
-  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  if (!ctx) return;
 
-  const w = petalBurst.clientWidth || window.innerWidth;
-  const h = petalBurst.clientHeight || window.innerHeight;
-  canvas.width = Math.floor(w * dpr);
-  canvas.height = Math.floor(h * dpr);
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const w = petalBurst.clientWidth || window.innerWidth || 360;
+  const h = petalBurst.clientHeight || window.innerHeight || 640;
+
+  canvas.width = Math.max(1, Math.floor(w * dpr));
+  canvas.height = Math.max(1, Math.floor(h * dpr));
   canvas.style.width = `${w}px`;
   canvas.style.height = `${h}px`;
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -44,18 +57,20 @@ function spawnPetals(count = PETAL_COUNT) {
     "rgba(107, 74, 138, 0.9)",
   ];
 
-  const petals = new Array(count);
-  for (let i = 0; i < count; i += 1) {
+  const safeCount = Math.max(0, Number(count) || 0);
+  const petals = new Array(safeCount);
+
+  for (let i = 0; i < safeCount; i += 1) {
     petals[i] = {
       x: Math.random() * w,
       y: -30 - Math.random() * h,
-      size: 5 + Math.random() * 12,
+      size: 7 + Math.random() * 16,
       speed: 140 + Math.random() * 260,
       drift: -70 + Math.random() * 140,
       rot: Math.random() * Math.PI * 2,
       spin: -2.5 + Math.random() * 5,
       color: colors[(Math.random() * colors.length) | 0],
-      delay: Math.random() * 0.55,
+      delay: Math.random() * 0.45,
     };
   }
 
@@ -67,7 +82,7 @@ function spawnPetals(count = PETAL_COUNT) {
     const elapsed = (ts - start) / 1000;
     ctx.clearRect(0, 0, w, h);
 
-    for (let i = 0; i < count; i += 1) {
+    for (let i = 0; i < safeCount; i += 1) {
       const p = petals[i];
       const local = elapsed - p.delay;
       if (local < 0) continue;
@@ -80,8 +95,16 @@ function spawnPetals(count = PETAL_COUNT) {
       ctx.rotate(p.rot + p.spin * local);
       ctx.fillStyle = p.color;
       ctx.beginPath();
-      ctx.ellipse(0, 0, p.size * 0.5, p.size, 0, 0, Math.PI * 2);
+      drawPetalShape(ctx, p.size * 0.42, p.size);
       ctx.fill();
+
+      // Soft center vein for a more petal-like look
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.22)";
+      ctx.lineWidth = Math.max(0.6, p.size * 0.06);
+      ctx.beginPath();
+      ctx.moveTo(0, -p.size * 0.72);
+      ctx.quadraticCurveTo(p.size * 0.04, 0, 0, p.size * 0.78);
+      ctx.stroke();
       ctx.restore();
     }
 
@@ -98,13 +121,18 @@ async function openInvitation() {
 
   cover.classList.add("is-opening");
   cover.setAttribute("aria-busy", "true");
-  cover.style.pointerEvents = "none";
 
-  await wait(30);
-  spawnPetals(PETAL_COUNT);
-  await wait(isMobile ? 2000 : 2800);
+  // Petals must never block opening if they fail
+  try {
+    await wait(30);
+    spawnPetals(PETAL_COUNT);
+    await wait(isMobile ? 1600 : 2000);
+  } catch (error) {
+    console.warn("Petal animation skipped:", error);
+  }
 
   cover.classList.add("is-gone");
+  cover.style.pointerEvents = "none";
   invite.hidden = false;
   document.body.style.overflow = "";
 
@@ -115,7 +143,6 @@ async function openInvitation() {
 
 document.body.style.overflow = "hidden";
 
-// Tap / press ANYWHERE on the cover screen
 function onCoverActivate(event) {
   if (opening) return;
   event.preventDefault();
@@ -123,7 +150,7 @@ function onCoverActivate(event) {
   openInvitation();
 }
 
-cover.addEventListener("touchstart", onCoverActivate, { passive: false });
+cover.addEventListener("touchend", onCoverActivate, { passive: false });
 cover.addEventListener("click", onCoverActivate);
 cover.addEventListener("keydown", (event) => {
   if (event.key === "Enter" || event.key === " ") {
