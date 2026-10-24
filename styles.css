@@ -52,9 +52,25 @@ body {
   padding:
     calc(1.25rem + var(--safe-top))
     var(--safe-x)
-    calc(2.25rem + var(--safe-bottom));
+    calc(2rem + var(--safe-bottom));
   overflow: hidden;
-  transition: opacity 0.7s ease, visibility 0.7s ease;
+  cursor: pointer;
+  transition: opacity 0.75s ease, visibility 0.75s ease;
+}
+
+.cover.is-opening .cover-photo {
+  transform: scale(1.06);
+  filter: blur(1.5px);
+}
+
+.cover.is-opening .cover-veil {
+  background: rgba(47, 29, 64, 0.35);
+}
+
+.cover.is-opening .open-btn {
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
 }
 
 .cover.is-gone {
@@ -72,26 +88,9 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center center;
   display: block;
-}
-
-.cover-photo.is-missing {
-  display: none;
-}
-
-.cover-fallback {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 30% 20%, #e8d7f4, transparent 45%),
-    radial-gradient(circle at 70% 60%, #c9a8e4, transparent 40%),
-    linear-gradient(160deg, #b88fd4, #6b4a8a 55%, #3f2a55);
-  z-index: -1;
-}
-
-.cover-photo:not(.is-missing) + .cover-fallback {
-  display: none;
+  transition: transform 1.4s ease, filter 1.2s ease;
 }
 
 .cover-veil {
@@ -99,75 +98,86 @@ body {
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(47, 29, 64, 0.2) 0%,
-    rgba(47, 29, 64, 0.28) 35%,
-    rgba(47, 29, 64, 0.78) 100%
+    rgba(47, 29, 64, 0.08) 0%,
+    rgba(47, 29, 64, 0.05) 45%,
+    rgba(47, 29, 64, 0.55) 100%
   );
-}
-
-.cover-content {
-  position: relative;
-  z-index: 1;
-  width: min(100%, 22rem);
-  text-align: center;
-  color: #f7f2fb;
-  animation: rise 1s ease both;
-}
-
-.cover-eyebrow {
-  margin: 0 0 0.35rem;
-  font-size: 0.68rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  opacity: 0.9;
-}
-
-.cover-names {
-  margin: 0;
-  font-family: var(--font-serif);
-  font-weight: 500;
-  font-size: clamp(2.35rem, 10vw, 3.4rem);
-  line-height: 1.05;
-}
-
-.cover-names span {
-  display: inline-block;
-  font-family: var(--font-script);
-  font-weight: 400;
-  color: var(--lav-200);
-  margin: 0 0.12em;
-}
-
-.cover-date {
-  margin: 0.5rem 0 1.35rem;
-  font-family: var(--font-serif);
-  font-size: 1rem;
-  letter-spacing: 0.06em;
-  opacity: 0.92;
+  transition: background 0.8s ease;
+  pointer-events: none;
 }
 
 .open-btn {
+  position: relative;
+  z-index: 2;
   appearance: none;
-  width: min(100%, 16rem);
-  min-height: 3rem;
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  background: rgba(47, 29, 64, 0.4);
+  width: min(100%, 17rem);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(47, 29, 64, 0.42);
   color: #f7f2fb;
-  padding: 0.9rem 1.25rem;
+  padding: 0.95rem 1.2rem 1.05rem;
+  display: grid;
+  gap: 0.28rem;
+  justify-items: center;
   font-family: var(--font-body);
-  font-size: 0.78rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
   cursor: pointer;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
   -webkit-tap-highlight-color: transparent;
-  animation: pulse 2.2s ease-in-out infinite;
-  transition: background 0.2s ease, transform 0.2s ease;
+  animation: pulse 2.4s ease-in-out infinite;
+  transition: opacity 0.45s ease, transform 0.45s ease, background 0.2s ease;
+}
+
+.open-kicker {
+  font-family: var(--font-script);
+  font-size: 1.35rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  opacity: 0.95;
+}
+
+.open-main {
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
 }
 
 .open-btn:active {
   transform: scale(0.98);
   background: rgba(92, 61, 122, 0.75);
+}
+
+/* Lavender petal burst */
+.petal-burst {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.petal-burst.is-active {
+  opacity: 1;
+}
+
+.petal {
+  position: absolute;
+  top: -8%;
+  border-radius: 70% 10% 70% 10%;
+  background: linear-gradient(145deg, #f0e4fa, #b48fd4 55%, #7a549e);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+  opacity: 0;
+  animation: petal-fall linear forwards;
+}
+
+.petal::after {
+  content: "";
+  position: absolute;
+  left: 40%;
+  top: 12%;
+  width: 20%;
+  height: 65%;
+  border-radius: 40%;
+  background: rgba(90, 55, 120, 0.28);
 }
 
 /* —— Passport invite (mobile: single page) —— */
@@ -428,6 +438,21 @@ body {
   }
 }
 
+@keyframes petal-fall {
+  0% {
+    transform: translate3d(0, -8vh, 0) rotate(0deg) scale(0.7);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate3d(var(--x, 20px), 110vh, 0) rotate(var(--rot, 220deg))
+      scale(1);
+    opacity: 0.9;
+  }
+}
+
 /* Tablet / desktop: open passport spread */
 @media (min-width: 720px) {
   .cover {
@@ -435,8 +460,7 @@ body {
   }
 
   .open-btn:hover {
-    background: rgba(92, 61, 122, 0.65);
-    transform: translateY(-2px);
+    background: rgba(92, 61, 122, 0.7);
   }
 
   .invite {
@@ -517,11 +541,12 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .cover,
-  .cover-content,
+  .cover-photo,
   .open-btn,
   .invite,
   .passport-page,
-  .passport-inside-left {
+  .passport-inside-left,
+  .petal {
     animation: none !important;
     transition: none !important;
   }
