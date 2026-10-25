@@ -273,6 +273,14 @@ async function openInvitation() {
   window.requestAnimationFrame(() => {
     passport.classList.add("is-open");
     invite.classList.add("is-revealed");
+    // Mobile Safari can leave delayed reveals at opacity 0 — force visible
+    document
+      .querySelectorAll(".countdown-section, .rsvp-deadline, .rsvp, .seating")
+      .forEach((el) => {
+        if (el.hasAttribute("hidden")) return;
+        el.style.opacity = "1";
+        el.style.transform = "none";
+      });
   });
 }
 
