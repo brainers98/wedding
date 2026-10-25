@@ -1,8 +1,10 @@
 """Sync guests-test.txt → guests.js, invite-links-test.txt, google-sheet-rsvp.gs
 
 Format:
-  1. Mr. Udara Kavinda | S
-  3. Mr. Isuru Jayashankha | U5
+  1. Mr. Udara Kavinda | C
+  3. Mr. Isuru Jayashankha | 5
+
+Codes: C = Couple, R = Reserved, 1–18 = guest tables
 """
 import re
 from pathlib import Path
@@ -13,7 +15,6 @@ site = "https://udara75.github.io/wedding/"
 
 def fix_title(name: str) -> str:
     name = re.sub(r"\s+", " ", name).strip()
-    # Mr. & Mrs. / Mr & Mrs
     name = re.sub(r"^(Mr)\.?\s*&\s*(Mrs)\.?\s+", r"Mr. & Mrs. ", name, flags=re.I)
     name = re.sub(r"^(Mr)\.?\s+", r"Mr. ", name, flags=re.I)
     name = re.sub(r"^(Miss)\.?\s+", r"Miss. ", name, flags=re.I)
@@ -36,7 +37,15 @@ def parse_table(raw: str):
     raw = re.sub(r"(?i)^table\s*", "", raw).strip()
     if not raw or raw in {"_", "-", "?", "tbd"}:
         return None
-    return raw.upper()
+    code = raw.upper()
+    if code in {"C", "S", "COUPLE"}:
+        return "C"
+    if code in {"R", "R1", "R2"}:
+        return "R"
+    u = re.match(r"^U(\d+)$", code)
+    if u:
+        return u.group(1)
+    return code
 
 
 def parse_line(line: str):
@@ -52,19 +61,6 @@ def parse_line(line: str):
     else:
         name = fix_title(line)
     return name, table
-
-
-def table_sort_key(label: str):
-    # S first, then U2, U3... then anything else
-    if label == "S":
-        return (0, 0, label)
-    m = re.match(r"^U(\d+)$", label, re.I)
-    if m:
-        return (1, int(m.group(1)), label)
-    m = re.match(r"^(\d+)$", label)
-    if m:
-        return (2, int(m.group(1)), label)
-    return (3, 0, label)
 
 
 lines = (root / "guests-test.txt").read_text(encoding="utf-8").splitlines()
@@ -83,8 +79,8 @@ for i, line in enumerate(lines):
 
 out_lines = [
     "# Format: 1. Guest Name | TableCode",
-    "# Examples: | S   or   | U4   or   | U5",
-    "# Use _ if not set. After editing, ask Cursor to sync.",
+    "# Codes: C = Couple, R = Reserved, 1–18 = guest tables",
+    "# After editing, ask Cursor to sync.",
     "",
 ]
 for i, g in enumerate(guests, 1):
@@ -102,25 +98,18 @@ for g in guests:
         f'  {{ id: "{g["id"]}", name: "{g["name"]}", table: {table_js} }}'
     )
 
-tables = sorted(
-    {g["table"] for g in guests if g["table"]},
-    key=table_sort_key,
-)
-tables_js = ", ".join(f'"{t}"' for t in tables)
-
 (root / "guests.js").write_text(
     f"""// Guest personalization — use ?guest=id in the URL
 // Example: index.html?guest=udara-kavinda
 //
 // Keep in sync with guests-test.txt
-// Format: 1. Name | TableCode   (S, U2, U3, U4, U5, U6, …)
+// Codes: C = Couple, R = Reserved, 1–18 = guest tables
 
 const GUESTS = [
 {",\n".join(guest_js_rows)},
 ];
 
-// Tables drawn on the seating map (order matters)
-const TABLE_LABELS = [{tables_js}];
+const TABLE_LABELS = ["C", "R", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18"];
 
 const SITE_URL = "{site}";
 
@@ -155,4 +144,3 @@ if gs_path.exists():
     gs_path.write_text(gs2, encoding="utf-8")
 
 print(f"Synced {len(guests)} guests")
-print("Tables:", ", ".join(tables) if tables else "(none)")

@@ -1,56 +1,56 @@
 # Format: 1. Guest Name | TableCode
-# Examples: | S   or   | U4   or   | U5
-# Use _ if not set. After editing, ask Cursor to sync.
+# Codes: C = Couple, R = Reserved, 1–18 = guest tables
+# After editing, ask Cursor to sync.
 
-1. Mr. Udara Kavinda | S
-2. Miss. Shainy Tharushika | S
-3. Mr. Isuru Jayashankha | U5
-4. Mr. Aditha Rajakaruna | U4
-5. Mr. Ashan Thirimanne | U4
-6. Mr. Lakshitha Madushan | U4
-7. Mr. Thimila Ranaweera | U4
-8. Miss. Manodya Dimanthi | U4
-9. Mr. Kaushan Ranasinghe | U4
-10. Mr. Venthiram kathircamalan | U4
-11. Mr. Ravindu Harshana | U4
-12. Mr. Ashan Serasinghe | U4
-13. Mr. Rishan Rasdeen | U4
-14. Miss. Kumudu Kalpani | U4
-15. Mr. Tharinda Uthpala | U6
-16. Mr. Dilan Nissanka | U6
-17. Mr. Amila Gunawickrama | U6
-18. Mr. Sahan Peris | U6
-19. Mr. Malith Mavinda | U6
-20. Mr. Thimira Keerthisena | U6
-21. Mr. Hasitha Madushan | U6
-22. Mr. Dhanuka Sankalpa | U6
-23. Mr. Santhushta Kariyawasam | U6
-24. Mr. Supun Dassanayake | U6
-25. Mr. Aruna Edirimanne | U6
-26. Mr. Lakshitha Konara | U6
-27. Mr. Kasun Sandakelum | U5
-28. Mr. Kasun Madushan | U5
-29. Mr. Ashan Sampath | U5
-30. Mr. Osanda Sandaruwan | U5
-31. Mr. Hasara Jayanath | U5
-32. Mr. Hashara Piyumal | U5
-33. Mr. Gihantha Wijesekara | U5
-34. Mr. Sudeepa Madubhashitha | U5
-35. Mr. Dulshan Dhanajaya | U5
-36. Mr. Sadeep Shyamal | U5
-37. Mr. Lasindu Nisalka | U5
-38. Mr. & Mrs. Ruwan Nandana | U3
-39. Mr. & Mrs. Chalindu Sankalpa | U3
-40. Mr. Madawa Dilshan | U3
-41. Mr. Lahiru Chamara | U3
-42. Mrs. Udari Pabodini | U3
-43. Mr. Naveen Wickramathunga | U3
-44. Miss. Chanuri Saneesha | U3
-45. Miss. Sapna Gamage | U3
-46. Mr. Sameera Dananjaya | U3
-47. Mr. Pasindu Kodippili | U3
-48. Mr. Ruchira Maduranga | U2
-49. Mr. Kapila Indrajith | U2
-50. Mrs. Harshi Nimali | U2
-51. Mrs. Dharshika Nilochani | U2
-52. Mr. Manjula Prabhath | U2
+1. Mr. Udara Kavinda | C
+2. Miss. Shainy Tharushika | C
+3. Mr. Isuru Jayashankha | 5
+4. Mr. Aditha Rajakaruna | 4
+5. Mr. Ashan Thirimanne | 4
+6. Mr. Lakshitha Madushan | 4
+7. Mr. Thimila Ranaweera | 4
+8. Miss. Manodya Dimanthi | 4
+9. Mr. Kaushan Ranasinghe | 4
+10. Mr. Venthiram kathircamalan | 4
+11. Mr. Ravindu Harshana | 4
+12. Mr. Ashan Serasinghe | 4
+13. Mr. Rishan Rasdeen | 4
+14. Miss. Kumudu Kalpani | 4
+15. Mr. Tharinda Uthpala | 6
+16. Mr. Dilan Nissanka | 6
+17. Mr. Amila Gunawickrama | 6
+18. Mr. Sahan Peris | 6
+19. Mr. Malith Mavinda | 6
+20. Mr. Thimira Keerthisena | 6
+21. Mr. Hasitha Madushan | 6
+22. Mr. Dhanuka Sankalpa | 6
+23. Mr. Santhushta Kariyawasam | 6
+24. Mr. Supun Dassanayake | 6
+25. Mr. Aruna Edirimanne | 6
+26. Mr. Lakshitha Konara | 6
+27. Mr. Kasun Sandakelum | 5
+28. Mr. Kasun Madushan | 5
+29. Mr. Ashan Sampath | 5
+30. Mr. Osanda Sandaruwan | 5
+31. Mr. Hasara Jayanath | 5
+32. Mr. Hashara Piyumal | 5
+33. Mr. Gihantha Wijesekara | 5
+34. Mr. Sudeepa Madubhashitha | 5
+35. Mr. Dulshan Dhanajaya | 5
+36. Mr. Sadeep Shyamal | 5
+37. Mr. Lasindu Nisalka | 5
+38. Mr. & Mrs. Ruwan Nandana | 3
+39. Mr. & Mrs. Chalindu Sankalpa | 3
+40. Mr. Madawa Dilshan | 3
+41. Mr. Lahiru Chamara | 3
+42. Mrs. Udari Pabodini | 3
+43. Mr. Naveen Wickramathunga | 3
+44. Miss. Chanuri Saneesha | 3
+45. Miss. Sapna Gamage | 3
+46. Mr. Sameera Dananjaya | 3
+47. Mr. Pasindu Kodippili | 3
+48. Mr. Ruchira Maduranga | 2
+49. Mr. Kapila Indrajith | 2
+50. Mrs. Harshi Nimali | 2
+51. Mrs. Dharshika Nilochani | 2
+52. Mr. Manjula Prabhath | 2

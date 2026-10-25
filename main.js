@@ -10,7 +10,7 @@ const rsvpSuccess = document.getElementById("rsvpSuccess");
 const seatingSection = document.getElementById("seating");
 const seatingNumber = document.getElementById("seatingNumber");
 const seatingNote = document.getElementById("seatingNote");
-const seatingTables = document.getElementById("seatingTables");
+const seatingMap = document.getElementById("seatingMap");
 
 const isMobile =
   window.matchMedia("(max-width: 768px)").matches ||
@@ -51,47 +51,55 @@ function getGuestFromUrl() {
   );
 }
 
-function renderSeating(guest) {
-  if (!seatingSection || !seatingTables) return;
+function normalizeTableCode(value) {
+  if (value == null || String(value).trim() === "") return null;
+  let code = String(value).trim().toUpperCase();
+  // Couple table
+  if (code === "C" || code === "S" || code === "COUPLE") return "C";
+  // Old U-codes → numbered tables on the new chart
+  const uMatch = code.match(/^U(\d+)$/);
+  if (uMatch) return uMatch[1];
+  // Reserved
+  if (code === "R" || code === "R1" || code === "R2") return "R";
+  return code;
+}
 
-  const table =
-    guest && guest.table != null && String(guest.table).trim() !== ""
-      ? String(guest.table).trim().toUpperCase()
-      : null;
+function tableDisplayName(code) {
+  if (code === "C") return "Couple table";
+  if (code === "R") return "Table R";
+  return `Table ${code}`;
+}
+
+function renderSeating(guest) {
+  if (!seatingSection || !seatingMap) return;
+
+  const table = normalizeTableCode(guest && guest.table);
+
+  seatingMap.querySelectorAll(".is-yours").forEach((el) => {
+    el.classList.remove("is-yours");
+  });
 
   if (!table) {
     seatingSection.hidden = true;
     return;
   }
 
-  const labels =
-    typeof TABLE_LABELS !== "undefined" && TABLE_LABELS.length
-      ? TABLE_LABELS.map((t) => String(t).toUpperCase())
-      : [
-          ...new Set(
-            (typeof GUESTS !== "undefined" ? GUESTS : [])
-              .map((g) => (g.table != null ? String(g.table).toUpperCase() : ""))
-              .filter(Boolean)
-          ),
-        ];
-
-  if (!labels.includes(table)) labels.push(table);
-
-  seatingSection.hidden = false;
-  if (seatingNumber) seatingNumber.textContent = `Table ${table}`;
-  if (seatingNote) {
-    seatingNote.textContent = `You're at Table ${table} — highlighted below.`;
+  const targets = seatingMap.querySelectorAll(`[data-table="${table}"]`);
+  if (!targets.length) {
+    seatingSection.hidden = true;
+    return;
   }
 
-  seatingTables.innerHTML = "";
-  labels.forEach((label) => {
-    const el = document.createElement("div");
-    const yours = label === table;
-    el.className = "seating-table" + (yours ? " is-yours" : "");
-    el.setAttribute("aria-label", yours ? `Your table ${label}` : `Table ${label}`);
-    el.innerHTML = `<span>${label}</span>`;
-    seatingTables.appendChild(el);
-  });
+  seatingSection.hidden = false;
+  targets.forEach((el) => el.classList.add("is-yours"));
+
+  if (seatingNumber) seatingNumber.textContent = tableDisplayName(table);
+  if (seatingNote) {
+    seatingNote.textContent =
+      table === "C"
+        ? "You're with the couple — highlighted on the chart."
+        : `You're at ${tableDisplayName(table)} — highlighted on the chart.`;
+  }
 }
 
 function personalizeInvitation() {
