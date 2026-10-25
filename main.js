@@ -70,6 +70,17 @@ function tableDisplayName(code) {
   return `Table ${code}`;
 }
 
+// Seating chart: Udara & Shainy always; everyone else from Dec 1, 2026 (Sri Lanka)
+const SEATING_UNLOCK_AT = new Date("2026-12-01T00:00:00+05:30").getTime();
+const SEATING_EARLY_IDS = new Set(["udara-kavinda", "shainy-tharushika"]);
+
+function canViewSeatingChart(guest) {
+  if (Date.now() >= SEATING_UNLOCK_AT) return true;
+  if (!guest) return false;
+  const id = guestId(guest);
+  return SEATING_EARLY_IDS.has(id);
+}
+
 function renderSeating(guest) {
   if (!seatingSection || !seatingMap) return;
 
@@ -81,16 +92,32 @@ function renderSeating(guest) {
 
   if (!table) {
     seatingSection.hidden = true;
+    seatingSection.classList.remove("is-locked");
     return;
   }
 
   const targets = seatingMap.querySelectorAll(`[data-table="${table}"]`);
   if (!targets.length) {
     seatingSection.hidden = true;
+    seatingSection.classList.remove("is-locked");
     return;
   }
 
   seatingSection.hidden = false;
+
+  if (!canViewSeatingChart(guest)) {
+    seatingSection.classList.add("is-locked");
+    seatingMap.hidden = true;
+    if (seatingNumber) seatingNumber.textContent = "Coming soon";
+    if (seatingNote) {
+      seatingNote.textContent =
+        "Your table chart will be available from December 1, 2026.";
+    }
+    return;
+  }
+
+  seatingSection.classList.remove("is-locked");
+  seatingMap.hidden = false;
   targets.forEach((el) => el.classList.add("is-yours"));
 
   if (seatingNumber) seatingNumber.textContent = tableDisplayName(table);

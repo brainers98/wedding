@@ -845,7 +845,7 @@ body {
   position: absolute;
   left: var(--x);
   top: var(--y);
-  width: 9.2%;
+  width: 8.4%;
   aspect-ratio: 1;
   transform: translate(-50%, -50%);
   border-radius: 50%;
@@ -855,19 +855,19 @@ body {
 }
 
 .hotspot-couple {
-  width: 12.5%;
-  height: 38%;
+  width: 10.5%;
+  height: 36%;
   aspect-ratio: auto;
   border-radius: 12px;
 }
 
 .hotspot.is-yours {
   border-color: #c9b07a;
-  background: rgba(143, 99, 181, 0.42);
+  background: rgba(143, 99, 181, 0.48);
   box-shadow:
-    0 0 0 4px rgba(201, 176, 122, 0.55),
-    0 0 22px rgba(92, 61, 122, 0.55),
-    inset 0 0 18px rgba(201, 176, 122, 0.35);
+    0 0 0 4px rgba(201, 176, 122, 0.65),
+    0 0 24px rgba(92, 61, 122, 0.6),
+    inset 0 0 16px rgba(201, 176, 122, 0.4);
   animation: tablePulse 1.8s ease-in-out infinite;
   z-index: 2;
 }
