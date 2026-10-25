@@ -7,6 +7,10 @@ const guestNameEl = document.getElementById("guestName");
 const rsvpForm = document.getElementById("rsvpForm");
 const rsvpNote = document.getElementById("rsvpNote");
 const rsvpSuccess = document.getElementById("rsvpSuccess");
+const seatingSection = document.getElementById("seating");
+const seatingNumber = document.getElementById("seatingNumber");
+const seatingNote = document.getElementById("seatingNote");
+const seatingTables = document.getElementById("seatingTables");
 
 const isMobile =
   window.matchMedia("(max-width: 768px)").matches ||
@@ -47,6 +51,49 @@ function getGuestFromUrl() {
   );
 }
 
+function renderSeating(guest) {
+  if (!seatingSection || !seatingTables) return;
+
+  const table =
+    guest && guest.table != null && String(guest.table).trim() !== ""
+      ? String(guest.table).trim().toUpperCase()
+      : null;
+
+  if (!table) {
+    seatingSection.hidden = true;
+    return;
+  }
+
+  const labels =
+    typeof TABLE_LABELS !== "undefined" && TABLE_LABELS.length
+      ? TABLE_LABELS.map((t) => String(t).toUpperCase())
+      : [
+          ...new Set(
+            (typeof GUESTS !== "undefined" ? GUESTS : [])
+              .map((g) => (g.table != null ? String(g.table).toUpperCase() : ""))
+              .filter(Boolean)
+          ),
+        ];
+
+  if (!labels.includes(table)) labels.push(table);
+
+  seatingSection.hidden = false;
+  if (seatingNumber) seatingNumber.textContent = `Table ${table}`;
+  if (seatingNote) {
+    seatingNote.textContent = `You're at Table ${table} — highlighted below.`;
+  }
+
+  seatingTables.innerHTML = "";
+  labels.forEach((label) => {
+    const el = document.createElement("div");
+    const yours = label === table;
+    el.className = "seating-table" + (yours ? " is-yours" : "");
+    el.setAttribute("aria-label", yours ? `Your table ${label}` : `Table ${label}`);
+    el.innerHTML = `<span>${label}</span>`;
+    seatingTables.appendChild(el);
+  });
+}
+
 function personalizeInvitation() {
   currentGuest = getGuestFromUrl();
   const displayName = currentGuest ? currentGuest.name : "Guest";
@@ -58,6 +105,8 @@ function personalizeInvitation() {
     const nameInput = rsvpForm?.querySelector('input[name="name"]');
     if (nameInput && !nameInput.value) nameInput.value = currentGuest.name;
   }
+
+  renderSeating(currentGuest);
 }
 
 personalizeInvitation();

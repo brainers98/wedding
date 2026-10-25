@@ -415,7 +415,8 @@ body {
 
 .countdown-section,
 .rsvp-deadline,
-.rsvp {
+.rsvp,
+.seating {
   opacity: 0;
   transform: translateY(16px);
 }
@@ -430,6 +431,10 @@ body {
 
 .invite.is-revealed .rsvp {
   animation: softReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) 2.1s both;
+}
+
+.invite.is-revealed .seating:not([hidden]) {
+  animation: softReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) 2.25s both;
 }
 
 .parents-line {
@@ -766,6 +771,125 @@ body {
   color: var(--lav-900);
 }
 
+/* —— Seating / table map —— */
+.seating {
+  width: min(100%, 380px);
+  text-align: center;
+  padding: 0.5rem 0 1.5rem;
+}
+
+.seating[hidden] {
+  display: none;
+}
+
+.seating-eyebrow {
+  margin: 0;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--lav-500);
+}
+
+.seating-title {
+  margin: 0.35rem 0 0.4rem;
+  font-family: var(--font-script);
+  font-size: clamp(1.9rem, 7vw, 2.3rem);
+  font-weight: 400;
+  color: var(--lav-900);
+}
+
+.seating-number {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(1.35rem, 5.5vw, 1.65rem);
+  font-weight: 600;
+  color: var(--lav-900);
+  letter-spacing: 0.04em;
+}
+
+.seating-note {
+  margin: 0.35rem 0 1rem;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--lav-700);
+}
+
+.seating-map {
+  padding: 0.85rem 0.75rem 1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(168, 127, 202, 0.35);
+  background:
+    linear-gradient(180deg, rgba(143, 99, 181, 0.08), transparent 40%),
+    rgba(255, 255, 255, 0.55);
+}
+
+.seating-stage {
+  margin: 0 auto 0.85rem;
+  width: min(100%, 11rem);
+  padding: 0.45rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--lav-700);
+  background: rgba(201, 176, 122, 0.22);
+  border: 1px solid rgba(201, 176, 122, 0.55);
+}
+
+.seating-tables {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.55rem;
+  justify-items: center;
+}
+
+.seating-table {
+  min-width: 2.75rem;
+  height: 2.75rem;
+  padding: 0 0.35rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-serif);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--lav-700);
+  background: rgba(255, 255, 255, 0.75);
+  border: 1.5px solid rgba(168, 127, 202, 0.4);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+}
+
+.seating-table.is-yours {
+  color: #f7f2fb;
+  background: linear-gradient(160deg, #8f63b5, #5c3d7a);
+  border-color: var(--gold);
+  box-shadow:
+    0 0 0 3px rgba(201, 176, 122, 0.35),
+    0 8px 18px rgba(47, 29, 64, 0.22);
+  transform: scale(1.12);
+  animation: tablePulse 2.2s ease-in-out infinite;
+}
+
+.seating-table span {
+  line-height: 1;
+}
+
+@keyframes tablePulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 3px rgba(201, 176, 122, 0.35),
+      0 8px 18px rgba(47, 29, 64, 0.22);
+  }
+  50% {
+    box-shadow:
+      0 0 0 6px rgba(201, 176, 122, 0.18),
+      0 10px 22px rgba(47, 29, 64, 0.28);
+  }
+}
+
 .rsvp-form {
   display: grid;
   gap: 0.8rem;
@@ -1077,6 +1201,8 @@ body {
   .countdown-section,
   .rsvp-deadline,
   .rsvp,
+  .seating,
+  .seating-table.is-yours,
   .heart-rule i {
     animation: none !important;
     transition: none !important;
@@ -1092,7 +1218,8 @@ body {
   .passport-page > .rsvp-link,
   .countdown-section,
   .rsvp-deadline,
-  .rsvp {
+  .rsvp,
+  .seating {
     opacity: 1;
     transform: none;
     filter: none;

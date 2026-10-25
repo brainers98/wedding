@@ -3,156 +3,158 @@ Personalized invitation links
 Base site:
 https://udara75.github.io/wedding/
 
-1. Mr. Udara Kavinda
+1. Mr. Udara Kavinda (Table S)
 https://udara75.github.io/wedding/?guest=udara-kavinda
 
-2. Miss. Shainy Tharushika
+2. Miss. Shainy Tharushika (Table S)
 https://udara75.github.io/wedding/?guest=shainy-tharushika
 
-3. Mr. Isuru Jayashankha
+3. Mr. Isuru Jayashankha (Table U5)
 https://udara75.github.io/wedding/?guest=isuru-jayashankha
 
-4. Mr. Ashan Thirimanne
+4. Mr. Aditha Rajakaruna (Table U4)
+https://udara75.github.io/wedding/?guest=aditha-rajakaruna
+
+5. Mr. Ashan Thirimanne (Table U4)
 https://udara75.github.io/wedding/?guest=ashan-thirimanne
 
-5. Mr. Lakshitha Madushan
+6. Mr. Lakshitha Madushan (Table U4)
 https://udara75.github.io/wedding/?guest=lakshitha-madushan
 
-6. Mr. Thimila Ranaweera
+7. Mr. Thimila Ranaweera (Table U4)
 https://udara75.github.io/wedding/?guest=thimila-ranaweera
 
-7. Miss. Manodya Dimanthi
+8. Miss. Manodya Dimanthi (Table U4)
 https://udara75.github.io/wedding/?guest=manodya-dimanthi
 
-8. Mr. Kaushan Ranasinghe
+9. Mr. Kaushan Ranasinghe (Table U4)
 https://udara75.github.io/wedding/?guest=kaushan-ranasinghe
 
-9. Mr. Ravindu Harshana
+10. Mr. Venthiram kathircamalan (Table U4)
+https://udara75.github.io/wedding/?guest=venthiram-kathircamalan
+
+11. Mr. Ravindu Harshana (Table U4)
 https://udara75.github.io/wedding/?guest=ravindu-harshana
 
-10. Mr. Ashan Serasinghe
+12. Mr. Ashan Serasinghe (Table U4)
 https://udara75.github.io/wedding/?guest=ashan-serasinghe
 
-11. Mr. Rishan Rasdeen
+13. Mr. Rishan Rasdeen (Table U4)
 https://udara75.github.io/wedding/?guest=rishan-rasdeen
 
-12. Miss. Kumudu Kalpani
+14. Miss. Kumudu Kalpani (Table U4)
 https://udara75.github.io/wedding/?guest=kumudu-kalpani
 
-13. Mr. Tharinda Uthpala
+15. Mr. Tharinda Uthpala (Table U6)
 https://udara75.github.io/wedding/?guest=tharinda-uthpala
 
-14. Mr. Dilan Nissanka
+16. Mr. Dilan Nissanka (Table U6)
 https://udara75.github.io/wedding/?guest=dilan-nissanka
 
-15. Mr. Amila Gunawickrama
+17. Mr. Amila Gunawickrama (Table U6)
 https://udara75.github.io/wedding/?guest=amila-gunawickrama
 
-16. Mr. Sahan Peris
+18. Mr. Sahan Peris (Table U6)
 https://udara75.github.io/wedding/?guest=sahan-peris
 
-17. Mr. Malith Mavinda
+19. Mr. Malith Mavinda (Table U6)
 https://udara75.github.io/wedding/?guest=malith-mavinda
 
-18. Mr. Thimira Keerthisena
+20. Mr. Thimira Keerthisena (Table U6)
 https://udara75.github.io/wedding/?guest=thimira-keerthisena
 
-19. Mr. Hasitha Madushan
+21. Mr. Hasitha Madushan (Table U6)
 https://udara75.github.io/wedding/?guest=hasitha-madushan
 
-20. Mr. Dhanuka Sankalpa
+22. Mr. Dhanuka Sankalpa (Table U6)
 https://udara75.github.io/wedding/?guest=dhanuka-sankalpa
 
-21. Mr. Santhushta Kariyawasam
+23. Mr. Santhushta Kariyawasam (Table U6)
 https://udara75.github.io/wedding/?guest=santhushta-kariyawasam
 
-22. Mr. Supun Dassanayake
+24. Mr. Supun Dassanayake (Table U6)
 https://udara75.github.io/wedding/?guest=supun-dassanayake
 
-23. Mr. Aruna Edirimanne
+25. Mr. Aruna Edirimanne (Table U6)
 https://udara75.github.io/wedding/?guest=aruna-edirimanne
 
-24. Mr. Lakshitha Konara
+26. Mr. Lakshitha Konara (Table U6)
 https://udara75.github.io/wedding/?guest=lakshitha-konara
 
-25. Mr. Kasun Sandakelum
+27. Mr. Kasun Sandakelum (Table U5)
 https://udara75.github.io/wedding/?guest=kasun-sandakelum
 
-26. Mr. Kasun Madushan
+28. Mr. Kasun Madushan (Table U5)
 https://udara75.github.io/wedding/?guest=kasun-madushan
 
-27. Mr. Ashan Sampath
+29. Mr. Ashan Sampath (Table U5)
 https://udara75.github.io/wedding/?guest=ashan-sampath
 
-28. Mr. Osanda Sandaruwan
+30. Mr. Osanda Sandaruwan (Table U5)
 https://udara75.github.io/wedding/?guest=osanda-sandaruwan
 
-29. Mr. Hasara Jayanath
+31. Mr. Hasara Jayanath (Table U5)
 https://udara75.github.io/wedding/?guest=hasara-jayanath
 
-30. Mr. Hashara Piyumal
+32. Mr. Hashara Piyumal (Table U5)
 https://udara75.github.io/wedding/?guest=hashara-piyumal
 
-31. Mr. Gihantha Wijesekara
+33. Mr. Gihantha Wijesekara (Table U5)
 https://udara75.github.io/wedding/?guest=gihantha-wijesekara
 
-32. Mr. Sudeepa Madubhashitha
+34. Mr. Sudeepa Madubhashitha (Table U5)
 https://udara75.github.io/wedding/?guest=sudeepa-madubhashitha
 
-33. Mr. Dulshan Dhanajaya
+35. Mr. Dulshan Dhanajaya (Table U5)
 https://udara75.github.io/wedding/?guest=dulshan-dhanajaya
 
-34. Mr. Sadeep Shyamal
+36. Mr. Sadeep Shyamal (Table U5)
 https://udara75.github.io/wedding/?guest=sadeep-shyamal
 
-35. Mr. Lasindu Nisalka
+37. Mr. Lasindu Nisalka (Table U5)
 https://udara75.github.io/wedding/?guest=lasindu-nisalka
 
-36. Mr. Ruwan Nandana
+38. Mr. & Mrs. Ruwan Nandana (Table U3)
 https://udara75.github.io/wedding/?guest=ruwan-nandana
 
-37. Mr. Chalindu Sankalpa
+39. Mr. & Mrs. Chalindu Sankalpa (Table U3)
 https://udara75.github.io/wedding/?guest=chalindu-sankalpa
 
-38. Mr. Madawa Dilshan
+40. Mr. Madawa Dilshan (Table U3)
 https://udara75.github.io/wedding/?guest=madawa-dilshan
 
-39. Mr. Lahiru Chamara
+41. Mr. Lahiru Chamara (Table U3)
 https://udara75.github.io/wedding/?guest=lahiru-chamara
 
-40. Mrs. Udari Pabodini
+42. Mrs. Udari Pabodini (Table U3)
 https://udara75.github.io/wedding/?guest=udari-pabodini
 
-41. Mr. Naveen Wickramathunga
+43. Mr. Naveen Wickramathunga (Table U3)
 https://udara75.github.io/wedding/?guest=naveen-wickramathunga
 
-42. Miss. Chanuri Saneesha
+44. Miss. Chanuri Saneesha (Table U3)
 https://udara75.github.io/wedding/?guest=chanuri-saneesha
 
-43. Miss. Sapna Gamage
+45. Miss. Sapna Gamage (Table U3)
 https://udara75.github.io/wedding/?guest=sapna-gamage
 
-44. Mr. Sameera Dananjaya
+46. Mr. Sameera Dananjaya (Table U3)
 https://udara75.github.io/wedding/?guest=sameera-dananjaya
 
-45. Mr. Pasindu Kodippili
+47. Mr. Pasindu Kodippili (Table U3)
 https://udara75.github.io/wedding/?guest=pasindu-kodippili
 
-46. Mr. Ruchira Maduranga
+48. Mr. Ruchira Maduranga (Table U2)
 https://udara75.github.io/wedding/?guest=ruchira-maduranga
 
-47. Mr. Kapila Indrajith
+49. Mr. Kapila Indrajith (Table U2)
 https://udara75.github.io/wedding/?guest=kapila-indrajith
 
-48. Mrs. Harshi Nimali
+50. Mrs. Harshi Nimali (Table U2)
 https://udara75.github.io/wedding/?guest=harshi-nimali
 
-49. Mrs. Dharshika Nilochani
+51. Mrs. Dharshika Nilochani (Table U2)
 https://udara75.github.io/wedding/?guest=dharshika-nilochani
 
-50. Mr. Manjula Prabhath
+52. Mr. Manjula Prabhath (Table U2)
 https://udara75.github.io/wedding/?guest=manjula-prabhath
-
-How replies work:
-- Sheet starts with all invitees (Pending)
-- When they RSVP, that same row becomes Yes or No (overwritten, not a new line)
