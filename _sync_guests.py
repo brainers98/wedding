@@ -6,12 +6,19 @@ Source format (any of these):
   53. Mr. New Guest | _
 
 No table yet → leave blank or use _  (goes under Unassigned)
+
+Each guest gets a unique hex invite code (persisted in guest-codes.json so
+links stay stable across syncs). Public links use ?guest=<hex> only.
 """
+import json
 import re
+import secrets
 from pathlib import Path
 
 root = Path(__file__).resolve().parent
 site = "https://udara75.github.io/wedding/"
+codes_path = root / "guest-codes.json"
+HEX_LEN = 16  # 16 hex chars = 8 bytes
 
 
 def fix_title(name: str) -> str:
@@ -132,6 +139,33 @@ indexed = list(enumerate(guests))
 indexed.sort(key=lambda it: (*table_group_key(it[1]["table"]), it[0]))
 guests = [g for _, g in indexed]
 
+# Stable unique hex invite codes (reuse saved map so re-sync doesn't break sent links)
+saved_codes = {}
+if codes_path.exists():
+    try:
+        saved_codes = json.loads(codes_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        saved_codes = {}
+
+used_codes = {str(c).lower() for c in saved_codes.values() if c}
+code_map = {}
+for g in guests:
+    existing = saved_codes.get(g["id"])
+    if existing and re.fullmatch(r"[0-9a-fA-F]+", str(existing)):
+        code = str(existing).lower()
+    else:
+        code = secrets.token_hex(HEX_LEN // 2)
+        while code in used_codes:
+            code = secrets.token_hex(HEX_LEN // 2)
+    used_codes.add(code)
+    code_map[g["id"]] = code
+    g["code"] = code
+
+codes_path.write_text(
+    json.dumps(code_map, indent=2, ensure_ascii=False) + "\n",
+    encoding="utf-8",
+)
+
 # Rewrite guests-test.txt: numbered + section banners (Unassigned = no table yet)
 out_lines = [
     "# Format: 1. Guest Name | TableCode",
@@ -158,12 +192,13 @@ guest_js_rows = []
 for g in guests:
     table_js = "null" if g["table"] is None else f'"{g["table"]}"'
     guest_js_rows.append(
-        f'  {{ id: "{g["id"]}", name: "{g["name"]}", table: {table_js} }}'
+        f'  {{ id: "{g["id"]}", code: "{g["code"]}", name: "{g["name"]}", table: {table_js} }}'
     )
 
 (root / "guests.js").write_text(
-    f"""// Guest personalization — use ?guest=id in the URL
-// Example: index.html?guest=udara-kavinda
+    f"""// Guest personalization — use ?guest=<hex code> in the URL
+// Example: index.html?guest=a1b2c3d4e5f67890
+// Codes are unique per guest (see guest-codes.json). Do not share the slug id.
 //
 // Auto-generated from guests-test.txt — edit that file, then sync/watch.
 
@@ -184,6 +219,7 @@ const RSVP_SCRIPT_URL =
 # Send-ready links (check then copy/paste to guests)
 link_lines = [
     "UDARA & SHAINY — INVITE LINKS TO SEND",
+    "Each link has a unique hex code. Only that guest's code opens their invite.",
     "Check each link, then send the matching one to that guest.",
     "",
     f"Base site: {site}",
@@ -201,7 +237,8 @@ for i, g in enumerate(guests, 1):
     seat = f"Table {g['table']}" if g["table"] else "Table TBD"
     link_lines.append(f"{i}. {g['name']}")
     link_lines.append(f"   Seat: {seat}")
-    link_lines.append(f"   Link: {site}?guest={g['id']}")
+    link_lines.append(f"   Code: {g['code']}")
+    link_lines.append(f"   Link: {site}?guest={g['code']}")
     link_lines.append(f"   [ ] Checked   [ ] Sent")
     link_lines.append("")
 (root / "invite-links-test.txt").write_text("\n".join(link_lines), encoding="utf-8")
@@ -211,11 +248,15 @@ gs_path = root / "google-sheet-rsvp.gs"
 if gs_path.exists():
     gs = gs_path.read_text(encoding="utf-8")
     invitees = ",\n".join(
-        f'  {{ id: "{g["id"]}", name: "{g["name"]}" }}' for g in guests
+        f'  {{ id: "{g["code"]}", name: "{g["name"]}" }}' for g in guests
     )
     new_block = f"const INVITEES = [\n{invitees},\n];"
     gs2 = re.sub(r"const INVITEES = \[[\s\S]*?\];", new_block, gs, count=1)
     gs_path.write_text(gs2, encoding="utf-8")
 
 assigned = sum(1 for g in guests if g["table"] is not None)
-print(f"Synced {len(guests)} guests ({assigned} with table, {len(guests) - assigned} unassigned)")
+print(
+    f"Synced {len(guests)} guests "
+    f"({assigned} with table, {len(guests) - assigned} unassigned) "
+    f"+ unique hex codes"
+)

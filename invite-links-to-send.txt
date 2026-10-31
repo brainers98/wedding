@@ -1,4 +1,5 @@
 UDARA & SHAINY — INVITE LINKS TO SEND
+Each link has a unique hex code. Only that guest's code opens their invite.
 Check each link, then send the matching one to that guest.
 
 Base site: https://udara75.github.io/wedding/
@@ -8,12 +9,14 @@ Total guests: 120
 
 1. Mr. Udara Kavinda
    Seat: Table C
-   Link: https://udara75.github.io/wedding/?guest=udara-kavinda
+   Code: 34710c622d750107
+   Link: https://udara75.github.io/wedding/?guest=34710c622d750107
    [ ] Checked   [ ] Sent
 
 2. Miss. Shainy Tharushika
    Seat: Table C
-   Link: https://udara75.github.io/wedding/?guest=shainy-tharushika
+   Code: cac85a6428a60a77
+   Link: https://udara75.github.io/wedding/?guest=cac85a6428a60a77
    [ ] Checked   [ ] Sent
 
 
@@ -21,27 +24,32 @@ Total guests: 120
 
 3. Mr. Ruchira Maduranga
    Seat: Table 2
-   Link: https://udara75.github.io/wedding/?guest=ruchira-maduranga
+   Code: 3012ca7dbc9935b9
+   Link: https://udara75.github.io/wedding/?guest=3012ca7dbc9935b9
    [ ] Checked   [ ] Sent
 
 4. Mr. Kapila Indrajith
    Seat: Table 2
-   Link: https://udara75.github.io/wedding/?guest=kapila-indrajith
+   Code: ddcf4354e7c585d3
+   Link: https://udara75.github.io/wedding/?guest=ddcf4354e7c585d3
    [ ] Checked   [ ] Sent
 
 5. Mrs. Harshi Nimali
    Seat: Table 2
-   Link: https://udara75.github.io/wedding/?guest=harshi-nimali
+   Code: 3b877130884bae28
+   Link: https://udara75.github.io/wedding/?guest=3b877130884bae28
    [ ] Checked   [ ] Sent
 
 6. Mrs. Dharshika Nilochani
    Seat: Table 2
-   Link: https://udara75.github.io/wedding/?guest=dharshika-nilochani
+   Code: 1e7d8cc001b3eaef
+   Link: https://udara75.github.io/wedding/?guest=1e7d8cc001b3eaef
    [ ] Checked   [ ] Sent
 
 7. Mr. Manjula Prabhath
    Seat: Table 2
-   Link: https://udara75.github.io/wedding/?guest=manjula-prabhath
+   Code: ff691812a3d3992c
+   Link: https://udara75.github.io/wedding/?guest=ff691812a3d3992c
    [ ] Checked   [ ] Sent
 
 
@@ -49,52 +57,62 @@ Total guests: 120
 
 8. Mr. & Mrs. Ruwan Nandana
    Seat: Table 3
-   Link: https://udara75.github.io/wedding/?guest=ruwan-nandana
+   Code: 4e086cd08c11f48b
+   Link: https://udara75.github.io/wedding/?guest=4e086cd08c11f48b
    [ ] Checked   [ ] Sent
 
 9. Mr. & Mrs. Chalindu Sankalpa
    Seat: Table 3
-   Link: https://udara75.github.io/wedding/?guest=chalindu-sankalpa
+   Code: b211eed4b9d1ed03
+   Link: https://udara75.github.io/wedding/?guest=b211eed4b9d1ed03
    [ ] Checked   [ ] Sent
 
 10. Mr. Madawa Dilshan
    Seat: Table 3
-   Link: https://udara75.github.io/wedding/?guest=madawa-dilshan
+   Code: d97c7b5fe2db2d3f
+   Link: https://udara75.github.io/wedding/?guest=d97c7b5fe2db2d3f
    [ ] Checked   [ ] Sent
 
 11. Mr. Lahiru Chamara
    Seat: Table 3
-   Link: https://udara75.github.io/wedding/?guest=lahiru-chamara
+   Code: 1c52e13977118850
+   Link: https://udara75.github.io/wedding/?guest=1c52e13977118850
    [ ] Checked   [ ] Sent
 
 12. Mrs. Udari Pabodini
    Seat: Table 3
-   Link: https://udara75.github.io/wedding/?guest=udari-pabodini
+   Code: 49f2ae4a15043381
+   Link: https://udara75.github.io/wedding/?guest=49f2ae4a15043381
    [ ] Checked   [ ] Sent
 
 13. Mr. Naveen Wickramathunga
    Seat: Table 3
-   Link: https://udara75.github.io/wedding/?guest=naveen-wickramathunga
+   Code: 27112d6305fc1e21
+   Link: https://udara75.github.io/wedding/?guest=27112d6305fc1e21
    [ ] Checked   [ ] Sent
 
 14. Miss. Chanuri Saneesha
    Seat: Table 3
-   Link: https://udara75.github.io/wedding/?guest=chanuri-saneesha
+   Code: 0dc1a61e5c29d7b7
+   Link: https://udara75.github.io/wedding/?guest=0dc1a61e5c29d7b7
    [ ] Checked   [ ] Sent
 
 15. Miss. Sapna Gamage
    Seat: Table 3
-   Link: https://udara75.github.io/wedding/?guest=sapna-gamage
+   Code: 3e446aef57dd1564
+   Link: https://udara75.github.io/wedding/?guest=3e446aef57dd1564
    [ ] Checked   [ ] Sent
 
 16. Mr. Sameera Dananjaya
    Seat: Table 3
-   Link: https://udara75.github.io/wedding/?guest=sameera-dananjaya
+   Code: f2454e10448ca5d1
+   Link: https://udara75.github.io/wedding/?guest=f2454e10448ca5d1
    [ ] Checked   [ ] Sent
 
 17. Mr. Pasindu Kodippili
    Seat: Table 3
-   Link: https://udara75.github.io/wedding/?guest=pasindu-kodippili
+   Code: f6bb4757903c647f
+   Link: https://udara75.github.io/wedding/?guest=f6bb4757903c647f
    [ ] Checked   [ ] Sent
 
 
@@ -102,57 +120,68 @@ Total guests: 120
 
 18. Mr. Aditha Rajakaruna
    Seat: Table 4
-   Link: https://udara75.github.io/wedding/?guest=aditha-rajakaruna
+   Code: f17209f8dfb4906f
+   Link: https://udara75.github.io/wedding/?guest=f17209f8dfb4906f
    [ ] Checked   [ ] Sent
 
 19. Mr. Ashan Thirimanne
    Seat: Table 4
-   Link: https://udara75.github.io/wedding/?guest=ashan-thirimanne
+   Code: 39d7561d1c499acd
+   Link: https://udara75.github.io/wedding/?guest=39d7561d1c499acd
    [ ] Checked   [ ] Sent
 
 20. Mr. Lakshitha Madushan
    Seat: Table 4
-   Link: https://udara75.github.io/wedding/?guest=lakshitha-madushan
+   Code: 7e73d5f0261c4a98
+   Link: https://udara75.github.io/wedding/?guest=7e73d5f0261c4a98
    [ ] Checked   [ ] Sent
 
 21. Mr. Thimila Ranaweera
    Seat: Table 4
-   Link: https://udara75.github.io/wedding/?guest=thimila-ranaweera
+   Code: c62dd68e2212c25e
+   Link: https://udara75.github.io/wedding/?guest=c62dd68e2212c25e
    [ ] Checked   [ ] Sent
 
 22. Miss. Manodya Dimanthi
    Seat: Table 4
-   Link: https://udara75.github.io/wedding/?guest=manodya-dimanthi
+   Code: 8863aae537e6e70c
+   Link: https://udara75.github.io/wedding/?guest=8863aae537e6e70c
    [ ] Checked   [ ] Sent
 
 23. Mr. Kaushan Ranasinghe
    Seat: Table 4
-   Link: https://udara75.github.io/wedding/?guest=kaushan-ranasinghe
+   Code: 40a262f5b494fac7
+   Link: https://udara75.github.io/wedding/?guest=40a262f5b494fac7
    [ ] Checked   [ ] Sent
 
 24. Mr. Venthiram kathircamalan
    Seat: Table 4
-   Link: https://udara75.github.io/wedding/?guest=venthiram-kathircamalan
+   Code: 3dc68c3e53ef32e6
+   Link: https://udara75.github.io/wedding/?guest=3dc68c3e53ef32e6
    [ ] Checked   [ ] Sent
 
 25. Mr. Ravindu Harshana
    Seat: Table 4
-   Link: https://udara75.github.io/wedding/?guest=ravindu-harshana
+   Code: 8cd6e00f3e30f611
+   Link: https://udara75.github.io/wedding/?guest=8cd6e00f3e30f611
    [ ] Checked   [ ] Sent
 
 26. Mr. Ashan Serasinghe
    Seat: Table 4
-   Link: https://udara75.github.io/wedding/?guest=ashan-serasinghe
+   Code: 5b580cefda80729d
+   Link: https://udara75.github.io/wedding/?guest=5b580cefda80729d
    [ ] Checked   [ ] Sent
 
 27. Mr. Rishan Rasdeen
    Seat: Table 4
-   Link: https://udara75.github.io/wedding/?guest=rishan-rasdeen
+   Code: 79e6e0f30230e8e5
+   Link: https://udara75.github.io/wedding/?guest=79e6e0f30230e8e5
    [ ] Checked   [ ] Sent
 
 28. Miss. Kumudu Kalpani
    Seat: Table 4
-   Link: https://udara75.github.io/wedding/?guest=kumudu-kalpani
+   Code: 6928d09deaa7cacf
+   Link: https://udara75.github.io/wedding/?guest=6928d09deaa7cacf
    [ ] Checked   [ ] Sent
 
 
@@ -160,62 +189,74 @@ Total guests: 120
 
 29. Mr. Isuru Jayashankha
    Seat: Table 5
-   Link: https://udara75.github.io/wedding/?guest=isuru-jayashankha
+   Code: 63a7261b8a93eedd
+   Link: https://udara75.github.io/wedding/?guest=63a7261b8a93eedd
    [ ] Checked   [ ] Sent
 
 30. Mr. Kasun Sandakelum
    Seat: Table 5
-   Link: https://udara75.github.io/wedding/?guest=kasun-sandakelum
+   Code: b6035ffbc553e886
+   Link: https://udara75.github.io/wedding/?guest=b6035ffbc553e886
    [ ] Checked   [ ] Sent
 
 31. Mr. Kasun Madushan
    Seat: Table 5
-   Link: https://udara75.github.io/wedding/?guest=kasun-madushan
+   Code: 99f3afde38a63a22
+   Link: https://udara75.github.io/wedding/?guest=99f3afde38a63a22
    [ ] Checked   [ ] Sent
 
 32. Mr. Ashan Sampath
    Seat: Table 5
-   Link: https://udara75.github.io/wedding/?guest=ashan-sampath
+   Code: 2dc9d5b46f801c4a
+   Link: https://udara75.github.io/wedding/?guest=2dc9d5b46f801c4a
    [ ] Checked   [ ] Sent
 
 33. Mr. Osanda Sandaruwan
    Seat: Table 5
-   Link: https://udara75.github.io/wedding/?guest=osanda-sandaruwan
+   Code: 98b0cdfe6557c414
+   Link: https://udara75.github.io/wedding/?guest=98b0cdfe6557c414
    [ ] Checked   [ ] Sent
 
 34. Mr. Hasara Jayanath
    Seat: Table 5
-   Link: https://udara75.github.io/wedding/?guest=hasara-jayanath
+   Code: 5d539b4cd1b41d5a
+   Link: https://udara75.github.io/wedding/?guest=5d539b4cd1b41d5a
    [ ] Checked   [ ] Sent
 
 35. Mr. Hashara Piyumal
    Seat: Table 5
-   Link: https://udara75.github.io/wedding/?guest=hashara-piyumal
+   Code: b5134336c327a935
+   Link: https://udara75.github.io/wedding/?guest=b5134336c327a935
    [ ] Checked   [ ] Sent
 
 36. Mr. Gihantha Wijesekara
    Seat: Table 5
-   Link: https://udara75.github.io/wedding/?guest=gihantha-wijesekara
+   Code: d68d6f3e48a9f6d7
+   Link: https://udara75.github.io/wedding/?guest=d68d6f3e48a9f6d7
    [ ] Checked   [ ] Sent
 
 37. Mr. Sudeepa Madubhashitha
    Seat: Table 5
-   Link: https://udara75.github.io/wedding/?guest=sudeepa-madubhashitha
+   Code: 304ac1f94fb52fbb
+   Link: https://udara75.github.io/wedding/?guest=304ac1f94fb52fbb
    [ ] Checked   [ ] Sent
 
 38. Mr. Dulshan Dhanajaya
    Seat: Table 5
-   Link: https://udara75.github.io/wedding/?guest=dulshan-dhanajaya
+   Code: 1e1ebb549552643b
+   Link: https://udara75.github.io/wedding/?guest=1e1ebb549552643b
    [ ] Checked   [ ] Sent
 
 39. Mr. Sadeep Shyamal
    Seat: Table 5
-   Link: https://udara75.github.io/wedding/?guest=sadeep-shyamal
+   Code: ab52e9ae5407b1d0
+   Link: https://udara75.github.io/wedding/?guest=ab52e9ae5407b1d0
    [ ] Checked   [ ] Sent
 
 40. Mr. Lasindu Nisalka
    Seat: Table 5
-   Link: https://udara75.github.io/wedding/?guest=lasindu-nisalka
+   Code: b9702b644c87b6cd
+   Link: https://udara75.github.io/wedding/?guest=b9702b644c87b6cd
    [ ] Checked   [ ] Sent
 
 
@@ -223,62 +264,74 @@ Total guests: 120
 
 41. Mr. Tharinda Uthpala
    Seat: Table 6
-   Link: https://udara75.github.io/wedding/?guest=tharinda-uthpala
+   Code: f816c4517b4a4222
+   Link: https://udara75.github.io/wedding/?guest=f816c4517b4a4222
    [ ] Checked   [ ] Sent
 
 42. Mr. Dilan Nissanka
    Seat: Table 6
-   Link: https://udara75.github.io/wedding/?guest=dilan-nissanka
+   Code: 04db0607d3d15bc3
+   Link: https://udara75.github.io/wedding/?guest=04db0607d3d15bc3
    [ ] Checked   [ ] Sent
 
 43. Mr. Amila Gunawickrama
    Seat: Table 6
-   Link: https://udara75.github.io/wedding/?guest=amila-gunawickrama
+   Code: a6cf09e53befea96
+   Link: https://udara75.github.io/wedding/?guest=a6cf09e53befea96
    [ ] Checked   [ ] Sent
 
 44. Mr. Sahan Peris
    Seat: Table 6
-   Link: https://udara75.github.io/wedding/?guest=sahan-peris
+   Code: 307f7781a75e1555
+   Link: https://udara75.github.io/wedding/?guest=307f7781a75e1555
    [ ] Checked   [ ] Sent
 
 45. Mr. Malith Mavinda
    Seat: Table 6
-   Link: https://udara75.github.io/wedding/?guest=malith-mavinda
+   Code: 4218e0782b3d46ea
+   Link: https://udara75.github.io/wedding/?guest=4218e0782b3d46ea
    [ ] Checked   [ ] Sent
 
 46. Mr. Thimira Keerthisena
    Seat: Table 6
-   Link: https://udara75.github.io/wedding/?guest=thimira-keerthisena
+   Code: 6e28fea817a0266e
+   Link: https://udara75.github.io/wedding/?guest=6e28fea817a0266e
    [ ] Checked   [ ] Sent
 
 47. Mr. Hasitha Madushan
    Seat: Table 6
-   Link: https://udara75.github.io/wedding/?guest=hasitha-madushan
+   Code: 24df5e2706f25950
+   Link: https://udara75.github.io/wedding/?guest=24df5e2706f25950
    [ ] Checked   [ ] Sent
 
 48. Mr. Dhanuka Sankalpa
    Seat: Table 6
-   Link: https://udara75.github.io/wedding/?guest=dhanuka-sankalpa
+   Code: 0fda00089d98aec4
+   Link: https://udara75.github.io/wedding/?guest=0fda00089d98aec4
    [ ] Checked   [ ] Sent
 
 49. Mr. Santhushta Kariyawasam
    Seat: Table 6
-   Link: https://udara75.github.io/wedding/?guest=santhushta-kariyawasam
+   Code: 46bea9e5fab23b70
+   Link: https://udara75.github.io/wedding/?guest=46bea9e5fab23b70
    [ ] Checked   [ ] Sent
 
 50. Mr. Supun Dassanayake
    Seat: Table 6
-   Link: https://udara75.github.io/wedding/?guest=supun-dassanayake
+   Code: f14b4514e596e1e1
+   Link: https://udara75.github.io/wedding/?guest=f14b4514e596e1e1
    [ ] Checked   [ ] Sent
 
 51. Mr. Aruna Edirimanne
    Seat: Table 6
-   Link: https://udara75.github.io/wedding/?guest=aruna-edirimanne
+   Code: 5dd1ae89812a814f
+   Link: https://udara75.github.io/wedding/?guest=5dd1ae89812a814f
    [ ] Checked   [ ] Sent
 
 52. Mr. Lakshitha Konara
    Seat: Table 6
-   Link: https://udara75.github.io/wedding/?guest=lakshitha-konara
+   Code: 62fa6d39217be166
+   Link: https://udara75.github.io/wedding/?guest=62fa6d39217be166
    [ ] Checked   [ ] Sent
 
 
@@ -286,340 +339,408 @@ Total guests: 120
 
 53. Dr. Sachith Nishshanka
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=sachith-nishshanka
+   Code: 2514b923035812af
+   Link: https://udara75.github.io/wedding/?guest=2514b923035812af
    [ ] Checked   [ ] Sent
 
 54. Dr. P. Thushantha
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=p-thushantha
+   Code: 0a01ada6a8e4808f
+   Link: https://udara75.github.io/wedding/?guest=0a01ada6a8e4808f
    [ ] Checked   [ ] Sent
 
 55. Dr. Akila Rathnayaka & Mrs. Sarangie Anuththara
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=akila-rathnayaka-mrs-sarangie-anuththara
+   Code: e011032441194156
+   Link: https://udara75.github.io/wedding/?guest=e011032441194156
    [ ] Checked   [ ] Sent
 
 56. Dr. Sandun Senanayaka
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=sandun-senanayaka
+   Code: ab4f0106a1968b6a
+   Link: https://udara75.github.io/wedding/?guest=ab4f0106a1968b6a
    [ ] Checked   [ ] Sent
 
 57. Dr. Omesha wedagedara
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=omesha-wedagedara
+   Code: 03ebaaac6a7f2921
+   Link: https://udara75.github.io/wedding/?guest=03ebaaac6a7f2921
    [ ] Checked   [ ] Sent
 
 58. Dr. Nishani Chathurika
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=nishani-chathurika
+   Code: bc4b170feb11da72
+   Link: https://udara75.github.io/wedding/?guest=bc4b170feb11da72
    [ ] Checked   [ ] Sent
 
 59. Dr. Jayamini Akuranthilake
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=jayamini-akuranthilake
+   Code: d4aeef6dd827fbf1
+   Link: https://udara75.github.io/wedding/?guest=d4aeef6dd827fbf1
    [ ] Checked   [ ] Sent
 
 60. Dr. Tharini Vithanage
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=tharini-vithanage
+   Code: de183eb8655d7e2c
+   Link: https://udara75.github.io/wedding/?guest=de183eb8655d7e2c
    [ ] Checked   [ ] Sent
 
 61. Dr. Harini Rupasinghe
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=harini-rupasinghe
+   Code: dc67713fe87b3f98
+   Link: https://udara75.github.io/wedding/?guest=dc67713fe87b3f98
    [ ] Checked   [ ] Sent
 
 62. Mr. & Mrs. Rivindu Peris
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=rivindu-peris
+   Code: db44ab89d9565700
+   Link: https://udara75.github.io/wedding/?guest=db44ab89d9565700
    [ ] Checked   [ ] Sent
 
 63. Dr. Hiruka Rathnayaka
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=hiruka-rathnayaka
+   Code: 793426b25a999632
+   Link: https://udara75.github.io/wedding/?guest=793426b25a999632
    [ ] Checked   [ ] Sent
 
 64. Dr. Anupama Bandusena
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=anupama-bandusena
+   Code: ccdd8d9ebdd3ac85
+   Link: https://udara75.github.io/wedding/?guest=ccdd8d9ebdd3ac85
    [ ] Checked   [ ] Sent
 
 65. Dr. Nishadini Lakshika
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=nishadini-lakshika
+   Code: a915197ecb3448fe
+   Link: https://udara75.github.io/wedding/?guest=a915197ecb3448fe
    [ ] Checked   [ ] Sent
 
 66. Dr. Melindu Daranagama
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=melindu-daranagama
+   Code: 1f059f7c5d9b0d51
+   Link: https://udara75.github.io/wedding/?guest=1f059f7c5d9b0d51
    [ ] Checked   [ ] Sent
 
 67. Dr. Sudheera Gayan and family
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=sudheera-gayan-and-family
+   Code: 08b82cdb16d426e3
+   Link: https://udara75.github.io/wedding/?guest=08b82cdb16d426e3
    [ ] Checked   [ ] Sent
 
 68. Dr. Methmal pathmasooriya
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=methmal-pathmasooriya
+   Code: edea7b60bbcefa59
+   Link: https://udara75.github.io/wedding/?guest=edea7b60bbcefa59
    [ ] Checked   [ ] Sent
 
 69. Dr. Dulanjani Dissanayaka
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=dulanjani-dissanayaka
+   Code: 6196ff8f7a95d0a6
+   Link: https://udara75.github.io/wedding/?guest=6196ff8f7a95d0a6
    [ ] Checked   [ ] Sent
 
 70. Dr. Dhyan Nadeera
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=dhyan-nadeera
+   Code: 0604f918a07eed94
+   Link: https://udara75.github.io/wedding/?guest=0604f918a07eed94
    [ ] Checked   [ ] Sent
 
 71. Dr. Viduni Basnayaka
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=viduni-basnayaka
+   Code: e712229b827567e6
+   Link: https://udara75.github.io/wedding/?guest=e712229b827567e6
    [ ] Checked   [ ] Sent
 
 72. Dr. S. Abithan
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=s-abithan
+   Code: 905ca6b4f215c364
+   Link: https://udara75.github.io/wedding/?guest=905ca6b4f215c364
    [ ] Checked   [ ] Sent
 
 73. Dr. M. Sameer
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=m-sameer
+   Code: c2387eaa41f376cd
+   Link: https://udara75.github.io/wedding/?guest=c2387eaa41f376cd
    [ ] Checked   [ ] Sent
 
 74. Dr. Anjelo Joseph
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=anjelo-joseph
+   Code: 67091e7031e404d3
+   Link: https://udara75.github.io/wedding/?guest=67091e7031e404d3
    [ ] Checked   [ ] Sent
 
 75. Dr. S. Inthujan
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=s-inthujan
+   Code: 5c04524d36d20d39
+   Link: https://udara75.github.io/wedding/?guest=5c04524d36d20d39
    [ ] Checked   [ ] Sent
 
 76. Dr. K. Sharanja
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=k-sharanja
+   Code: 78dca21fdebe42b0
+   Link: https://udara75.github.io/wedding/?guest=78dca21fdebe42b0
    [ ] Checked   [ ] Sent
 
 77. Dr. Ruvin Alawatta
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=ruvin-alawatta
+   Code: 188afdc162b2604f
+   Link: https://udara75.github.io/wedding/?guest=188afdc162b2604f
    [ ] Checked   [ ] Sent
 
 78. Dr. Amaya Rosa
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=amaya-rosa
+   Code: cb402883fdb6c837
+   Link: https://udara75.github.io/wedding/?guest=cb402883fdb6c837
    [ ] Checked   [ ] Sent
 
 79. Mr. & Mrs. Ravindra Priyalal
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=ravindra-priyalal
+   Code: 085a6d29c020057d
+   Link: https://udara75.github.io/wedding/?guest=085a6d29c020057d
    [ ] Checked   [ ] Sent
 
 80. Dr. Naveen Fernando
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=naveen-fernando
+   Code: 71c64dbc9aae8f4a
+   Link: https://udara75.github.io/wedding/?guest=71c64dbc9aae8f4a
    [ ] Checked   [ ] Sent
 
 81. Dr. Madhara Jayawardhene
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=madhara-jayawardhene
+   Code: 3c91d627bb349075
+   Link: https://udara75.github.io/wedding/?guest=3c91d627bb349075
    [ ] Checked   [ ] Sent
 
 82. Dr. Dilu Ashani
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=dilu-ashani
+   Code: 06c8cc24b64c8dba
+   Link: https://udara75.github.io/wedding/?guest=06c8cc24b64c8dba
    [ ] Checked   [ ] Sent
 
 83. Dr. Dulakshi Navanjana
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=dulakshi-navanjana
+   Code: ab4157d128a25326
+   Link: https://udara75.github.io/wedding/?guest=ab4157d128a25326
    [ ] Checked   [ ] Sent
 
 84. Dr. Tharuka Perera
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=tharuka-perera
+   Code: c4671b5684a0398a
+   Link: https://udara75.github.io/wedding/?guest=c4671b5684a0398a
    [ ] Checked   [ ] Sent
 
 85. Mr. & Mrs. Shilpa Fernando
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=shilpa-fernando
+   Code: f17b2b0414cd8c14
+   Link: https://udara75.github.io/wedding/?guest=f17b2b0414cd8c14
    [ ] Checked   [ ] Sent
 
 86. Mr. & Mrs. Ansala Botheju
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=ansala-botheju
+   Code: efd06aff8969ea31
+   Link: https://udara75.github.io/wedding/?guest=efd06aff8969ea31
    [ ] Checked   [ ] Sent
 
 87. Mr. & Mrs. Bawantha Sibera
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=bawantha-sibera
+   Code: b08ab10c81444093
+   Link: https://udara75.github.io/wedding/?guest=b08ab10c81444093
    [ ] Checked   [ ] Sent
 
 88. Mr. & Mrs. Mohommad Usman
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=mohommad-usman
+   Code: 7bbf9e78ebb52f54
+   Link: https://udara75.github.io/wedding/?guest=7bbf9e78ebb52f54
    [ ] Checked   [ ] Sent
 
 89. Mr. & Mrs. Ravindu Perera
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=ravindu-perera
+   Code: 999f1fe572593c53
+   Link: https://udara75.github.io/wedding/?guest=999f1fe572593c53
    [ ] Checked   [ ] Sent
 
 90. Mr. & Mrs. Nipun Fernando and Family
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=nipun-fernando-and-family
+   Code: 099b661c3cb2f3dc
+   Link: https://udara75.github.io/wedding/?guest=099b661c3cb2f3dc
    [ ] Checked   [ ] Sent
 
 91. Mr. & Mrs. Deshan Fernando and Family
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=deshan-fernando-and-family
+   Code: 5e2eea006b11b25c
+   Link: https://udara75.github.io/wedding/?guest=5e2eea006b11b25c
    [ ] Checked   [ ] Sent
 
 92. Miss. Menora Sathsarani
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=menora-sathsarani
+   Code: 33a1a8b80ac68b68
+   Link: https://udara75.github.io/wedding/?guest=33a1a8b80ac68b68
    [ ] Checked   [ ] Sent
 
 93. Dr. Dayathri Kuruwita
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=dayathri-kuruwita
+   Code: 50fdaf675ec14bad
+   Link: https://udara75.github.io/wedding/?guest=50fdaf675ec14bad
    [ ] Checked   [ ] Sent
 
 94. Miss. Ravindi Kuruwita
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=ravindi-kuruwita
+   Code: 492997dcd48a95bf
+   Link: https://udara75.github.io/wedding/?guest=492997dcd48a95bf
    [ ] Checked   [ ] Sent
 
 95. Miss. Venuri Amalya
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=venuri-amalya
+   Code: 19fe189ca674179a
+   Link: https://udara75.github.io/wedding/?guest=19fe189ca674179a
    [ ] Checked   [ ] Sent
 
 96. Miss. Lithmi Hettiarachchi
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=lithmi-hettiarachchi
+   Code: 6833b37bfc2d1568
+   Link: https://udara75.github.io/wedding/?guest=6833b37bfc2d1568
    [ ] Checked   [ ] Sent
 
 97. Mr. & Mrs. Janaka and Family
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=janaka-and-family
+   Code: a72c123e940c06b8
+   Link: https://udara75.github.io/wedding/?guest=a72c123e940c06b8
    [ ] Checked   [ ] Sent
 
 98. Dr. Weranga Wanniarachchi
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=weranga-wanniarachchi
+   Code: 15f4559ccf08b688
+   Link: https://udara75.github.io/wedding/?guest=15f4559ccf08b688
    [ ] Checked   [ ] Sent
 
 99. Mr. & Mrs. Dulitha Premathilake
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=dulitha-premathilake
+   Code: 83247597a19518fe
+   Link: https://udara75.github.io/wedding/?guest=83247597a19518fe
    [ ] Checked   [ ] Sent
 
 100. Mr. & Mrs. Premathilake
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=premathilake
+   Code: 84b52353d1e4504d
+   Link: https://udara75.github.io/wedding/?guest=84b52353d1e4504d
    [ ] Checked   [ ] Sent
 
 101. Mr. Anuradhe Jayathilake
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=anuradhe-jayathilake
+   Code: 9a2a412f7dfee191
+   Link: https://udara75.github.io/wedding/?guest=9a2a412f7dfee191
    [ ] Checked   [ ] Sent
 
 102. Mr. Lahiru Adikari
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=lahiru-adikari
+   Code: 836323a0bc35dcb2
+   Link: https://udara75.github.io/wedding/?guest=836323a0bc35dcb2
    [ ] Checked   [ ] Sent
 
 103. Mr. Lahiru Sampath
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=lahiru-sampath
+   Code: c705743ee4fb5a6b
+   Link: https://udara75.github.io/wedding/?guest=c705743ee4fb5a6b
    [ ] Checked   [ ] Sent
 
 104. Dr. Amila Ekanayaka
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=amila-ekanayaka
+   Code: c021e796bc88f74f
+   Link: https://udara75.github.io/wedding/?guest=c021e796bc88f74f
    [ ] Checked   [ ] Sent
 
 105. Mr. Dulmika Ruvishan
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=dulmika-ruvishan
+   Code: 88e8e1c6466d472b
+   Link: https://udara75.github.io/wedding/?guest=88e8e1c6466d472b
    [ ] Checked   [ ] Sent
 
 106. Mr. Sisith Thushan
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=sisith-thushan
+   Code: 0bf2d0d6eca7ab1b
+   Link: https://udara75.github.io/wedding/?guest=0bf2d0d6eca7ab1b
    [ ] Checked   [ ] Sent
 
 107. Mr. Sachith Madushan
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=sachith-madushan
+   Code: e89d0a15f0bd601a
+   Link: https://udara75.github.io/wedding/?guest=e89d0a15f0bd601a
    [ ] Checked   [ ] Sent
 
 108. Mr. Frank Lakshan
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=frank-lakshan
+   Code: a3d4252d386d0a44
+   Link: https://udara75.github.io/wedding/?guest=a3d4252d386d0a44
    [ ] Checked   [ ] Sent
 
 109. Mr. Deshan Randeniya
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=deshan-randeniya
+   Code: 1479fe0f3399d049
+   Link: https://udara75.github.io/wedding/?guest=1479fe0f3399d049
    [ ] Checked   [ ] Sent
 
 110. Mr. Kavindu Rathnayaka
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=kavindu-rathnayaka
+   Code: 2ad8ff967e18c87d
+   Link: https://udara75.github.io/wedding/?guest=2ad8ff967e18c87d
    [ ] Checked   [ ] Sent
 
 111. Mr. Hilari Costa
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=hilari-costa
+   Code: 31d67718d76e9eea
+   Link: https://udara75.github.io/wedding/?guest=31d67718d76e9eea
    [ ] Checked   [ ] Sent
 
 112. Mr. Lal Fernando
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=lal-fernando
+   Code: 425f2e2dac4107ec
+   Link: https://udara75.github.io/wedding/?guest=425f2e2dac4107ec
    [ ] Checked   [ ] Sent
 
 113. Mr. Priyantha Jayasooriya
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=priyantha-jayasooriya
+   Code: 3751a0f32825cf41
+   Link: https://udara75.github.io/wedding/?guest=3751a0f32825cf41
    [ ] Checked   [ ] Sent
 
 114. Mr. Jude Herman
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=jude-herman
+   Code: 7d624b89bdff84b9
+   Link: https://udara75.github.io/wedding/?guest=7d624b89bdff84b9
    [ ] Checked   [ ] Sent
 
 115. Mr. Anura Perera
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=anura-perera
+   Code: ad3f14d9f66d069f
+   Link: https://udara75.github.io/wedding/?guest=ad3f14d9f66d069f
    [ ] Checked   [ ] Sent
 
 116. Mr. & Mrs. Fayaz Marikkar
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=fayaz-marikkar
+   Code: c6c2b453c167de84
+   Link: https://udara75.github.io/wedding/?guest=c6c2b453c167de84
    [ ] Checked   [ ] Sent
 
 117. Dr. Nethmi Silva
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=nethmi-silva
+   Code: 0ee90d599b280223
+   Link: https://udara75.github.io/wedding/?guest=0ee90d599b280223
    [ ] Checked   [ ] Sent
 
 118. Dr. Shiney Nayanathara
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=shiney-nayanathara
+   Code: 5a3912be2acbd148
+   Link: https://udara75.github.io/wedding/?guest=5a3912be2acbd148
    [ ] Checked   [ ] Sent
 
 119. Dr. Aashani
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=aashani
+   Code: 1ea9cb659e34abe8
+   Link: https://udara75.github.io/wedding/?guest=1ea9cb659e34abe8
    [ ] Checked   [ ] Sent
 
 120. Dr. Diluka Jayasekara
    Seat: Table TBD
-   Link: https://udara75.github.io/wedding/?guest=diluka-jayasekara
+   Code: 88a0065baf6de2fa
+   Link: https://udara75.github.io/wedding/?guest=88a0065baf6de2fa
    [ ] Checked   [ ] Sent

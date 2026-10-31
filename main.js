@@ -35,19 +35,22 @@ function guestId(guest) {
     .replace(/^-|-$/g, "");
 }
 
+function guestCode(guest) {
+  return String((guest && guest.code) || "")
+    .trim()
+    .toLowerCase();
+}
+
 function getGuestFromUrl() {
   const params = new URLSearchParams(window.location.search);
-  const raw = params.get("guest") || params.get("name") || params.get("to");
+  const raw = params.get("guest") || params.get("code") || "";
   if (!raw) return null;
 
-  const requested = normalizeGuestKey(raw);
+  const requested = String(raw).trim().toLowerCase();
   const guests = typeof GUESTS !== "undefined" ? GUESTS : [];
 
-  return (
-    guests.find((guest) => guestId(guest) === requested) ||
-    guests.find((guest) => normalizeGuestKey(guest.name) === requested) ||
-    null
-  );
+  // Secure invite links use a unique hex code only (not the name / slug).
+  return guests.find((guest) => guestCode(guest) === requested) || null;
 }
 
 function normalizeTableCode(value) {
@@ -320,7 +323,7 @@ rsvpForm.addEventListener("submit", async (event) => {
   const data = Object.fromEntries(new FormData(rsvpForm).entries());
   if (currentGuest) {
     data.guestFromLink = currentGuest.name;
-    data.guestId = currentGuest.id || guestId(currentGuest);
+    data.guestId = currentGuest.code || guestCode(currentGuest);
   }
 
   const scriptUrl =
