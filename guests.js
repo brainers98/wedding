@@ -131,7 +131,7 @@ const GUESTS = [
   { id: "madhuka-dasanayaka", code: "0xedc", name: "Dr. Madhuka Dasanayaka", table: null },
   { id: "chula-perera-family", code: "0xedd", name: "Mr. & Mrs. Chula Perera & Family", table: null },
   { id: "bandu-family", code: "0xede", name: "Mr. & Mrs. Bandu & Family", table: null },
-  { id: "niluka-family", code: "0xedf", name: "Mrs. Niluka & Family", table: null },
+  { id: "niluka-family", code: "0xedf", name: "Mrs. Niluka & Family", table: "12" },
   { id: "susith-rodrigo", code: "0xeea", name: "Mr. & Mrs. Susith Rodrigo", table: null },
 ];
 
