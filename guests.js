@@ -65,7 +65,7 @@ const GUESTS = [
   { id: "jayamini-akuranthilake", name: "Dr. Jayamini Akuranthilake", table: null },
   { id: "tharini-vithanage", name: "Dr. Tharini Vithanage", table: null },
   { id: "harini-rupasinghe", name: "Dr. Harini Rupasinghe", table: null },
-  { id: "savindi-uduwana", name: "Dr. Savindi Uduwana", table: null },
+  { id: "rivindu-peris", name: "Mr. & Mrs. Rivindu Peris", table: null },
   { id: "hiruka-rathnayaka", name: "Dr. Hiruka Rathnayaka", table: null },
   { id: "anupama-bandusena", name: "Dr. Anupama Bandusena", table: null },
   { id: "nishadini-lakshika", name: "Dr. Nishadini Lakshika", table: null },
@@ -101,7 +101,6 @@ const GUESTS = [
   { id: "venuri-amalya", name: "Miss. Venuri Amalya", table: null },
   { id: "lithmi-hettiarachchi", name: "Miss. Lithmi Hettiarachchi", table: null },
   { id: "janaka-and-family", name: "Mr. & Mrs. Janaka and Family", table: null },
-  { id: "rivindu-peiris", name: "Mr. & Mrs. Rivindu Peiris", table: null },
   { id: "weranga-wanniarachchi", name: "Dr. Weranga Wanniarachchi", table: null },
   { id: "dulitha-premathilake", name: "Mr. & Mrs. Dulitha Premathilake", table: null },
   { id: "premathilake", name: "Mr. & Mrs. Premathilake", table: null },
@@ -115,6 +114,12 @@ const GUESTS = [
   { id: "frank-lakshan", name: "Mr. Frank Lakshan", table: null },
   { id: "deshan-randeniya", name: "Mr. Deshan Randeniya", table: null },
   { id: "kavindu-rathnayaka", name: "Mr. Kavindu Rathnayaka", table: null },
+  { id: "hilari-costa", name: "Mr. Hilari Costa", table: null },
+  { id: "lal-fernando", name: "Mr. Lal Fernando", table: null },
+  { id: "priyantha-jayasooriya", name: "Mr. Priyantha Jayasooriya", table: null },
+  { id: "jude-herman", name: "Mr. Jude Herman", table: null },
+  { id: "anura-perera", name: "Mr. Anura Perera", table: null },
+  { id: "fayaz-marikkar", name: "Mr. & Mrs. Fayaz Marikkar", table: null },
 ];
 
 const TABLE_LABELS = ["C", "R", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18"];

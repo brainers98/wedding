@@ -242,36 +242,42 @@
         <p class="seating-note" id="seatingNote">Find your highlighted seat below.</p>
 
         <div class="seating-map" id="seatingMap" aria-label="Table arrangement">
-          <img
-            class="seating-chart-img"
-            src="seating-chart.png"
-            alt="Wedding reception seating chart"
-            width="1200"
-            height="900"
-            decoding="async"
-          />
-          <div class="seating-hotspots" aria-hidden="true">
-            <!-- Centers measured from seating-chart.png -->
-            <span class="hotspot" data-table="1" style="--x:10.0%; --y:37.4%"></span>
-            <span class="hotspot" data-table="2" style="--x:22.4%; --y:37.4%"></span>
-            <span class="hotspot" data-table="3" style="--x:35.2%; --y:37.4%"></span>
-            <span class="hotspot" data-table="4" style="--x:48.8%; --y:37.4%"></span>
-            <span class="hotspot" data-table="5" style="--x:61.8%; --y:37.4%"></span>
-            <span class="hotspot" data-table="6" style="--x:74.6%; --y:37.4%"></span>
-            <span class="hotspot" data-table="7" style="--x:10.0%; --y:57.8%"></span>
-            <span class="hotspot" data-table="8" style="--x:22.4%; --y:57.8%"></span>
-            <span class="hotspot" data-table="9" style="--x:35.2%; --y:57.8%"></span>
-            <span class="hotspot" data-table="10" style="--x:48.8%; --y:57.8%"></span>
-            <span class="hotspot" data-table="11" style="--x:61.8%; --y:57.8%"></span>
-            <span class="hotspot" data-table="12" style="--x:74.6%; --y:57.8%"></span>
-            <span class="hotspot" data-table="13" style="--x:10.0%; --y:79.0%"></span>
-            <span class="hotspot" data-table="14" style="--x:22.4%; --y:79.0%"></span>
-            <span class="hotspot" data-table="15" style="--x:35.2%; --y:79.0%"></span>
-            <span class="hotspot" data-table="16" style="--x:48.8%; --y:79.0%"></span>
-            <span class="hotspot" data-table="17" style="--x:61.8%; --y:79.0%"></span>
-            <span class="hotspot" data-table="18" style="--x:74.6%; --y:79.0%"></span>
-            <span class="hotspot hotspot-r" data-table="R" style="--x:74.5%; --y:24.8%"></span>
-            <span class="hotspot hotspot-couple" data-table="C" style="--x:88.5%; --y:58%"></span>
+          <div class="floor-plan">
+            <div class="floor-top">
+              <div class="floor-band">
+                <span class="floor-label">Band</span>
+              </div>
+              <button type="button" class="floor-table" data-table="R" tabindex="-1" aria-label="Table R">
+                <span>R</span>
+              </button>
+            </div>
+
+            <div class="floor-body">
+              <div class="floor-grid">
+                <button type="button" class="floor-table" data-table="1" tabindex="-1"><span>1</span></button>
+                <button type="button" class="floor-table" data-table="2" tabindex="-1"><span>2</span></button>
+                <button type="button" class="floor-table" data-table="3" tabindex="-1"><span>3</span></button>
+                <button type="button" class="floor-table" data-table="4" tabindex="-1"><span>4</span></button>
+                <button type="button" class="floor-table" data-table="5" tabindex="-1"><span>5</span></button>
+                <button type="button" class="floor-table" data-table="6" tabindex="-1"><span>6</span></button>
+                <button type="button" class="floor-table" data-table="7" tabindex="-1"><span>7</span></button>
+                <button type="button" class="floor-table" data-table="8" tabindex="-1"><span>8</span></button>
+                <button type="button" class="floor-table" data-table="9" tabindex="-1"><span>9</span></button>
+                <button type="button" class="floor-table" data-table="10" tabindex="-1"><span>10</span></button>
+                <button type="button" class="floor-table" data-table="11" tabindex="-1"><span>11</span></button>
+                <button type="button" class="floor-table" data-table="12" tabindex="-1"><span>12</span></button>
+                <button type="button" class="floor-table" data-table="13" tabindex="-1"><span>13</span></button>
+                <button type="button" class="floor-table" data-table="14" tabindex="-1"><span>14</span></button>
+                <button type="button" class="floor-table" data-table="15" tabindex="-1"><span>15</span></button>
+                <button type="button" class="floor-table" data-table="16" tabindex="-1"><span>16</span></button>
+                <button type="button" class="floor-table" data-table="17" tabindex="-1"><span>17</span></button>
+                <button type="button" class="floor-table" data-table="18" tabindex="-1"><span>18</span></button>
+              </div>
+
+              <div class="floor-couple" data-table="C" aria-label="Couple table">
+                <span class="floor-label">Couple</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>

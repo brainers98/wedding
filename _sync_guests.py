@@ -181,11 +181,13 @@ const RSVP_SCRIPT_URL =
     encoding="utf-8",
 )
 
+# Send-ready links (check then copy/paste to guests)
 link_lines = [
-    "Personalized invitation links",
+    "UDARA & SHAINY — INVITE LINKS TO SEND",
+    "Check each link, then send the matching one to that guest.",
     "",
-    "Base site:",
-    site,
+    f"Base site: {site}",
+    f"Total guests: {len(guests)}",
     "",
 ]
 current_table = _SENTINEL
@@ -193,13 +195,17 @@ for i, g in enumerate(guests, 1):
     if g["table"] != current_table:
         if current_table is not _SENTINEL:
             link_lines.append("")
-        link_lines.append(f"------------------ {section_label(g['table'])} ------------------")
+        link_lines.append(f"================== {section_label(g['table']).upper()} ==================")
+        link_lines.append("")
         current_table = g["table"]
-    table_txt = f" (Table {g['table']})" if g["table"] else " (table TBD)"
-    link_lines.append(f"{i}. {g['name']}{table_txt}")
-    link_lines.append(f"{site}?guest={g['id']}")
+    seat = f"Table {g['table']}" if g["table"] else "Table TBD"
+    link_lines.append(f"{i}. {g['name']}")
+    link_lines.append(f"   Seat: {seat}")
+    link_lines.append(f"   Link: {site}?guest={g['id']}")
+    link_lines.append(f"   [ ] Checked   [ ] Sent")
     link_lines.append("")
 (root / "invite-links-test.txt").write_text("\n".join(link_lines), encoding="utf-8")
+(root / "invite-links-to-send.txt").write_text("\n".join(link_lines), encoding="utf-8")
 
 gs_path = root / "google-sheet-rsvp.gs"
 if gs_path.exists():

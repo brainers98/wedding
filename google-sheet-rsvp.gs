@@ -74,7 +74,7 @@ const INVITEES = [
   { id: "jayamini-akuranthilake", name: "Dr. Jayamini Akuranthilake" },
   { id: "tharini-vithanage", name: "Dr. Tharini Vithanage" },
   { id: "harini-rupasinghe", name: "Dr. Harini Rupasinghe" },
-  { id: "savindi-uduwana", name: "Dr. Savindi Uduwana" },
+  { id: "rivindu-peris", name: "Mr. & Mrs. Rivindu Peris" },
   { id: "hiruka-rathnayaka", name: "Dr. Hiruka Rathnayaka" },
   { id: "anupama-bandusena", name: "Dr. Anupama Bandusena" },
   { id: "nishadini-lakshika", name: "Dr. Nishadini Lakshika" },
@@ -110,7 +110,6 @@ const INVITEES = [
   { id: "venuri-amalya", name: "Miss. Venuri Amalya" },
   { id: "lithmi-hettiarachchi", name: "Miss. Lithmi Hettiarachchi" },
   { id: "janaka-and-family", name: "Mr. & Mrs. Janaka and Family" },
-  { id: "rivindu-peiris", name: "Mr. & Mrs. Rivindu Peiris" },
   { id: "weranga-wanniarachchi", name: "Dr. Weranga Wanniarachchi" },
   { id: "dulitha-premathilake", name: "Mr. & Mrs. Dulitha Premathilake" },
   { id: "premathilake", name: "Mr. & Mrs. Premathilake" },
@@ -124,6 +123,12 @@ const INVITEES = [
   { id: "frank-lakshan", name: "Mr. Frank Lakshan" },
   { id: "deshan-randeniya", name: "Mr. Deshan Randeniya" },
   { id: "kavindu-rathnayaka", name: "Mr. Kavindu Rathnayaka" },
+  { id: "hilari-costa", name: "Mr. Hilari Costa" },
+  { id: "lal-fernando", name: "Mr. Lal Fernando" },
+  { id: "priyantha-jayasooriya", name: "Mr. Priyantha Jayasooriya" },
+  { id: "jude-herman", name: "Mr. Jude Herman" },
+  { id: "anura-perera", name: "Mr. Anura Perera" },
+  { id: "fayaz-marikkar", name: "Mr. & Mrs. Fayaz Marikkar" },
 ];
 
 const HEADERS = [
