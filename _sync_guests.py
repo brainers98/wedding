@@ -1,10 +1,11 @@
-"""Sync guests-test.txt → guests.js, invite-links-test.txt, google-sheet-rsvp.gs
+"""Sync guests-test.txt → guests.js + invite-links-test.txt (+ Apps Script list)
 
-Format:
+Source format (any of these):
   1. Mr. Udara Kavinda | C
-  3. Mr. Isuru Jayashankha | 5
+  Mr. New Guest
+  53. Mr. New Guest | _
 
-Codes: C = Couple, R = Reserved, 1–18 = guest tables
+No table yet → leave blank or use _  (goes under Unassigned)
 """
 import re
 from pathlib import Path
@@ -16,9 +17,11 @@ site = "https://udara75.github.io/wedding/"
 def fix_title(name: str) -> str:
     name = re.sub(r"\s+", " ", name).strip()
     name = re.sub(r"^(Mr)\.?\s*&\s*(Mrs)\.?\s+", r"Mr. & Mrs. ", name, flags=re.I)
+    name = re.sub(r"^(Dr)\.?\s+", r"Dr. ", name, flags=re.I)
     name = re.sub(r"^(Mr)\.?\s+", r"Mr. ", name, flags=re.I)
     name = re.sub(r"^(Miss)\.?\s+", r"Miss. ", name, flags=re.I)
     name = re.sub(r"^(Mrs)\.?\s+", r"Mrs. ", name, flags=re.I)
+    name = re.sub(r"^dr\.", "Dr.", name, flags=re.I)
     name = re.sub(r"^mr\. & mrs\.", "Mr. & Mrs.", name, flags=re.I)
     name = re.sub(r"^mr\.", "Mr.", name, flags=re.I)
     name = re.sub(r"^miss\.", "Miss.", name, flags=re.I)
@@ -27,15 +30,20 @@ def fix_title(name: str) -> str:
 
 
 def to_id(n: str) -> str:
-    n = re.sub(r"^(mr\.?\s*&\s*mrs\.?|mr|mrs|miss|ms)\.?\s+", "", n, flags=re.I)
+    n = re.sub(
+        r"^(dr|mr\.?\s*&\s*mrs\.?|mr|mrs|miss|ms)\.?\s+",
+        "",
+        n,
+        flags=re.I,
+    )
     n = n.lower()
     return re.sub(r"[^a-z0-9]+", "-", n).strip("-")
 
 
 def parse_table(raw: str):
-    raw = raw.strip()
+    raw = (raw or "").strip()
     raw = re.sub(r"(?i)^table\s*", "", raw).strip()
-    if not raw or raw in {"_", "-", "?", "tbd"}:
+    if not raw or raw in {"_", "-", "?", "tbd", "none", "null"}:
         return None
     code = raw.upper()
     if code in {"C", "S", "COUPLE"}:
@@ -48,52 +56,107 @@ def parse_table(raw: str):
     return code
 
 
+def is_separator(line: str) -> bool:
+    return bool(re.match(r"^-{3,}", line.strip()))
+
+
 def parse_line(line: str):
     line = line.strip()
-    if not line or line.startswith("#"):
+    if not line or line.startswith("#") or is_separator(line):
         return None
-    line = re.sub(r"^\d+\.\s*", "", line)
+
     table = None
     if "|" in line:
         name_part, table_part = line.split("|", 1)
-        name = fix_title(name_part)
         table = parse_table(table_part)
+        name_part = name_part.strip()
     else:
-        name = fix_title(line)
-    return name, table
+        name_part = line
+
+    name_part = re.sub(r"^\d+\.\s*", "", name_part).strip()
+    if not name_part:
+        return None
+
+    return fix_title(name_part), table
+
+
+def section_label(table):
+    if table is None:
+        return "Unassigned"
+    if table == "C":
+        return "Couple"
+    if table == "R":
+        return "Reserved"
+    return f"Table {table}"
+
+
+def table_group_key(table):
+    """Sort groups: Couple, Reserved, numbered tables, then Unassigned last."""
+    if table == "C":
+        return (0, 0)
+    if table == "R":
+        return (1, 0)
+    if table is None:
+        return (9, 0)
+    try:
+        return (2, int(table))
+    except (TypeError, ValueError):
+        return (3, str(table))
 
 
 lines = (root / "guests-test.txt").read_text(encoding="utf-8").splitlines()
 guests = []
-seen = {}
+seen_ids = {}
+seen_names = set()
 for i, line in enumerate(lines):
     parsed = parse_line(line)
     if not parsed:
         continue
     name, table = parsed
+    name_key = re.sub(r"\s+", " ", name).strip().lower()
+    # Skip accidental duplicate paste of the same person
+    if name_key in seen_names:
+        continue
+    seen_names.add(name_key)
+
     gid = to_id(name)
-    if gid in seen:
+    if not gid:
+        continue
+    if gid in seen_ids:
         gid = f"{gid}-{i + 1}"
-    seen[gid] = True
+    seen_ids[gid] = True
     guests.append({"id": gid, "name": name, "table": table})
 
+# Keep relative order within each table group; order groups sensibly
+indexed = list(enumerate(guests))
+indexed.sort(key=lambda it: (*table_group_key(it[1]["table"]), it[0]))
+guests = [g for _, g in indexed]
+
+# Rewrite guests-test.txt: numbered + section banners (Unassigned = no table yet)
 out_lines = [
     "# Format: 1. Guest Name | TableCode",
     "# Codes: C = Couple, R = Reserved, 1–18 = guest tables",
-    "# After editing, ask Cursor to sync.",
+    "# No table yet: omit | or use | _   (listed under Unassigned)",
+    "# Save this file while watch-guests.py is running to auto-update guests.js",
     "",
 ]
+_SENTINEL = object()
+current_table = _SENTINEL
 for i, g in enumerate(guests, 1):
-    table_txt = g["table"] if g["table"] is not None else "_"
-    out_lines.append(f"{i}. {g['name']} | {table_txt}")
+    if g["table"] != current_table:
+        if current_table is not _SENTINEL:
+            out_lines.append("")
+        out_lines.append(f"------------------ {section_label(g['table'])} ------------------")
+        current_table = g["table"]
+    if g["table"] is None:
+        out_lines.append(f"{i}. {g['name']}")
+    else:
+        out_lines.append(f"{i}. {g['name']} | {g['table']}")
 (root / "guests-test.txt").write_text("\n".join(out_lines) + "\n", encoding="utf-8")
 
 guest_js_rows = []
 for g in guests:
-    if g["table"] is None:
-        table_js = "null"
-    else:
-        table_js = f'"{g["table"]}"'
+    table_js = "null" if g["table"] is None else f'"{g["table"]}"'
     guest_js_rows.append(
         f'  {{ id: "{g["id"]}", name: "{g["name"]}", table: {table_js} }}'
     )
@@ -102,8 +165,7 @@ for g in guests:
     f"""// Guest personalization — use ?guest=id in the URL
 // Example: index.html?guest=udara-kavinda
 //
-// Keep in sync with guests-test.txt
-// Codes: C = Couple, R = Reserved, 1–18 = guest tables
+// Auto-generated from guests-test.txt — edit that file, then sync/watch.
 
 const GUESTS = [
 {",\n".join(guest_js_rows)},
@@ -126,8 +188,14 @@ link_lines = [
     site,
     "",
 ]
+current_table = _SENTINEL
 for i, g in enumerate(guests, 1):
-    table_txt = f" (Table {g['table']})" if g["table"] else ""
+    if g["table"] != current_table:
+        if current_table is not _SENTINEL:
+            link_lines.append("")
+        link_lines.append(f"------------------ {section_label(g['table'])} ------------------")
+        current_table = g["table"]
+    table_txt = f" (Table {g['table']})" if g["table"] else " (table TBD)"
     link_lines.append(f"{i}. {g['name']}{table_txt}")
     link_lines.append(f"{site}?guest={g['id']}")
     link_lines.append("")
@@ -143,4 +211,5 @@ if gs_path.exists():
     gs2 = re.sub(r"const INVITEES = \[[\s\S]*?\];", new_block, gs, count=1)
     gs_path.write_text(gs2, encoding="utf-8")
 
-print(f"Synced {len(guests)} guests")
+assigned = sum(1 for g in guests if g["table"] is not None)
+print(f"Synced {len(guests)} guests ({assigned} with table, {len(guests) - assigned} unassigned)")

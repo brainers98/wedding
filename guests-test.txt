@@ -1,56 +1,129 @@
 # Format: 1. Guest Name | TableCode
 # Codes: C = Couple, R = Reserved, 1–18 = guest tables
-# After editing, ask Cursor to sync.
+# No table yet: omit | or use | _   (listed under Unassigned)
+# Save this file while watch-guests.py is running to auto-update guests.js
 
+------------------ Couple ------------------
 1. Mr. Udara Kavinda | C
 2. Miss. Shainy Tharushika | C
-3. Mr. Isuru Jayashankha | 5
-4. Mr. Aditha Rajakaruna | 4
-5. Mr. Ashan Thirimanne | 4
-6. Mr. Lakshitha Madushan | 4
-7. Mr. Thimila Ranaweera | 4
-8. Miss. Manodya Dimanthi | 4
-9. Mr. Kaushan Ranasinghe | 4
-10. Mr. Venthiram kathircamalan | 4
-11. Mr. Ravindu Harshana | 4
-12. Mr. Ashan Serasinghe | 4
-13. Mr. Rishan Rasdeen | 4
-14. Miss. Kumudu Kalpani | 4
-15. Mr. Tharinda Uthpala | 6
-16. Mr. Dilan Nissanka | 6
-17. Mr. Amila Gunawickrama | 6
-18. Mr. Sahan Peris | 6
-19. Mr. Malith Mavinda | 6
-20. Mr. Thimira Keerthisena | 6
-21. Mr. Hasitha Madushan | 6
-22. Mr. Dhanuka Sankalpa | 6
-23. Mr. Santhushta Kariyawasam | 6
-24. Mr. Supun Dassanayake | 6
-25. Mr. Aruna Edirimanne | 6
-26. Mr. Lakshitha Konara | 6
-27. Mr. Kasun Sandakelum | 5
-28. Mr. Kasun Madushan | 5
-29. Mr. Ashan Sampath | 5
-30. Mr. Osanda Sandaruwan | 5
-31. Mr. Hasara Jayanath | 5
-32. Mr. Hashara Piyumal | 5
-33. Mr. Gihantha Wijesekara | 5
-34. Mr. Sudeepa Madubhashitha | 5
-35. Mr. Dulshan Dhanajaya | 5
-36. Mr. Sadeep Shyamal | 5
-37. Mr. Lasindu Nisalka | 5
-38. Mr. & Mrs. Ruwan Nandana | 3
-39. Mr. & Mrs. Chalindu Sankalpa | 3
-40. Mr. Madawa Dilshan | 3
-41. Mr. Lahiru Chamara | 3
-42. Mrs. Udari Pabodini | 3
-43. Mr. Naveen Wickramathunga | 3
-44. Miss. Chanuri Saneesha | 3
-45. Miss. Sapna Gamage | 3
-46. Mr. Sameera Dananjaya | 3
-47. Mr. Pasindu Kodippili | 3
-48. Mr. Ruchira Maduranga | 2
-49. Mr. Kapila Indrajith | 2
-50. Mrs. Harshi Nimali | 2
-51. Mrs. Dharshika Nilochani | 2
-52. Mr. Manjula Prabhath | 2
+
+------------------ Table 2 ------------------
+3. Mr. Ruchira Maduranga | 2
+4. Mr. Kapila Indrajith | 2
+5. Mrs. Harshi Nimali | 2
+6. Mrs. Dharshika Nilochani | 2
+7. Mr. Manjula Prabhath | 2
+
+------------------ Table 3 ------------------
+8. Mr. & Mrs. Ruwan Nandana | 3
+9. Mr. & Mrs. Chalindu Sankalpa | 3
+10. Mr. Madawa Dilshan | 3
+11. Mr. Lahiru Chamara | 3
+12. Mrs. Udari Pabodini | 3
+13. Mr. Naveen Wickramathunga | 3
+14. Miss. Chanuri Saneesha | 3
+15. Miss. Sapna Gamage | 3
+16. Mr. Sameera Dananjaya | 3
+17. Mr. Pasindu Kodippili | 3
+
+------------------ Table 4 ------------------
+18. Mr. Aditha Rajakaruna | 4
+19. Mr. Ashan Thirimanne | 4
+20. Mr. Lakshitha Madushan | 4
+21. Mr. Thimila Ranaweera | 4
+22. Miss. Manodya Dimanthi | 4
+23. Mr. Kaushan Ranasinghe | 4
+24. Mr. Venthiram kathircamalan | 4
+25. Mr. Ravindu Harshana | 4
+26. Mr. Ashan Serasinghe | 4
+27. Mr. Rishan Rasdeen | 4
+28. Miss. Kumudu Kalpani | 4
+
+------------------ Table 5 ------------------
+29. Mr. Isuru Jayashankha | 5
+30. Mr. Kasun Sandakelum | 5
+31. Mr. Kasun Madushan | 5
+32. Mr. Ashan Sampath | 5
+33. Mr. Osanda Sandaruwan | 5
+34. Mr. Hasara Jayanath | 5
+35. Mr. Hashara Piyumal | 5
+36. Mr. Gihantha Wijesekara | 5
+37. Mr. Sudeepa Madubhashitha | 5
+38. Mr. Dulshan Dhanajaya | 5
+39. Mr. Sadeep Shyamal | 5
+40. Mr. Lasindu Nisalka | 5
+
+------------------ Table 6 ------------------
+41. Mr. Tharinda Uthpala | 6
+42. Mr. Dilan Nissanka | 6
+43. Mr. Amila Gunawickrama | 6
+44. Mr. Sahan Peris | 6
+45. Mr. Malith Mavinda | 6
+46. Mr. Thimira Keerthisena | 6
+47. Mr. Hasitha Madushan | 6
+48. Mr. Dhanuka Sankalpa | 6
+49. Mr. Santhushta Kariyawasam | 6
+50. Mr. Supun Dassanayake | 6
+51. Mr. Aruna Edirimanne | 6
+52. Mr. Lakshitha Konara | 6
+
+------------------ Unassigned ------------------
+53. Dr. Sachith Nishshanka
+54. Dr. P. Thushantha
+55. Dr. Akila Rathnayaka & Mrs. Sarangie Anuththara
+56. Dr. Sandun Senanayaka
+57. Dr. Omesha wedagedara
+58. Dr. Nishani Chathurika
+59. Dr. Jayamini Akuranthilake
+60. Dr. Tharini Vithanage
+61. Dr. Harini Rupasinghe
+62. Dr. Savindi Uduwana
+63. Dr. Hiruka Rathnayaka
+64. Dr. Anupama Bandusena
+65. Dr. Nishadini Lakshika
+66. Dr. Melindu Daranagama
+67. Dr. Sudheera Gayan and family
+68. Dr. Methmal pathmasooriya
+69. Dr. Dulanjani Dissanayaka
+70. Dr. Dhyan Nadeera
+71. Dr. Viduni Basnayaka
+72. Dr. S. Abithan
+73. Dr. M. Sameer
+74. Dr. Anjelo Joseph
+75. Dr. S. Inthujan
+76. Dr. K. Sharanja
+77. Dr. Ruvin Alawatta
+78. Dr. Amaya Rosa
+79. Mr. & Mrs. Ravindra Priyalal
+80. Dr. Naveen Fernando
+81. Dr. Madhara Jayawardhene
+82. Dr. Dilu Ashani
+83. Dr. Dulakshi Navanjana
+84. Dr. Tharuka Perera
+85. Mr. & Mrs. Shilpa Fernando
+86. Mr. & Mrs. Ansala Botheju
+87. Mr. & Mrs. Bawantha Sibera
+88. Mr. & Mrs. Mohommad Usman
+89. Mr. & Mrs. Ravindu Perera
+90. Mr. & Mrs. Nipun Fernando and Family
+91. Mr. & Mrs. Deshan Fernando and Family
+92. Miss. Menora Sathsarani
+93. Dr. Dayathri Kuruwita
+94. Miss. Ravindi Kuruwita
+95. Miss. Venuri Amalya
+96. Miss. Lithmi Hettiarachchi
+97. Mr. & Mrs. Janaka and Family
+98. Mr. & Mrs. Rivindu Peiris
+99. Dr. Weranga Wanniarachchi
+100. Mr. & Mrs. Dulitha Premathilake
+101. Mr. & Mrs. Premathilake
+102. Mr. Anuradhe Jayathilake
+103. Mr. Lahiru Adikari
+104. Mr. Lahiru Sampath
+105. Dr. Amila Ekanayaka
+106. Mr. Dulmika Ruvishan
+107. Mr. Sisith Thushan
+108. Mr. Sachith Madushan
+109. Mr. Frank Lakshan
+110. Mr. Deshan Randeniya
+111. Mr. Kavindu Rathnayaka

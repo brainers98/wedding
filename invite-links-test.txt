@@ -3,158 +3,348 @@ Personalized invitation links
 Base site:
 https://udara75.github.io/wedding/
 
+------------------ Couple ------------------
 1. Mr. Udara Kavinda (Table C)
 https://udara75.github.io/wedding/?guest=udara-kavinda
 
 2. Miss. Shainy Tharushika (Table C)
 https://udara75.github.io/wedding/?guest=shainy-tharushika
 
-3. Mr. Isuru Jayashankha (Table 5)
-https://udara75.github.io/wedding/?guest=isuru-jayashankha
 
-4. Mr. Aditha Rajakaruna (Table 4)
-https://udara75.github.io/wedding/?guest=aditha-rajakaruna
-
-5. Mr. Ashan Thirimanne (Table 4)
-https://udara75.github.io/wedding/?guest=ashan-thirimanne
-
-6. Mr. Lakshitha Madushan (Table 4)
-https://udara75.github.io/wedding/?guest=lakshitha-madushan
-
-7. Mr. Thimila Ranaweera (Table 4)
-https://udara75.github.io/wedding/?guest=thimila-ranaweera
-
-8. Miss. Manodya Dimanthi (Table 4)
-https://udara75.github.io/wedding/?guest=manodya-dimanthi
-
-9. Mr. Kaushan Ranasinghe (Table 4)
-https://udara75.github.io/wedding/?guest=kaushan-ranasinghe
-
-10. Mr. Venthiram kathircamalan (Table 4)
-https://udara75.github.io/wedding/?guest=venthiram-kathircamalan
-
-11. Mr. Ravindu Harshana (Table 4)
-https://udara75.github.io/wedding/?guest=ravindu-harshana
-
-12. Mr. Ashan Serasinghe (Table 4)
-https://udara75.github.io/wedding/?guest=ashan-serasinghe
-
-13. Mr. Rishan Rasdeen (Table 4)
-https://udara75.github.io/wedding/?guest=rishan-rasdeen
-
-14. Miss. Kumudu Kalpani (Table 4)
-https://udara75.github.io/wedding/?guest=kumudu-kalpani
-
-15. Mr. Tharinda Uthpala (Table 6)
-https://udara75.github.io/wedding/?guest=tharinda-uthpala
-
-16. Mr. Dilan Nissanka (Table 6)
-https://udara75.github.io/wedding/?guest=dilan-nissanka
-
-17. Mr. Amila Gunawickrama (Table 6)
-https://udara75.github.io/wedding/?guest=amila-gunawickrama
-
-18. Mr. Sahan Peris (Table 6)
-https://udara75.github.io/wedding/?guest=sahan-peris
-
-19. Mr. Malith Mavinda (Table 6)
-https://udara75.github.io/wedding/?guest=malith-mavinda
-
-20. Mr. Thimira Keerthisena (Table 6)
-https://udara75.github.io/wedding/?guest=thimira-keerthisena
-
-21. Mr. Hasitha Madushan (Table 6)
-https://udara75.github.io/wedding/?guest=hasitha-madushan
-
-22. Mr. Dhanuka Sankalpa (Table 6)
-https://udara75.github.io/wedding/?guest=dhanuka-sankalpa
-
-23. Mr. Santhushta Kariyawasam (Table 6)
-https://udara75.github.io/wedding/?guest=santhushta-kariyawasam
-
-24. Mr. Supun Dassanayake (Table 6)
-https://udara75.github.io/wedding/?guest=supun-dassanayake
-
-25. Mr. Aruna Edirimanne (Table 6)
-https://udara75.github.io/wedding/?guest=aruna-edirimanne
-
-26. Mr. Lakshitha Konara (Table 6)
-https://udara75.github.io/wedding/?guest=lakshitha-konara
-
-27. Mr. Kasun Sandakelum (Table 5)
-https://udara75.github.io/wedding/?guest=kasun-sandakelum
-
-28. Mr. Kasun Madushan (Table 5)
-https://udara75.github.io/wedding/?guest=kasun-madushan
-
-29. Mr. Ashan Sampath (Table 5)
-https://udara75.github.io/wedding/?guest=ashan-sampath
-
-30. Mr. Osanda Sandaruwan (Table 5)
-https://udara75.github.io/wedding/?guest=osanda-sandaruwan
-
-31. Mr. Hasara Jayanath (Table 5)
-https://udara75.github.io/wedding/?guest=hasara-jayanath
-
-32. Mr. Hashara Piyumal (Table 5)
-https://udara75.github.io/wedding/?guest=hashara-piyumal
-
-33. Mr. Gihantha Wijesekara (Table 5)
-https://udara75.github.io/wedding/?guest=gihantha-wijesekara
-
-34. Mr. Sudeepa Madubhashitha (Table 5)
-https://udara75.github.io/wedding/?guest=sudeepa-madubhashitha
-
-35. Mr. Dulshan Dhanajaya (Table 5)
-https://udara75.github.io/wedding/?guest=dulshan-dhanajaya
-
-36. Mr. Sadeep Shyamal (Table 5)
-https://udara75.github.io/wedding/?guest=sadeep-shyamal
-
-37. Mr. Lasindu Nisalka (Table 5)
-https://udara75.github.io/wedding/?guest=lasindu-nisalka
-
-38. Mr. & Mrs. Ruwan Nandana (Table 3)
-https://udara75.github.io/wedding/?guest=ruwan-nandana
-
-39. Mr. & Mrs. Chalindu Sankalpa (Table 3)
-https://udara75.github.io/wedding/?guest=chalindu-sankalpa
-
-40. Mr. Madawa Dilshan (Table 3)
-https://udara75.github.io/wedding/?guest=madawa-dilshan
-
-41. Mr. Lahiru Chamara (Table 3)
-https://udara75.github.io/wedding/?guest=lahiru-chamara
-
-42. Mrs. Udari Pabodini (Table 3)
-https://udara75.github.io/wedding/?guest=udari-pabodini
-
-43. Mr. Naveen Wickramathunga (Table 3)
-https://udara75.github.io/wedding/?guest=naveen-wickramathunga
-
-44. Miss. Chanuri Saneesha (Table 3)
-https://udara75.github.io/wedding/?guest=chanuri-saneesha
-
-45. Miss. Sapna Gamage (Table 3)
-https://udara75.github.io/wedding/?guest=sapna-gamage
-
-46. Mr. Sameera Dananjaya (Table 3)
-https://udara75.github.io/wedding/?guest=sameera-dananjaya
-
-47. Mr. Pasindu Kodippili (Table 3)
-https://udara75.github.io/wedding/?guest=pasindu-kodippili
-
-48. Mr. Ruchira Maduranga (Table 2)
+------------------ Table 2 ------------------
+3. Mr. Ruchira Maduranga (Table 2)
 https://udara75.github.io/wedding/?guest=ruchira-maduranga
 
-49. Mr. Kapila Indrajith (Table 2)
+4. Mr. Kapila Indrajith (Table 2)
 https://udara75.github.io/wedding/?guest=kapila-indrajith
 
-50. Mrs. Harshi Nimali (Table 2)
+5. Mrs. Harshi Nimali (Table 2)
 https://udara75.github.io/wedding/?guest=harshi-nimali
 
-51. Mrs. Dharshika Nilochani (Table 2)
+6. Mrs. Dharshika Nilochani (Table 2)
 https://udara75.github.io/wedding/?guest=dharshika-nilochani
 
-52. Mr. Manjula Prabhath (Table 2)
+7. Mr. Manjula Prabhath (Table 2)
 https://udara75.github.io/wedding/?guest=manjula-prabhath
+
+
+------------------ Table 3 ------------------
+8. Mr. & Mrs. Ruwan Nandana (Table 3)
+https://udara75.github.io/wedding/?guest=ruwan-nandana
+
+9. Mr. & Mrs. Chalindu Sankalpa (Table 3)
+https://udara75.github.io/wedding/?guest=chalindu-sankalpa
+
+10. Mr. Madawa Dilshan (Table 3)
+https://udara75.github.io/wedding/?guest=madawa-dilshan
+
+11. Mr. Lahiru Chamara (Table 3)
+https://udara75.github.io/wedding/?guest=lahiru-chamara
+
+12. Mrs. Udari Pabodini (Table 3)
+https://udara75.github.io/wedding/?guest=udari-pabodini
+
+13. Mr. Naveen Wickramathunga (Table 3)
+https://udara75.github.io/wedding/?guest=naveen-wickramathunga
+
+14. Miss. Chanuri Saneesha (Table 3)
+https://udara75.github.io/wedding/?guest=chanuri-saneesha
+
+15. Miss. Sapna Gamage (Table 3)
+https://udara75.github.io/wedding/?guest=sapna-gamage
+
+16. Mr. Sameera Dananjaya (Table 3)
+https://udara75.github.io/wedding/?guest=sameera-dananjaya
+
+17. Mr. Pasindu Kodippili (Table 3)
+https://udara75.github.io/wedding/?guest=pasindu-kodippili
+
+
+------------------ Table 4 ------------------
+18. Mr. Aditha Rajakaruna (Table 4)
+https://udara75.github.io/wedding/?guest=aditha-rajakaruna
+
+19. Mr. Ashan Thirimanne (Table 4)
+https://udara75.github.io/wedding/?guest=ashan-thirimanne
+
+20. Mr. Lakshitha Madushan (Table 4)
+https://udara75.github.io/wedding/?guest=lakshitha-madushan
+
+21. Mr. Thimila Ranaweera (Table 4)
+https://udara75.github.io/wedding/?guest=thimila-ranaweera
+
+22. Miss. Manodya Dimanthi (Table 4)
+https://udara75.github.io/wedding/?guest=manodya-dimanthi
+
+23. Mr. Kaushan Ranasinghe (Table 4)
+https://udara75.github.io/wedding/?guest=kaushan-ranasinghe
+
+24. Mr. Venthiram kathircamalan (Table 4)
+https://udara75.github.io/wedding/?guest=venthiram-kathircamalan
+
+25. Mr. Ravindu Harshana (Table 4)
+https://udara75.github.io/wedding/?guest=ravindu-harshana
+
+26. Mr. Ashan Serasinghe (Table 4)
+https://udara75.github.io/wedding/?guest=ashan-serasinghe
+
+27. Mr. Rishan Rasdeen (Table 4)
+https://udara75.github.io/wedding/?guest=rishan-rasdeen
+
+28. Miss. Kumudu Kalpani (Table 4)
+https://udara75.github.io/wedding/?guest=kumudu-kalpani
+
+
+------------------ Table 5 ------------------
+29. Mr. Isuru Jayashankha (Table 5)
+https://udara75.github.io/wedding/?guest=isuru-jayashankha
+
+30. Mr. Kasun Sandakelum (Table 5)
+https://udara75.github.io/wedding/?guest=kasun-sandakelum
+
+31. Mr. Kasun Madushan (Table 5)
+https://udara75.github.io/wedding/?guest=kasun-madushan
+
+32. Mr. Ashan Sampath (Table 5)
+https://udara75.github.io/wedding/?guest=ashan-sampath
+
+33. Mr. Osanda Sandaruwan (Table 5)
+https://udara75.github.io/wedding/?guest=osanda-sandaruwan
+
+34. Mr. Hasara Jayanath (Table 5)
+https://udara75.github.io/wedding/?guest=hasara-jayanath
+
+35. Mr. Hashara Piyumal (Table 5)
+https://udara75.github.io/wedding/?guest=hashara-piyumal
+
+36. Mr. Gihantha Wijesekara (Table 5)
+https://udara75.github.io/wedding/?guest=gihantha-wijesekara
+
+37. Mr. Sudeepa Madubhashitha (Table 5)
+https://udara75.github.io/wedding/?guest=sudeepa-madubhashitha
+
+38. Mr. Dulshan Dhanajaya (Table 5)
+https://udara75.github.io/wedding/?guest=dulshan-dhanajaya
+
+39. Mr. Sadeep Shyamal (Table 5)
+https://udara75.github.io/wedding/?guest=sadeep-shyamal
+
+40. Mr. Lasindu Nisalka (Table 5)
+https://udara75.github.io/wedding/?guest=lasindu-nisalka
+
+
+------------------ Table 6 ------------------
+41. Mr. Tharinda Uthpala (Table 6)
+https://udara75.github.io/wedding/?guest=tharinda-uthpala
+
+42. Mr. Dilan Nissanka (Table 6)
+https://udara75.github.io/wedding/?guest=dilan-nissanka
+
+43. Mr. Amila Gunawickrama (Table 6)
+https://udara75.github.io/wedding/?guest=amila-gunawickrama
+
+44. Mr. Sahan Peris (Table 6)
+https://udara75.github.io/wedding/?guest=sahan-peris
+
+45. Mr. Malith Mavinda (Table 6)
+https://udara75.github.io/wedding/?guest=malith-mavinda
+
+46. Mr. Thimira Keerthisena (Table 6)
+https://udara75.github.io/wedding/?guest=thimira-keerthisena
+
+47. Mr. Hasitha Madushan (Table 6)
+https://udara75.github.io/wedding/?guest=hasitha-madushan
+
+48. Mr. Dhanuka Sankalpa (Table 6)
+https://udara75.github.io/wedding/?guest=dhanuka-sankalpa
+
+49. Mr. Santhushta Kariyawasam (Table 6)
+https://udara75.github.io/wedding/?guest=santhushta-kariyawasam
+
+50. Mr. Supun Dassanayake (Table 6)
+https://udara75.github.io/wedding/?guest=supun-dassanayake
+
+51. Mr. Aruna Edirimanne (Table 6)
+https://udara75.github.io/wedding/?guest=aruna-edirimanne
+
+52. Mr. Lakshitha Konara (Table 6)
+https://udara75.github.io/wedding/?guest=lakshitha-konara
+
+
+------------------ Unassigned ------------------
+53. Dr. Sachith Nishshanka (table TBD)
+https://udara75.github.io/wedding/?guest=sachith-nishshanka
+
+54. Dr. P. Thushantha (table TBD)
+https://udara75.github.io/wedding/?guest=p-thushantha
+
+55. Dr. Akila Rathnayaka & Mrs. Sarangie Anuththara (table TBD)
+https://udara75.github.io/wedding/?guest=akila-rathnayaka-mrs-sarangie-anuththara
+
+56. Dr. Sandun Senanayaka (table TBD)
+https://udara75.github.io/wedding/?guest=sandun-senanayaka
+
+57. Dr. Omesha wedagedara (table TBD)
+https://udara75.github.io/wedding/?guest=omesha-wedagedara
+
+58. Dr. Nishani Chathurika (table TBD)
+https://udara75.github.io/wedding/?guest=nishani-chathurika
+
+59. Dr. Jayamini Akuranthilake (table TBD)
+https://udara75.github.io/wedding/?guest=jayamini-akuranthilake
+
+60. Dr. Tharini Vithanage (table TBD)
+https://udara75.github.io/wedding/?guest=tharini-vithanage
+
+61. Dr. Harini Rupasinghe (table TBD)
+https://udara75.github.io/wedding/?guest=harini-rupasinghe
+
+62. Dr. Savindi Uduwana (table TBD)
+https://udara75.github.io/wedding/?guest=savindi-uduwana
+
+63. Dr. Hiruka Rathnayaka (table TBD)
+https://udara75.github.io/wedding/?guest=hiruka-rathnayaka
+
+64. Dr. Anupama Bandusena (table TBD)
+https://udara75.github.io/wedding/?guest=anupama-bandusena
+
+65. Dr. Nishadini Lakshika (table TBD)
+https://udara75.github.io/wedding/?guest=nishadini-lakshika
+
+66. Dr. Melindu Daranagama (table TBD)
+https://udara75.github.io/wedding/?guest=melindu-daranagama
+
+67. Dr. Sudheera Gayan and family (table TBD)
+https://udara75.github.io/wedding/?guest=sudheera-gayan-and-family
+
+68. Dr. Methmal pathmasooriya (table TBD)
+https://udara75.github.io/wedding/?guest=methmal-pathmasooriya
+
+69. Dr. Dulanjani Dissanayaka (table TBD)
+https://udara75.github.io/wedding/?guest=dulanjani-dissanayaka
+
+70. Dr. Dhyan Nadeera (table TBD)
+https://udara75.github.io/wedding/?guest=dhyan-nadeera
+
+71. Dr. Viduni Basnayaka (table TBD)
+https://udara75.github.io/wedding/?guest=viduni-basnayaka
+
+72. Dr. S. Abithan (table TBD)
+https://udara75.github.io/wedding/?guest=s-abithan
+
+73. Dr. M. Sameer (table TBD)
+https://udara75.github.io/wedding/?guest=m-sameer
+
+74. Dr. Anjelo Joseph (table TBD)
+https://udara75.github.io/wedding/?guest=anjelo-joseph
+
+75. Dr. S. Inthujan (table TBD)
+https://udara75.github.io/wedding/?guest=s-inthujan
+
+76. Dr. K. Sharanja (table TBD)
+https://udara75.github.io/wedding/?guest=k-sharanja
+
+77. Dr. Ruvin Alawatta (table TBD)
+https://udara75.github.io/wedding/?guest=ruvin-alawatta
+
+78. Dr. Amaya Rosa (table TBD)
+https://udara75.github.io/wedding/?guest=amaya-rosa
+
+79. Mr. & Mrs. Ravindra Priyalal (table TBD)
+https://udara75.github.io/wedding/?guest=ravindra-priyalal
+
+80. Dr. Naveen Fernando (table TBD)
+https://udara75.github.io/wedding/?guest=naveen-fernando
+
+81. Dr. Madhara Jayawardhene (table TBD)
+https://udara75.github.io/wedding/?guest=madhara-jayawardhene
+
+82. Dr. Dilu Ashani (table TBD)
+https://udara75.github.io/wedding/?guest=dilu-ashani
+
+83. Dr. Dulakshi Navanjana (table TBD)
+https://udara75.github.io/wedding/?guest=dulakshi-navanjana
+
+84. Dr. Tharuka Perera (table TBD)
+https://udara75.github.io/wedding/?guest=tharuka-perera
+
+85. Mr. & Mrs. Shilpa Fernando (table TBD)
+https://udara75.github.io/wedding/?guest=shilpa-fernando
+
+86. Mr. & Mrs. Ansala Botheju (table TBD)
+https://udara75.github.io/wedding/?guest=ansala-botheju
+
+87. Mr. & Mrs. Bawantha Sibera (table TBD)
+https://udara75.github.io/wedding/?guest=bawantha-sibera
+
+88. Mr. & Mrs. Mohommad Usman (table TBD)
+https://udara75.github.io/wedding/?guest=mohommad-usman
+
+89. Mr. & Mrs. Ravindu Perera (table TBD)
+https://udara75.github.io/wedding/?guest=ravindu-perera
+
+90. Mr. & Mrs. Nipun Fernando and Family (table TBD)
+https://udara75.github.io/wedding/?guest=nipun-fernando-and-family
+
+91. Mr. & Mrs. Deshan Fernando and Family (table TBD)
+https://udara75.github.io/wedding/?guest=deshan-fernando-and-family
+
+92. Miss. Menora Sathsarani (table TBD)
+https://udara75.github.io/wedding/?guest=menora-sathsarani
+
+93. Dr. Dayathri Kuruwita (table TBD)
+https://udara75.github.io/wedding/?guest=dayathri-kuruwita
+
+94. Miss. Ravindi Kuruwita (table TBD)
+https://udara75.github.io/wedding/?guest=ravindi-kuruwita
+
+95. Miss. Venuri Amalya (table TBD)
+https://udara75.github.io/wedding/?guest=venuri-amalya
+
+96. Miss. Lithmi Hettiarachchi (table TBD)
+https://udara75.github.io/wedding/?guest=lithmi-hettiarachchi
+
+97. Mr. & Mrs. Janaka and Family (table TBD)
+https://udara75.github.io/wedding/?guest=janaka-and-family
+
+98. Mr. & Mrs. Rivindu Peiris (table TBD)
+https://udara75.github.io/wedding/?guest=rivindu-peiris
+
+99. Dr. Weranga Wanniarachchi (table TBD)
+https://udara75.github.io/wedding/?guest=weranga-wanniarachchi
+
+100. Mr. & Mrs. Dulitha Premathilake (table TBD)
+https://udara75.github.io/wedding/?guest=dulitha-premathilake
+
+101. Mr. & Mrs. Premathilake (table TBD)
+https://udara75.github.io/wedding/?guest=premathilake
+
+102. Mr. Anuradhe Jayathilake (table TBD)
+https://udara75.github.io/wedding/?guest=anuradhe-jayathilake
+
+103. Mr. Lahiru Adikari (table TBD)
+https://udara75.github.io/wedding/?guest=lahiru-adikari
+
+104. Mr. Lahiru Sampath (table TBD)
+https://udara75.github.io/wedding/?guest=lahiru-sampath
+
+105. Dr. Amila Ekanayaka (table TBD)
+https://udara75.github.io/wedding/?guest=amila-ekanayaka
+
+106. Mr. Dulmika Ruvishan (table TBD)
+https://udara75.github.io/wedding/?guest=dulmika-ruvishan
+
+107. Mr. Sisith Thushan (table TBD)
+https://udara75.github.io/wedding/?guest=sisith-thushan
+
+108. Mr. Sachith Madushan (table TBD)
+https://udara75.github.io/wedding/?guest=sachith-madushan
+
+109. Mr. Frank Lakshan (table TBD)
+https://udara75.github.io/wedding/?guest=frank-lakshan
+
+110. Mr. Deshan Randeniya (table TBD)
+https://udara75.github.io/wedding/?guest=deshan-randeniya
+
+111. Mr. Kavindu Rathnayaka (table TBD)
+https://udara75.github.io/wedding/?guest=kavindu-rathnayaka
