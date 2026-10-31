@@ -129,6 +129,10 @@ const INVITEES = [
   { id: "jude-herman", name: "Mr. Jude Herman" },
   { id: "anura-perera", name: "Mr. Anura Perera" },
   { id: "fayaz-marikkar", name: "Mr. & Mrs. Fayaz Marikkar" },
+  { id: "nethmi-silva", name: "Dr. Nethmi Silva" },
+  { id: "shiney-nayanathara", name: "Dr. Shiney Nayanathara" },
+  { id: "aashani", name: "Dr. Aashani" },
+  { id: "diluka-jayasekara", name: "Dr. Diluka Jayasekara" },
 ];
 
 const HEADERS = [

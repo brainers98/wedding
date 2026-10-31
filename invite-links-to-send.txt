@@ -2,7 +2,7 @@ UDARA & SHAINY — INVITE LINKS TO SEND
 Check each link, then send the matching one to that guest.
 
 Base site: https://udara75.github.io/wedding/
-Total guests: 116
+Total guests: 120
 
 ================== COUPLE ==================
 
@@ -602,4 +602,24 @@ Total guests: 116
 116. Mr. & Mrs. Fayaz Marikkar
    Seat: Table TBD
    Link: https://udara75.github.io/wedding/?guest=fayaz-marikkar
+   [ ] Checked   [ ] Sent
+
+117. Dr. Nethmi Silva
+   Seat: Table TBD
+   Link: https://udara75.github.io/wedding/?guest=nethmi-silva
+   [ ] Checked   [ ] Sent
+
+118. Dr. Shiney Nayanathara
+   Seat: Table TBD
+   Link: https://udara75.github.io/wedding/?guest=shiney-nayanathara
+   [ ] Checked   [ ] Sent
+
+119. Dr. Aashani
+   Seat: Table TBD
+   Link: https://udara75.github.io/wedding/?guest=aashani
+   [ ] Checked   [ ] Sent
+
+120. Dr. Diluka Jayasekara
+   Seat: Table TBD
+   Link: https://udara75.github.io/wedding/?guest=diluka-jayasekara
    [ ] Checked   [ ] Sent

@@ -10,7 +10,6 @@ const rsvpSuccess = document.getElementById("rsvpSuccess");
 const seatingSection = document.getElementById("seating");
 const seatingNumber = document.getElementById("seatingNumber");
 const seatingNote = document.getElementById("seatingNote");
-const seatingMap = document.getElementById("seatingMap");
 
 const isMobile =
   window.matchMedia("(max-width: 768px)").matches ||
@@ -82,22 +81,12 @@ function canViewSeatingChart(guest) {
 }
 
 function renderSeating(guest) {
-  if (!seatingSection || !seatingMap) return;
+  if (!seatingSection) return;
 
   const table = normalizeTableCode(guest && guest.table);
 
-  seatingMap.querySelectorAll(".is-yours").forEach((el) => {
-    el.classList.remove("is-yours");
-  });
-
+  // No table assigned yet — hide section
   if (!table) {
-    seatingSection.hidden = true;
-    seatingSection.classList.remove("is-locked");
-    return;
-  }
-
-  const targets = seatingMap.querySelectorAll(`[data-table="${table}"]`);
-  if (!targets.length) {
     seatingSection.hidden = true;
     seatingSection.classList.remove("is-locked");
     return;
@@ -105,27 +94,24 @@ function renderSeating(guest) {
 
   seatingSection.hidden = false;
 
+  // Date lock: only Udara & Shainy before Dec 1, 2026
   if (!canViewSeatingChart(guest)) {
     seatingSection.classList.add("is-locked");
-    seatingMap.hidden = true;
     if (seatingNumber) seatingNumber.textContent = "Coming soon";
     if (seatingNote) {
       seatingNote.textContent =
-        "Your table chart will be available from December 1, 2026.";
+        "Your table number will be available from December 1, 2026.";
     }
     return;
   }
 
   seatingSection.classList.remove("is-locked");
-  seatingMap.hidden = false;
-  targets.forEach((el) => el.classList.add("is-yours"));
-
   if (seatingNumber) seatingNumber.textContent = tableDisplayName(table);
   if (seatingNote) {
     seatingNote.textContent =
       table === "C"
-        ? "You're with the couple — highlighted on the chart."
-        : `You're at ${tableDisplayName(table)} — highlighted on the chart.`;
+        ? "You are seated at the couple's table."
+        : `Please join us at ${tableDisplayName(table)}.`;
   }
 }
 

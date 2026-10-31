@@ -120,6 +120,10 @@ const GUESTS = [
   { id: "jude-herman", name: "Mr. Jude Herman", table: null },
   { id: "anura-perera", name: "Mr. Anura Perera", table: null },
   { id: "fayaz-marikkar", name: "Mr. & Mrs. Fayaz Marikkar", table: null },
+  { id: "nethmi-silva", name: "Dr. Nethmi Silva", table: null },
+  { id: "shiney-nayanathara", name: "Dr. Shiney Nayanathara", table: null },
+  { id: "aashani", name: "Dr. Aashani", table: null },
+  { id: "diluka-jayasekara", name: "Dr. Diluka Jayasekara", table: null },
 ];
 
 const TABLE_LABELS = ["C", "R", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18"];
