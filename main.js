@@ -295,27 +295,56 @@ function spawnPetals(count = PETAL_COUNT) {
   window.setTimeout(() => window.cancelAnimationFrame(frameId), 5000);
 }
 
+function showMusicToggle() {
+  if (!musicToggle) return;
+  musicToggle.hidden = false;
+}
+
 function setMusicMuted(muted) {
-  if (!weddingMusic || !musicToggle) return;
-  weddingMusic.muted = muted;
-  musicToggle.classList.toggle("is-muted", muted);
+  if (!weddingMusic) return;
+  weddingMusic.muted = !!muted;
+  if (!musicToggle) return;
+  musicToggle.classList.toggle("is-muted", !!muted);
   musicToggle.setAttribute(
     "aria-label",
     muted ? "Play music" : "Mute music"
   );
 }
 
+function syncMusicToggle() {
+  if (!weddingMusic || !musicToggle) return;
+  const silent = weddingMusic.paused || weddingMusic.muted;
+  musicToggle.classList.toggle("is-muted", silent);
+  musicToggle.setAttribute(
+    "aria-label",
+    silent ? "Play music" : "Mute music"
+  );
+}
+
 function startWeddingMusic() {
   if (!weddingMusic) return;
-  weddingMusic.volume = 0.55;
-  setMusicMuted(false);
-  if (musicToggle) musicToggle.hidden = false;
+  showMusicToggle();
+  weddingMusic.volume = 0.7;
+  weddingMusic.muted = false;
+  try {
+    weddingMusic.currentTime = 0;
+  } catch (_) {
+    /* ignore seek errors before metadata */
+  }
   const playAttempt = weddingMusic.play();
-  if (playAttempt && typeof playAttempt.catch === "function") {
-    playAttempt.catch(() => {
-      // Autoplay blocked — keep mute button so guest can start it
-      if (musicToggle) musicToggle.hidden = false;
-    });
+  if (playAttempt && typeof playAttempt.then === "function") {
+    playAttempt
+      .then(() => {
+        setMusicMuted(false);
+        syncMusicToggle();
+      })
+      .catch(() => {
+        // Browser blocked it — guest can tap ♪
+        showMusicToggle();
+        syncMusicToggle();
+      });
+  } else {
+    syncMusicToggle();
   }
 }
 
@@ -323,7 +352,7 @@ async function openInvitation() {
   if (opening) return;
   opening = true;
 
-  // Start on the same user tap as "Press to open" (browsers allow audio then)
+  // Must start inside this tap/click — browsers block music otherwise
   startWeddingMusic();
 
   cover.classList.add("is-opening");
@@ -374,15 +403,23 @@ openBtn.addEventListener("keydown", (event) => {
   }
 });
 
+if (weddingMusic) {
+  weddingMusic.addEventListener("play", syncMusicToggle);
+  weddingMusic.addEventListener("pause", syncMusicToggle);
+}
+
 if (musicToggle) {
-  musicToggle.addEventListener("click", () => {
+  musicToggle.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
     if (!weddingMusic) return;
     if (weddingMusic.paused) {
-      setMusicMuted(false);
-      weddingMusic.play().catch(() => {});
+      weddingMusic.muted = false;
+      weddingMusic.play().then(syncMusicToggle).catch(syncMusicToggle);
       return;
     }
     setMusicMuted(!weddingMusic.muted);
+    syncMusicToggle();
   });
 }
 

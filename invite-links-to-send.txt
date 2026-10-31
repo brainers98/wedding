@@ -4,7 +4,7 @@ Offset n = 42  |  Example: ?guest_0xacf=udara-kavinda
 Check each link, then send the matching one to that guest.
 
 Base site: https://udara75.github.io/wedding/
-Total guests: 120
+Total guests: 127
 
 ================== COUPLE ==================
 
@@ -620,10 +620,10 @@ Total guests: 120
    Link: https://udara75.github.io/wedding/?guest_0xdfc=dulitha-premathilake
    [ ] Checked   [ ] Sent
 
-100. Mr. & Mrs. Premathilake
+100. Mr. & Mrs. H.D.D. Premathilake
    Seat: Table TBD
-   Code: 0xdfd
-   Link: https://udara75.github.io/wedding/?guest_0xdfd=premathilake
+   Code: 0xeeb
+   Link: https://udara75.github.io/wedding/?guest_0xeeb=h-d-d-premathilake
    [ ] Checked   [ ] Sent
 
 101. Mr. Anuradhe Jayathilake
@@ -744,4 +744,46 @@ Total guests: 120
    Seat: Table TBD
    Code: 0xecf
    Link: https://udara75.github.io/wedding/?guest_0xecf=diluka-jayasekara
+   [ ] Checked   [ ] Sent
+
+121. Dr. P. K. Ravindran
+   Seat: Table TBD
+   Code: 0xeda
+   Link: https://udara75.github.io/wedding/?guest_0xeda=p-k-ravindran
+   [ ] Checked   [ ] Sent
+
+122. Dr. G. M. K. Bogammana
+   Seat: Table TBD
+   Code: 0xedb
+   Link: https://udara75.github.io/wedding/?guest_0xedb=g-m-k-bogammana
+   [ ] Checked   [ ] Sent
+
+123. Dr. Madhuka Dasanayaka
+   Seat: Table TBD
+   Code: 0xedc
+   Link: https://udara75.github.io/wedding/?guest_0xedc=madhuka-dasanayaka
+   [ ] Checked   [ ] Sent
+
+124. Mr. & Mrs. Chula Perera & Family
+   Seat: Table TBD
+   Code: 0xedd
+   Link: https://udara75.github.io/wedding/?guest_0xedd=chula-perera-family
+   [ ] Checked   [ ] Sent
+
+125. Mr. & Mrs. Bandu & Family
+   Seat: Table TBD
+   Code: 0xede
+   Link: https://udara75.github.io/wedding/?guest_0xede=bandu-family
+   [ ] Checked   [ ] Sent
+
+126. Mrs. Niluka & Family
+   Seat: Table TBD
+   Code: 0xedf
+   Link: https://udara75.github.io/wedding/?guest_0xedf=niluka-family
+   [ ] Checked   [ ] Sent
+
+127. Mr. & Mrs. Susith Rodrigo
+   Seat: Table TBD
+   Code: 0xeea
+   Link: https://udara75.github.io/wedding/?guest_0xeea=susith-rodrigo
    [ ] Checked   [ ] Sent

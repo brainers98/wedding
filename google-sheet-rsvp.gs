@@ -113,7 +113,7 @@ const INVITEES = [
   { id: "guest_0xdfa", name: "Mr. & Mrs. Janaka and Family" },
   { id: "guest_0xdfb", name: "Dr. Weranga Wanniarachchi" },
   { id: "guest_0xdfc", name: "Mr. & Mrs. Dulitha Premathilake" },
-  { id: "guest_0xdfd", name: "Mr. & Mrs. Premathilake" },
+  { id: "guest_0xeeb", name: "Mr. & Mrs. H.D.D. Premathilake" },
   { id: "guest_0xdfe", name: "Mr. Anuradhe Jayathilake" },
   { id: "guest_0xdff", name: "Mr. Lahiru Adikari" },
   { id: "guest_0xeaa", name: "Mr. Lahiru Sampath" },
@@ -134,6 +134,13 @@ const INVITEES = [
   { id: "guest_0xecd", name: "Dr. Shiney Nayanathara" },
   { id: "guest_0xece", name: "Dr. Aashani" },
   { id: "guest_0xecf", name: "Dr. Diluka Jayasekara" },
+  { id: "guest_0xeda", name: "Dr. P. K. Ravindran" },
+  { id: "guest_0xedb", name: "Dr. G. M. K. Bogammana" },
+  { id: "guest_0xedc", name: "Dr. Madhuka Dasanayaka" },
+  { id: "guest_0xedd", name: "Mr. & Mrs. Chula Perera & Family" },
+  { id: "guest_0xede", name: "Mr. & Mrs. Bandu & Family" },
+  { id: "guest_0xedf", name: "Mrs. Niluka & Family" },
+  { id: "guest_0xeea", name: "Mr. & Mrs. Susith Rodrigo" },
 ];
 
 const HEADERS = [

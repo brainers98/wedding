@@ -105,7 +105,7 @@ const GUESTS = [
   { id: "janaka-and-family", code: "0xdfa", name: "Mr. & Mrs. Janaka and Family", table: null },
   { id: "weranga-wanniarachchi", code: "0xdfb", name: "Dr. Weranga Wanniarachchi", table: null },
   { id: "dulitha-premathilake", code: "0xdfc", name: "Mr. & Mrs. Dulitha Premathilake", table: null },
-  { id: "premathilake", code: "0xdfd", name: "Mr. & Mrs. Premathilake", table: null },
+  { id: "h-d-d-premathilake", code: "0xeeb", name: "Mr. & Mrs. H.D.D. Premathilake", table: null },
   { id: "anuradhe-jayathilake", code: "0xdfe", name: "Mr. Anuradhe Jayathilake", table: null },
   { id: "lahiru-adikari", code: "0xdff", name: "Mr. Lahiru Adikari", table: null },
   { id: "lahiru-sampath", code: "0xeaa", name: "Mr. Lahiru Sampath", table: null },
@@ -126,6 +126,13 @@ const GUESTS = [
   { id: "shiney-nayanathara", code: "0xecd", name: "Dr. Shiney Nayanathara", table: null },
   { id: "aashani", code: "0xece", name: "Dr. Aashani", table: null },
   { id: "diluka-jayasekara", code: "0xecf", name: "Dr. Diluka Jayasekara", table: null },
+  { id: "p-k-ravindran", code: "0xeda", name: "Dr. P. K. Ravindran", table: null },
+  { id: "g-m-k-bogammana", code: "0xedb", name: "Dr. G. M. K. Bogammana", table: null },
+  { id: "madhuka-dasanayaka", code: "0xedc", name: "Dr. Madhuka Dasanayaka", table: null },
+  { id: "chula-perera-family", code: "0xedd", name: "Mr. & Mrs. Chula Perera & Family", table: null },
+  { id: "bandu-family", code: "0xede", name: "Mr. & Mrs. Bandu & Family", table: null },
+  { id: "niluka-family", code: "0xedf", name: "Mrs. Niluka & Family", table: null },
+  { id: "susith-rodrigo", code: "0xeea", name: "Mr. & Mrs. Susith Rodrigo", table: null },
 ];
 
 const TABLE_LABELS = ["C", "R", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18"];
