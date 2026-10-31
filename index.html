@@ -67,6 +67,23 @@
       <div class="petal-burst" id="petalBurst" aria-hidden="true"></div>
     </section>
 
+    <audio
+      id="weddingMusic"
+      src="wedding-music.mp3"
+      loop
+      preload="auto"
+      playsinline
+    ></audio>
+    <button
+      type="button"
+      class="music-toggle"
+      id="musicToggle"
+      aria-label="Mute music"
+      hidden
+    >
+      <span class="music-toggle-icon" aria-hidden="true">♪</span>
+    </button>
+
     <!-- Passport invitation details -->
     <main class="invite" id="invite" hidden>
       <div class="passport" id="passport">
@@ -243,7 +260,7 @@
       </section>
     </main>
 
-    <script src="guests.js?v=letterhex1"></script>
-    <script src="main.js?v=letterhex1"></script>
+    <script src="guests.js?v=music1"></script>
+    <script src="main.js?v=music1"></script>
   </body>
 </html>

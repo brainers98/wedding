@@ -10,6 +10,8 @@ const rsvpSuccess = document.getElementById("rsvpSuccess");
 const seatingSection = document.getElementById("seating");
 const seatingNumber = document.getElementById("seatingNumber");
 const seatingNote = document.getElementById("seatingNote");
+const weddingMusic = document.getElementById("weddingMusic");
+const musicToggle = document.getElementById("musicToggle");
 
 const isMobile =
   window.matchMedia("(max-width: 768px)").matches ||
@@ -293,9 +295,36 @@ function spawnPetals(count = PETAL_COUNT) {
   window.setTimeout(() => window.cancelAnimationFrame(frameId), 5000);
 }
 
+function setMusicMuted(muted) {
+  if (!weddingMusic || !musicToggle) return;
+  weddingMusic.muted = muted;
+  musicToggle.classList.toggle("is-muted", muted);
+  musicToggle.setAttribute(
+    "aria-label",
+    muted ? "Play music" : "Mute music"
+  );
+}
+
+function startWeddingMusic() {
+  if (!weddingMusic) return;
+  weddingMusic.volume = 0.55;
+  setMusicMuted(false);
+  if (musicToggle) musicToggle.hidden = false;
+  const playAttempt = weddingMusic.play();
+  if (playAttempt && typeof playAttempt.catch === "function") {
+    playAttempt.catch(() => {
+      // Autoplay blocked — keep mute button so guest can start it
+      if (musicToggle) musicToggle.hidden = false;
+    });
+  }
+}
+
 async function openInvitation() {
   if (opening) return;
   opening = true;
+
+  // Start on the same user tap as "Press to open" (browsers allow audio then)
+  startWeddingMusic();
 
   cover.classList.add("is-opening");
   cover.setAttribute("aria-busy", "true");
@@ -344,6 +373,18 @@ openBtn.addEventListener("keydown", (event) => {
     onOpenActivate(event);
   }
 });
+
+if (musicToggle) {
+  musicToggle.addEventListener("click", () => {
+    if (!weddingMusic) return;
+    if (weddingMusic.paused) {
+      setMusicMuted(false);
+      weddingMusic.play().catch(() => {});
+      return;
+    }
+    setMusicMuted(!weddingMusic.muted);
+  });
+}
 
 rsvpForm.addEventListener("submit", async (event) => {
   event.preventDefault();

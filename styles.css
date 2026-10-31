@@ -222,6 +222,40 @@ body {
   pointer-events: none;
 }
 
+.music-toggle {
+  position: fixed;
+  top: calc(0.85rem + var(--safe-top));
+  right: calc(0.85rem + var(--safe-x));
+  z-index: 40;
+  width: 2.6rem;
+  height: 2.6rem;
+  border: 1px solid rgba(201, 176, 122, 0.55);
+  border-radius: 50%;
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.92), rgba(236, 224, 247, 0.95));
+  color: var(--lav-800);
+  box-shadow: 0 8px 22px rgba(70, 40, 100, 0.16);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.music-toggle[hidden] {
+  display: none;
+}
+
+.music-toggle-icon {
+  font-size: 1.05rem;
+  line-height: 1;
+  transform: translateY(1px);
+}
+
+.music-toggle.is-muted .music-toggle-icon {
+  opacity: 0.45;
+  text-decoration: line-through;
+}
+
 /* —— Passport invite (mobile: single page) —— */
 .invite {
   min-height: 100dvh;
