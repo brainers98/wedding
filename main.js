@@ -35,22 +35,50 @@ function guestId(guest) {
     .replace(/^-|-$/g, "");
 }
 
-function guestCode(guest) {
-  return String((guest && guest.code) || "")
+function normalizeHexCode(value) {
+  const raw = String(value || "")
     .trim()
     .toLowerCase();
+  // Letter-hex only: 0x + three chars from a–f
+  const match = raw.match(/^(?:0x)?([a-f]{3})$/);
+  if (!match) return "";
+  return `0x${match[1]}`;
+}
+
+function guestCode(guest) {
+  return normalizeHexCode(guest && guest.code);
+}
+
+function guestParam(guest) {
+  const code = guestCode(guest);
+  return code ? `guest_${code}` : "";
 }
 
 function getGuestFromUrl() {
   const params = new URLSearchParams(window.location.search);
-  const raw = params.get("guest") || params.get("code") || "";
-  if (!raw) return null;
-
-  const requested = String(raw).trim().toLowerCase();
   const guests = typeof GUESTS !== "undefined" ? GUESTS : [];
 
-  // Secure invite links use a unique hex code only (not the name / slug).
-  return guests.find((guest) => guestCode(guest) === requested) || null;
+  // Recommended: ?guest_0xacf=udara-kavinda  (letter-hex + name slug must both match)
+  for (const [key, value] of params.entries()) {
+    const keyMatch = String(key)
+      .trim()
+      .toLowerCase()
+      .match(/^guest_(0x[a-f]{3})$/);
+    if (!keyMatch) continue;
+
+    const code = normalizeHexCode(keyMatch[1]);
+    const slug = normalizeGuestKey(value)
+      .replace(/&/g, " and ")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "");
+
+    const found = guests.find(
+      (guest) => guestCode(guest) === code && guestId(guest) === slug
+    );
+    if (found) return found;
+  }
+
+  return null;
 }
 
 function normalizeTableCode(value) {
@@ -323,7 +351,7 @@ rsvpForm.addEventListener("submit", async (event) => {
   const data = Object.fromEntries(new FormData(rsvpForm).entries());
   if (currentGuest) {
     data.guestFromLink = currentGuest.name;
-    data.guestId = currentGuest.code || guestCode(currentGuest);
+    data.guestId = guestParam(currentGuest) || currentGuest.id;
   }
 
   const scriptUrl =

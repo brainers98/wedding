@@ -7,18 +7,62 @@ Source format (any of these):
 
 No table yet → leave blank or use _  (goes under Unassigned)
 
-Each guest gets a unique hex invite code (persisted in guest-codes.json so
-links stay stable across syncs). Public links use ?guest=<hex> only.
+Each guest gets a FIXED hex id made of hex *letters* a–f only (e.g. 0xacf),
+built from slot + HEX_OFFSET_N. Saved in guest-codes.json — never changes
+on later syncs. New guests take the next free slot.
+
+Public links (recommended):
+  ?guest_0xacf=udara-kavinda
 """
 import json
 import re
-import secrets
 from pathlib import Path
 
 root = Path(__file__).resolve().parent
 site = "https://udara75.github.io/wedding/"
 codes_path = root / "guest-codes.json"
-HEX_LEN = 16  # 16 hex chars = 8 bytes
+
+# Shift amount "n" — change this to move the whole letter-hex series.
+# Codes use only a–f (no 0–9 digits).
+HEX_OFFSET_N = 42
+HEX_LETTERS = "abcdef"
+HEX_LETTER_BASE = len(HEX_LETTERS)  # 6
+HEX_LETTER_LEN = 3
+HEX_LETTER_CAPACITY = HEX_LETTER_BASE**HEX_LETTER_LEN  # 216
+
+
+def letter_hex_from_slot(slot: int) -> str:
+    """Map slot index → 0x*** using only hex letters, after HEX_OFFSET_N."""
+    n = slot + HEX_OFFSET_N
+    if n < 0 or n >= HEX_LETTER_CAPACITY:
+        raise ValueError(f"slot {slot} with offset {HEX_OFFSET_N} out of range")
+    digits = []
+    for _ in range(HEX_LETTER_LEN):
+        digits.append(HEX_LETTERS[n % HEX_LETTER_BASE])
+        n //= HEX_LETTER_BASE
+    return "0x" + "".join(reversed(digits))
+
+
+def normalize_hex_code(raw):
+    """Return fixed letter-hex form 0x[a-f]{3}, or None if invalid."""
+    if raw is None:
+        return None
+    s = str(raw).strip().lower()
+    m = re.fullmatch(r"(?:0x)?([a-f]{3})", s)
+    if not m:
+        return None
+    return f"0x{m.group(1)}"
+
+
+def slot_from_letter_hex(code):
+    """Inverse of letter_hex_from_slot (without offset), or None."""
+    norm = normalize_hex_code(code)
+    if not norm:
+        return None
+    n = 0
+    for ch in norm[2:]:
+        n = n * HEX_LETTER_BASE + HEX_LETTERS.index(ch)
+    return n - HEX_OFFSET_N
 
 
 def fix_title(name: str) -> str:
@@ -139,7 +183,7 @@ indexed = list(enumerate(guests))
 indexed.sort(key=lambda it: (*table_group_key(it[1]["table"]), it[0]))
 guests = [g for _, g in indexed]
 
-# Stable unique hex invite codes (reuse saved map so re-sync doesn't break sent links)
+# FIXED letter-hex codes (a–f only), offset by HEX_OFFSET_N — reuse forever
 saved_codes = {}
 if codes_path.exists():
     try:
@@ -147,19 +191,41 @@ if codes_path.exists():
     except json.JSONDecodeError:
         saved_codes = {}
 
-used_codes = {str(c).lower() for c in saved_codes.values() if c}
+used_slots = set()
+for raw in saved_codes.values():
+    slot = slot_from_letter_hex(raw)
+    if slot is not None and slot >= 0:
+        used_slots.add(slot)
+
+next_slot = 0
+
+
+def alloc_letter_hex():
+    global next_slot
+    while next_slot in used_slots:
+        next_slot += 1
+    if next_slot + HEX_OFFSET_N >= HEX_LETTER_CAPACITY:
+        raise RuntimeError("Ran out of 3-letter hex codes (a–f)")
+    slot = next_slot
+    used_slots.add(slot)
+    next_slot += 1
+    return letter_hex_from_slot(slot)
+
+
 code_map = {}
 for g in guests:
-    existing = saved_codes.get(g["id"])
-    if existing and re.fullmatch(r"[0-9a-fA-F]+", str(existing)):
-        code = str(existing).lower()
+    existing = normalize_hex_code(saved_codes.get(g["id"]))
+    if existing:
+        code = existing
+        slot = slot_from_letter_hex(code)
+        if slot is not None and slot >= 0:
+            used_slots.add(slot)
     else:
-        code = secrets.token_hex(HEX_LEN // 2)
-        while code in used_codes:
-            code = secrets.token_hex(HEX_LEN // 2)
-    used_codes.add(code)
+        code = alloc_letter_hex()
     code_map[g["id"]] = code
     g["code"] = code
+    g["param"] = f"guest_{code}"  # guest_0xacf
+    g["token"] = f"{g['param']}={g['id']}"  # guest_0xacf=udara-kavinda
 
 codes_path.write_text(
     json.dumps(code_map, indent=2, ensure_ascii=False) + "\n",
@@ -196,9 +262,10 @@ for g in guests:
     )
 
 (root / "guests.js").write_text(
-    f"""// Guest personalization — use ?guest=<hex code> in the URL
-// Example: index.html?guest=a1b2c3d4e5f67890
-// Codes are unique per guest (see guest-codes.json). Do not share the slug id.
+    f"""// Guest personalization — fixed letter-hex codes (a–f only, offset by n)
+// Link format: ?guest_0xacf=<slug>
+// Example: index.html?guest_0xacf=udara-kavinda
+// Codes live in guest-codes.json and stay fixed across syncs.
 //
 // Auto-generated from guests-test.txt — edit that file, then sync/watch.
 
@@ -219,7 +286,8 @@ const RSVP_SCRIPT_URL =
 # Send-ready links (check then copy/paste to guests)
 link_lines = [
     "UDARA & SHAINY — INVITE LINKS TO SEND",
-    "Each link has a unique hex code. Only that guest's code opens their invite.",
+    "Format: guest_0x***=<guest-slug>  (letter-hex a–f only, fixed — does not change on re-sync)",
+    f"Offset n = {HEX_OFFSET_N}  |  Example: ?guest_0xacf=udara-kavinda",
     "Check each link, then send the matching one to that guest.",
     "",
     f"Base site: {site}",
@@ -238,7 +306,7 @@ for i, g in enumerate(guests, 1):
     link_lines.append(f"{i}. {g['name']}")
     link_lines.append(f"   Seat: {seat}")
     link_lines.append(f"   Code: {g['code']}")
-    link_lines.append(f"   Link: {site}?guest={g['code']}")
+    link_lines.append(f"   Link: {site}?{g['token']}")
     link_lines.append(f"   [ ] Checked   [ ] Sent")
     link_lines.append("")
 (root / "invite-links-test.txt").write_text("\n".join(link_lines), encoding="utf-8")
@@ -248,15 +316,24 @@ gs_path = root / "google-sheet-rsvp.gs"
 if gs_path.exists():
     gs = gs_path.read_text(encoding="utf-8")
     invitees = ",\n".join(
-        f'  {{ id: "{g["code"]}", name: "{g["name"]}" }}' for g in guests
+        f'  {{ id: "{g["param"]}", name: "{g["name"]}" }}' for g in guests
     )
     new_block = f"const INVITEES = [\n{invitees},\n];"
     gs2 = re.sub(r"const INVITEES = \[[\s\S]*?\];", new_block, gs, count=1)
+    # Keep header note accurate
+    gs2 = gs2.replace(
+        " * Guest ID = guest_0x*** (same as link param), e.g. guest_0x001",
+        " * Guest ID = guest_0x*** letter-hex (same as link param), e.g. guest_0xacf",
+    )
+    gs2 = gs2.replace(
+        " * Guest ID = slug-3hex (same as ?guest= in the link), e.g. udara-kavinda-a3f",
+        " * Guest ID = guest_0x*** letter-hex (same as link param), e.g. guest_0xacf",
+    )
     gs_path.write_text(gs2, encoding="utf-8")
 
 assigned = sum(1 for g in guests if g["table"] is not None)
 print(
     f"Synced {len(guests)} guests "
     f"({assigned} with table, {len(guests) - assigned} unassigned) "
-    f"+ unique hex codes"
+    f"+ letter-hex codes (offset n={HEX_OFFSET_N})"
 )
